@@ -2,13 +2,19 @@
 layout: base
 ---
 
-%h1
-  = page.title
-%h2
-  author #{page.author}
-
-%h2
-  date #{page.date}
-
-
-~ content
+.row
+  .large-9{:class=>'columns'}
+    %h3
+      = page.title
+    %h6
+      #{page.date}
+    %h6
+      #{page.author}
+  
+    ~ content
+  .large-3{:class=>'columns'}
+    %ul
+      %li
+        Previous Post
+      %li
+        Next Post
