@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    asciidoctor (0.1.4)
     awestruct (0.5.4.dev)
       bootstrap-sass (>= 2.3.1.0)
       compass (>= 0.12.1)
@@ -50,4 +51,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  asciidoctor
   awestruct (= 0.5.4.dev)

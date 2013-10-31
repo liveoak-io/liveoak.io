@@ -2,3 +2,13 @@ name: Restafari
 title: Backend-as-a-Service
 org: Red Hat
 base_url: ''
+asciidoctor:
+#  :compact: true
+#  :eruby: erubis
+  :attributes:
+    idprefix: ''
+    idseparator: '-'
+    icons: 'font'
+    sectanchors: ''
+    linkattrs: ''
+    source-highlighter: highlight.js
