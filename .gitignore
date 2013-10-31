@@ -1,0 +1,7 @@
+_site
+_tmp
+.awestruct
+.sass-cache
+.ruby-version
+.ruby-gemset
+*.swp
