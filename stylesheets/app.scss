@@ -54,3 +54,20 @@
 // @import "foundation/components/tooltips";
 // @import "foundation/components/dropdown";
 
+
+table#builds {
+  tr {
+    border-bottom: 1px solid #999999;
+  }
+  tr.SUCCESS td {
+    background-color: #00DD00;
+  }
+  
+  tr.FAILURE td {
+    background-color: #DD0000;
+  }
+  
+  tr.ABORTED td {
+    background-color: #DDDDDD;
+  }
+}

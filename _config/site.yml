@@ -4,7 +4,7 @@ org: Red Hat
 base_url: ''
 asciidoctor:
 #  :compact: true
-#  :eruby: erubis
+  :eruby: erubis
   :attributes:
     idprefix: ''
     idseparator: '-'

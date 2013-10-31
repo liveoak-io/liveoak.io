@@ -1,0 +1,15 @@
+---
+layout: base
+---
+
+%h1
+  The blog!
+
+- puts page.posts.inspect
+
+- for post in page.posts
+  .blog-post
+    .title
+      %a{:href=>post.url}
+        = post.title
+
