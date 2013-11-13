@@ -7,7 +7,6 @@
   %meta(charset='utf-8')
   %meta(name='viewport' content='width=device-width, initial-scale=1.0')
   %title=site.title
-  %link{:rel=>'stylesheet', :href=>"#{site.base_url}/stylesheets/normalize.css"}
   %link{:rel=>'stylesheet', :href=>"#{site.base_url}/stylesheets/app.css"}
   %script(src="#{site.base_url}/javascripts/vendor/custom.modernizr.js")
   %link{:rel=>'author', :type=>'text/plain', :href=>"#{site.base_url}/humans.txt"}
@@ -28,6 +27,18 @@
         %li.divider
           %li
             %a{:href=>"#{site.base_url}/blog"} Blog
+        %li.divider
+          %li
+            %a{:href=>"#{site.base_url}/team"} Team
+        %li.divider
+          %li
+            %a{:href=>"#{site.base_url}/community"} Community
+        %li.divider
+          %li
+            %a{:href=>"#{site.base_url}/builds"} Builds
+        %li.divider
+          %li
+            %a{:href=>"#{site.base_url}/faq"} FAQ
   .row
     .large-12.columns
       ~ content
@@ -38,12 +49,6 @@
         &copy; #{site.org} #{Date.today.year}
         %br
         Built on Foundation. Baked by Awestruct.
-    .large-6.columns
-      %ul.inline-list.right
-        %li
-          %a{:href=>"#{site.base_url}/"} Home
-        -#%li
-        -#  %a{:href=>"#{site.base_url}/blog"} Blog
   %script
     document.write('<script src=' + ('__proto__' in {} ? '#{site.base_url}/javascripts/vendor/zepto' : '#{site.base_url}/javascripts/vendor/jquery') + '.js><\/script>')
   %script{:src=>"#{site.base_url}/javascripts/foundation/foundation.js"}

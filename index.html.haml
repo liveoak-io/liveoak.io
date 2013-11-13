@@ -2,40 +2,54 @@
 layout: base
 ---
 .row
-  .large-12.columns
-    %h1 Backend-as-a-Service
-    %hr
-
-.row
-  .large-12.columns
+  .large-4.columns{:style=>'background:url("/images/tree.png") right center no-repeat'}
+    %h1 LiveOak
+    %h1.subheader Backend as a Service
+  .large-8.columns.right
     .panel
-      %h3 Get started
-      %p This site is all setup to use Foundation 4 with Awestruct.
-      %a.button{:href=>'http://foundation.zurb.com'} Check out Foundation 4
-      %a.button.secondary{:href=>'http://awestruct.org'} Check out Awestruct
+      %p 
+        LiveOak is a backend-as-a-service stack that simplifies
+        development for mobile and standard web clients. Its goal
+        is to enable client-side access to traditional backend
+        services without having to write server-side code.
+      %p
+        LiveOak's fundamental architectural approach is REST to
+        the core. LiveOak provides publish/subscribe,
+        push-to-the-mobile-client, and REST-based APIs to shuffle data between
+        mobile handsets, traditional desktops, and other servers in a local
+        cluster or in the cloud.
 
 .row
   .large-4.columns
-    %h3 About 
-    %p 
-      #{site.name} is a backend-as-a-service stack which aims to simplify 
-      complex client development, whether the client is mobile or not.
+    %h3 Services
     %p
-      %a.button{:href=>'http://awestruct.org'} View details &raquo; 
+      LiveOak is a set of backend enterprise services including user
+      management, data storage, blob storage, real-time push, push
+      notifications via APNS/GCM, and analytics.
 
   .large-4.columns
-    %h3 Goal
+    %h3 Languages
     %p 
-      The goal of #{site.name} is to enable access to traditional services
-      without having to write server-side code.
-    %p
-      %a.button{:href=>'http://awestruct.org'} View details &raquo; 
+      LiveOak applications are targeted to the JVM on the server side
+      and applications can be written in multiple languages, including
+      Java, JavaScript, Objective-C, and Android Java.
 
   .large-4.columns
-    %h3 Concept
+    %h3 Integrations
     %p
-      The core concept of #{site.name} is that services can be provided
-      through REST and push interfaces to clients on mobile handsets,
-      desktop computers, or other servers.
+      LiveOak speaks
+      %a{:href=>'http://vertx.io'}Vert.x
+      fluently and provides seamless integration with Vert.x modules.  Exposing
+      your existing Vert.x data through the LiveOak REST API works over the
+      Vert.x event bus, allowing all of your Vert.x modules to play along.
+
+.row
+  .large-4.columns
     %p
-      %a.button{:href=>'http://awestruct.org'} View details &raquo; 
+      %a.button{:href=>'/services'} View details &raquo; 
+  .large-4.columns
+    %p
+      %a.button{:href=>'Languages'} View details &raquo; 
+  .large-4.columns
+    %p
+      %a.button{:href=>'Integrations'} View details &raquo; 

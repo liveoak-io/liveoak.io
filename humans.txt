@@ -2,7 +2,17 @@
 /* zurb.com */
 /* humanstxt.org */
 
-/* SITE */
-  Standards: HTML5, CSS3
-  Components: jQuery, Orbit, Reveal
-  Software: Coda, Textmate, Git
+/* PROJECT */
+  Software: IntelliJ IDEA, Eclipse, Git, Vim, Emacs
+  Author: Ben Browning <bbrownin@redhat.com>
+  Author: Bob McWhirter <bob@mcwhirter.org>
+  Author: Ken Finnigan <ken@kenfinnigan.me>
+  Author: Lance Ball <lball@redhat.com>
+  Author: Marek Posolda <mposolda@gmail.com>
+  Author: Marko Strukelj <marko.strukelj@gmail.com>
+  Author: Matt Wringe <mwringe@redhat.com>
+  Author: Stian Thorgersen <stianst@gmail.com>
+  Author: mposolda <mposolda@gmail.com>
+  Author: mwringe <mwringe@gmail.com>
+  Author: nscavell <nick.scavelli@gmail.com>
+  Author: stianst <stian@redhat.com>

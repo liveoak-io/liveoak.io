@@ -2,16 +2,18 @@
 layout: base
 ---
 
-%h1
-  The blog!
-
-- puts page.posts.inspect
-
-- for post in page.posts
-  .blog-post
-    .title
-      %a{:href=>post.url}
-        = post.title
-    .author
-      = post.author
+.row
+  .large-4.columns.header-box
+    %h1 LiveOak
+    %h1.subheader The Blog
+  .large-8.columns.right
+    - leader = page.posts.first
+    .panel
+      - for post in page.posts
+        .blog-post
+          .title
+            %a{:href=>post.url}
+              = post.title
+          .author
+            = post.author
 
