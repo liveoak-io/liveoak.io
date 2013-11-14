@@ -26,6 +26,8 @@ layout: base
       LiveOak is a set of backend enterprise services including user
       management, data storage, blob storage, real-time push, push
       notifications via APNS/GCM, and analytics.
+    %p
+      %a.button{:href=>'/services'} View details &raquo; 
 
   .large-4.columns
     %h3 Languages
@@ -33,23 +35,17 @@ layout: base
       LiveOak applications are targeted to the JVM on the server side
       and applications can be written in multiple languages, including
       Java, JavaScript, Objective-C, and Android Java.
+    %p
+      %a.button{:href=>'Languages'} View details &raquo; 
 
   .large-4.columns
     %h3 Integrations
     %p
       LiveOak speaks
       %a{:href=>'http://vertx.io'}Vert.x
-      fluently and provides seamless integration with Vert.x modules.  Exposing
-      your existing Vert.x data through the LiveOak REST API works over the
-      Vert.x event bus, allowing all of your Vert.x modules to play along.
-
-.row
-  .large-4.columns
-    %p
-      %a.button{:href=>'/services'} View details &raquo; 
-  .large-4.columns
-    %p
-      %a.button{:href=>'Languages'} View details &raquo; 
-  .large-4.columns
+      fluently. Your Vert.x application data is easily exposed via the Vert.x
+      event bus through the LiveOak REST API, allowing all of your Vert.x
+      modules to play along.
     %p
       %a.button{:href=>'Integrations'} View details &raquo; 
+
