@@ -18,7 +18,7 @@ var CI = function() {
 CI.prototype = {
   handle_job_jsonp: function(data) {
     var builds = data.builds;
-    console.debug( builds );
+    console.log(builds);
 
     $(builds).each( function(i, build) {
       try {
@@ -33,11 +33,11 @@ CI.prototype = {
         $('<tr class="' + build.result + '">').append( 
           $( '<td>' ).append( build.number )
         ).append( 
-          $( '<td>' ).append( timestamp.toUTCString() )
+          $( '<td style="font-size:smaller">' ).append( timestamp.toUTCString() )
         ).append( 
-          $( '<td>' ).append( build.result )
+          $( '<td>' ).append( $('<a>').attr('href', build.url).append( build.result.toLowerCase() ) )
         ).append(
-          $( '<td>' ).append( sha1 )
+          $( '<td>' ).append( sha1.substring(0,7) )
         ) 
       );
     } );

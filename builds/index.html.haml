@@ -3,25 +3,26 @@ layout: base
 ---
 
 .row
-  .large-4.columns.header-box
+  .large-4.columns{:style=>'background:url("/images/tree.png") right center no-repeat'}
     %h1 LiveOak
     %h1.subheader Builds
   .large-8.columns.right
     .panel
-      %p
+      %p 
         Keep up with the latest builds from our CI server.
+    .row
+      .large-12.columns
+        %table#builds
+          %tr
+            %th
+              Build
+            %th
+              When
+            %th 
+              Status
+            %th 
+              Commit
+
 %script{ :src=>'/javascripts/vendor/jquery.js', :type=>'application/javascript'}
 %script{ :src=>'ci.js', :type=>'application/javascript'}
-
-.row
-  %table#builds
-    %tr
-      %th
-        Build
-      %th
-        When
-      %th 
-        Status
-      %th 
-        Commit
 
