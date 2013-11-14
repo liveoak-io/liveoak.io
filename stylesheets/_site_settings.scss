@@ -10,3 +10,17 @@ footer {
   background: url("/images/tree.png") right top no-repeat
 }
 
+.blog-post-listings {
+  margin-top: 2.5em;
+}
+
+.blog-post-listing {
+  padding: 1ex 0;
+  border-top: 1px dashed #ddd;
+}
+
+.blog-post .date, .blog-post-listing .date {
+  font-size: smaller;
+  color: #666;
+}
+
