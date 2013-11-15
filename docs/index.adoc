@@ -42,3 +42,19 @@ to traditional GET, POST, PUT and DELETE, a client can SUBSCRIBE
 to the same resource, and be immediately notified of changes
 to the resource, including creates, updates, and deletes.
 
+== A Resource
+
+The only type of component on the server-side is a *Resource*,
+which matches the ideas of REST.  Each resource is addressable
+through a URL, and may (or may not) support the full array of
+CRUD operations. Each resource may have a set of properties
+and may have a set of children.
+
+== Launching LiveOak
+
+=== Standalone
+
+To launch LiveOak, use `bin/liveoak`.  By default, it
+binds to localhost on port 8080.
+
+=== As a Vertx Module
