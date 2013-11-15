@@ -1,3 +1,16 @@
+profiles:
+  development:
+  staging:
+    base_url: http://staging.torquebox.org/
+    deploy:
+      host: liveoak.io
+      path: /var/www/domains/liveoak.io/staging/htdocs/ 
+  production:
+    base_url: http://torquebox.org/
+    deploy:
+      host: liveoak.io
+      path: /var/www/domains/liveoak.io/www/htdocs/ 
+
 name: LiveOak
 title: LiveOak
 org: Red Hat
