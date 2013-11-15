@@ -105,4 +105,15 @@ div.toc {
   ul {
     margin-left: 1em;
   }
+
+  #toctitle {
+    margin-bottom: 1ex;
+  }
+
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 1em;
+}
+
+.sect1 h2 {
+  font-size: 140%;
 }

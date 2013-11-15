@@ -34,6 +34,16 @@ the world, the API for writing server-side services
 is pretty slim. You can implement new resources very
 easily and deploy them within an instance of LiveOak.
 
+== How mature is LiveOak?
+
+LiveOak is pretty nascent at the moment.  Being a Red Hat
+project, we prefer to be as open as possible, as early as
+possible. Thus, at the current moment, LiveOak has few
+services and hasn't been battle-tested.
+
+The only way to play with LiveOak currently is to build it
+from source.
+
 == What about browser push?
 
 The LiveOak team has taken REST beyond simple HTTP.
@@ -60,9 +70,32 @@ and supports *any* client that can speak the STOMP protocol.
 This enabled command-line tools and other scripts to
 watch the system without having to learn how to speak WebSockets.
 
+== How is LiveOak built?
+
+LiveOak is a Java-based server.  Since modern rich clients
+are new and fancy, we decided to continue the new-and-fancy
+theme and use Java 8.  Java 8 brings some syntactic sugar,
+especially when writing asynchronous code, in the form of
+lambdas.
+
+To actually build LiveOak, Maven 3 is required.
+
+== What do you mean "asynchronous"?
+
+Given that rich clients want to have continuous connections
+to receive real-time updates, they represent a rather large
+load on a server, even when no data is flowing.  With traditional
+synchronous programming models, this requires threads to be 
+blocked, ready-and-waiting to shovel some data to or from the
+client.  Each thread has a cost.
+
+Using asynchronous libraries, such as Netty and Vert.x, 
+LiveOak can reduce this overhead, and easily support many
+thousands of idle connections without becoming overloaded.
+
 == What is the license of LiveOak?
 
-LiveOak is licensed under the Eclipse Public License,
-version 1.0.  A copy of the license can be found in the
-source repository and with our distribution.
+LiveOak is licensed under the 
+link:/license[Eclipse Public License version 1.0].  
+A copy of the license can be found in the source repository and with our distribution.
 
