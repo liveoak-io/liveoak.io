@@ -12,19 +12,18 @@ for mobile handsets, tablets, or any device using HTML5
 and Javascript, the need for server-side code is significantly
 reduced.
 
-To enable quicker development of this applications that do
-not reside on the server, Restafari aims to provide both
-the typically-needed services, along with a platform for
-providing additional services.  Additional services may be
-created and deployed by 3rd-party service-providers, or as
-little blobs of custom server-side code explicitly in support
-of a specific application.
+To enable quicker development of applications that are almost 100% client-side,
+LiveOak provides both the typically-needed services like data persistence out
+of the box, along with a platform and API for providing your own custom
+services.  Additional services may be created and deployed by 3rd-party
+service-providers, or as little blobs of custom server-side code explicitly in
+support of a specific application.
 
 == REST with 100% more push
 
 HTML5/Javascript-based applications today have a variety of
 libraries and frameworks that enable interaction with RESTful
-services, typically JSON.  Restafari fully supports RESTful
+services, typically JSON.  LiveOak fully supports RESTful
 interactions, with strong following of the Fielding Constraints.
 
 At least with HTTP 1.1, the polling nature of REST is not
@@ -32,14 +31,14 @@ necessarily as performant and reactive as applications would
 desire. Strategies such as long-polling have worked around this
 in the past.  WebSockets and Server-Sent Events (SSE) now provide
 alternatives for pushing bits from the server to the client 
-in real-time. Restafari has overlaid RESTful concepts on top
+in real-time. LiveOak has overlaid RESTful concepts on top
 of these push technologies. 
 
 This addition of push semantics basically adds one more verb
 to the standard array of REST verbs:  SUBSCRIBE.
 
-For any given resource provided by the BaaS server, in addition
+For any given resource provided by the LiveOak server, in addition
 to traditional GET, POST, PUT and DELETE, a client can SUBSCRIBE
 to the same resource, and be immediately notified of changes
-to the resource, including creation, updates, and deletions.
+to the resource, including creates, updates, and deletes.
 
