@@ -76,5 +76,33 @@ table#builds {
 }
 
 .top-bar {
-  margin-bottom: 1em;
+  margin-bottom: 3em;
+}
+
+ul.vcard {
+  display: block;
+  .twitter img {
+    border: 1px solid #999;
+  }
+  li.org {
+    font-weight: bold;
+    font-size: 90%;
+    float: right;
+    clear: right;
+  }
+  li.locality {
+    float: right;
+    clear: right;
+  }
+}
+
+div.title {
+  font-weight: bold;
+  font-size: 140%;
+}
+
+div.toc {
+  ul {
+    margin-left: 1em;
+  }
 }
