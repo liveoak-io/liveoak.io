@@ -1,13 +1,13 @@
 profiles:
   development:
   staging:
-    base_url: http://staging.torquebox.org/
+    base_url: http://staging.liveoak.io/
     deploy:
       host: liveoak.io
       path: /var/www/domains/liveoak.io/staging/htdocs/ 
       uncommitted: true
   production:
-    base_url: http://torquebox.org/
+    base_url: http://liveoak.io/
     deploy:
       host: liveoak.io
       path: /var/www/domains/liveoak.io/www/htdocs/ 
