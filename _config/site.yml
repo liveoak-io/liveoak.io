@@ -5,11 +5,13 @@ profiles:
     deploy:
       host: liveoak.io
       path: /var/www/domains/liveoak.io/staging/htdocs/ 
+      uncommitted: true
   production:
     base_url: http://torquebox.org/
     deploy:
       host: liveoak.io
       path: /var/www/domains/liveoak.io/www/htdocs/ 
+      uncommitted: true
 
 name: LiveOak
 title: LiveOak
