@@ -1,5 +1,5 @@
 
-var job_name = "experimental";
+var job_name = "liveoak";
 
 var CI = function() {
   this.json_url = "https://projectodd.ci.cloudbees.com/job/" + job_name + "/api/json?depth=1";
