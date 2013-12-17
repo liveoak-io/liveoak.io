@@ -1,0 +1,19 @@
+# How to build this site
+
+Ensure you have Ruby 1.9ish
+
+1. Run this to ensure bundler is installed
+
+  gem install bundler
+
+2. Run this to have bundler install the dependencies
+   listed in the Gemfile(.lock)
+
+  bundle install 
+
+3. Run this to generate the site and launch the local server
+
+  bundle exec awestruct -d
+
+
+
