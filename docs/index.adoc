@@ -43,11 +43,13 @@ to the resource, including creates, updates, and deletes.
 
 === A Resource
 
-The only type of component on the server-side is a *Resource*,
+The only type of component visible on the server-side is a *Resource*,
 which matches the ideas of REST.  Each resource is addressable
 through a URL, and may (or may not) support the full array of
 CRUD operations. Each resource may have a set of properties
 and may have a set of children.
+
+Resources are controlled by Extensions, described more fully below.
 
 == Launching LiveOak
 
@@ -55,8 +57,6 @@ and may have a set of children.
 
 To launch LiveOak, use `bin/liveoak`.  By default, it
 binds to localhost on port 8080.
-
-=== As a Vertx Module
 
 == All About Resources
 
@@ -123,4 +123,6 @@ upon notification so as to ensure matching resource identifiers.
 Likewise, if `/people/bob` is deleted from the LiveOak server,
 your server would receive a `DELETE` at 
 `http://myserver.com/my-people/bob`.
+
+include::extensions.adoc[]
 
