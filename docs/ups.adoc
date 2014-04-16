@@ -1,0 +1,263 @@
+= Push Notifications
+:awestruct-layout: two-column
+:toc:
+
+toc::[]
+
+== Native Push Notifications
+
+In LiveOak, we delegate native push notifications to the Aerogear UnifiedPush Server (UPS) using the LiveOak UPS module. Native applications can then register themselves with UPS and subscribe to resources in LiveOak in a similar manner to our Stomp and HTML push subscriptions.
+
+
+== Configuring a UPS instance
+
+Since the UPS instance sends out the notifications, you will need to have your own instance of UPS running and configured with the various native push platforms it supports.
+
+Instructions for how to setup and install a UPS instance is best left to the official http://aerogear.org/docs/specs/aerogear-server-push/[AeroGear UPS Documentation].
+
+== Configuring the UPS module
+
+To use UPS to send push notifications, you will need to configure some simple setting in either the JSON configuration file or through the LiveOak Admin Console.
+
+Since LiveOak needs to be able to send messages to a UPS instance, it will need the following information which needs to be obtained from a UPS intances directly:
+
+* The URL of where the UPS instance can be located
+* The ID of the UPS application
+* The master secret for that UPS application
+
+=== Configuring the UPS module using application.json
+
+The following is an example of how to setup the +application.json+ file to configure a UPS module under the +/push+ context 
+
+[source,xml]
+.application.json
+----
+push: {
+    type: 'ups',
+    config: {
+      ups-url: 'http://my-usp-server-host/ups-context', <!--1-->
+      application-id: 'XXXXXXXX-XXXX-...', <!--2-->
+      master-secret: 'XXXXXXXX-XXXX-...' <!--3-->
+      }
+    }
+  }
+----
+
+<1> +ups-url+ The URL to the server hosting the UPS instance
+
+<2> +application-id+ The ID of the application configure in UPS
+
+<3> +master-secret+ The master secret for the specified application
+
+NOTE: The +application-id+ and its +master-secret+ need to be retrieved from the UPS console.
+
+
+
+=== Configuring the UPS module using the Admin Console
+
+TODO
+
+== The UPS Module Endpoints
+
+The main UPS endpoint is under the context of whatever was specified in the application.xml for your application. In the following examples, we will assume it is has been specified as +/push+
+
+The +/push+ endpoint contains references to two other endpoint +/push/aliases+ and +/push/subscription+
+
+=== The Aliases Endpoint
+
+The +/push/aliases+ endpoint is to allow for individual applications to manage and configure their own subscriptions. If you need to send subscribe a group of users to a resource, then you should be doing this as an admin using the +/push/subscriptions+ endpoint instead.
+
+This endpoint is used to retrieve an opaque alias from the LiveOak system which needs to be used as the alias when registering an application with UPS. You must use this alias when subscribing to UPS if you want your individiual application to be able to manage its own subscriptions.
+
+==== Retrieving the Alias
+
+Sending a +POST+ operation to +/push/aliases+ will return the systems alias for current user. If you are an authenticated user, then this will return the same alias value each time. If you are an unauthenticated user, then this will return a new alias each time.
+
+[source]
+POST /push/aliases
+{ } <!--1-->
+
+<1> Empty or No Content Passed
+
+
+[source]
+Unauthenticated Users's Response:
+{
+  "id" : "XXXXXXXX-XXXX-...", <!--1-->
+  "self" : {
+    "href" : "/chat-secured/push/aliases/XXXXXXXX-XXXX-..." <!--2-->
+  },
+  "user" : null <!--3-->
+}
+
+[source]
+Authenticated Users's Response:
+{
+  "id" : "XXXXXXXX-XXXX-...", <!--1-->
+  "self" : {
+    "href" : "/chat-secured/push/aliases/XXXXXXXX-XXXX-..." <!--2-->
+  },
+  "user" : YYYYYYYY-YYYY-... <!--3-->
+}
+
+<1> The id which is the alias to use
+<2> The URL for this particular alias
+<3> The authenticated user's id or null if unauthenticated
+
+NOTE: Each individual alias should be considered a secret and not shared. It also needs to be properly secured in your application.
+
+==== Alias Based Subscriptions
+
+Once you have your alias and your individual alias endpoint, you can now create subscriptions specific to your alias.
+
+To create a new subscription for this alias, where the system creates an id for it:
+
+[source]
+POST /push/aliases/XXXXXXXX-XXXX-.../
+{
+  "resource-path" : "/myApp/myStorage/myData/*", <!--1-->
+  "variants" : ["VVVVVV-VVVVV..."] <!--2-->
+  "categories" : ["categoryA", "categoryB", ...] <!--3-->
+  "device-type" : ["phone", "tablet", ...] <!--4-->
+  "simple-push" : X <!--5-->
+  "message" : {  <!--6-->
+    "alert" : "Content Updated" <!--7-->
+    ... <!--8-->
+  }
+}
+
+<1> +resource-path+ : (Required) specifies the resource path to listen on
+
+<2> +variants+ : (Optional) Specific variants registered in UPS to send to.
+
+<3> +categories+ : (Optional) Specific cateogories registered in UPS to send to.
+
+<4> +device-type+ : (Optional) Specific device types registered in UPS to send to.
+
+<5> +simple-push+ : (Optional) Integer value to be sent as the simple push version. If specified is automatically incremented on each update.
+
+<6> +message+ : (Optional) The message to send to the device when a resource is modified
+
+<7> +alert+ : (Optional) The alert message to send to the device.
+
+<8> (Optional) Any other content to send across in the message
+
+
+NOTE: When one of these subscriptions sends a message to UPS, it automatically sets the alias to that which the LiveOak system maintaines. As such, an alias subscription will only be sent to the device or user which created the subscription. You cannot specify the alias here for when pushing a message to UPS.
+
+If you want to name your specific subscription, use a PUT with the alias name as part of the path:
+
+[source]
+PUT /push/aliases/XXXXXXXX-XXXX-.../MySubscription
+{
+  "resource-path" : "/myApp/myStorage/myData/*",
+  ... 
+}
+
+
+==== Securing the Alias Endpoint
+
+It is very important to secure the UPS endpoint in the +uri-policy-config.json+ file. Endpoints are not secured by default and will have to be done manually. The following are the recommended security settings to apply:
+
+* Allow CREATE on the +/push/aliases+. This allows the specified users or groups to create a subscription for themselves.
+
+[source]
+{
+  "priority": 1,
+  "uriPattern": "/myApp/push/aliases",
+  "requestType": "CREATE",
+  "allowedUsers": "'...'" <!--1-->
+}
+
+<1> Set the 'allowedUsers' or 'allowedGroups' to the users/groups you want to be able to create subscriptions. If you want to be able to allow for unauthorized users to create subscriptions, then use "'*'"
+
+//
+
+* Deny READ on +/push/aliases+. You will want to deny users or groups for being able to directly read the list aliases. The alias must be considered as a secret, knowing the full path of an alias for unauthorized users means being able to manipulate that subscription.
+
+[source]
+{
+"priority": 1,
+"uriPattern": "/chat-secured/push/aliases",
+"requestType": "READ",
+"deniedUsers": "'*'"
+}
+
+//
+
+* Allow READ and DELETE on specific subscriptions. For unauthenticated users, the alias is considered a secret and knowing it is enough to be able to READ or DELETE it. For authenticated users, we store the user's id and can use that as well as the alias to secure it.
+
+NOTE: TODO: figure out the proper way to do this, need for either the uri-policy to handle situations like this or for the new acl policy stuff to be completed.
+
+[source]
+{
+"priority": 1,
+"uriPattern": "/chat-secured/push/aliases/*",
+"requestType": "READ,DELETE",
+"queryParamsCondition": "$responseState.getProperty('user') != null && ( $responseState.getProperty('user') == null || $responseState.getProperty('user') == $securityContext.subject)",
+"allowUsers": "'*'"
+}
+
+//
+
+=== The Subscriptions Endpoint
+
+The +/push/subscription+ endpoint allows for the creation of subscriptions without the restrictions on the alias like in the +/push/aliases+ endpoint. Without the alias restriction, subscriptions created here can be configured to be sent to individual users or groups of users. *As such, it is highly recommended to secure this endpoint so that only admins have access to these resources*. 
+
+These types of subscriptions meant for more generic, group subscriptions in which an admin should be configuring and not each individual device. An example could be a message sent to all devices when an important announcement is made, or a message sent to all android devices when an update is available.
+
+==== Creating a Subscriptions
+
+To create a subscription under the +/push/subscription+ endpoint, you will need to either do a +POST+ to +/push/subscriptions+ or a +PUT+ to +/push/subscriptions/MySubscriptionID+
+
+To create a new subscription, where the system creates an id for it:
+
+[source]
+POST /push/subscriptions/
+{
+  "resource-path" : "/myApp/myStorage/myData/*", <!--1-->
+  "variants" : ["VVVVVV-VVVVV..."] <!--2-->
+  "alias" : ["aliasA", "aliasB", "aliasC"...] <!--3-->
+  "categories" : ["categoryA", "categoryB", ...] <!--4-->
+  "device-type" : ["phone", "tablet", ...] <!--5-->
+  "simple-push" : X <!--6-->
+  "message" : {  <!--7-->
+    "alert" : "Content Updated" <!--8-->
+    ... <!--9-->
+  }
+}
+
+<1> +resource-path+ : (Required) specifies the resource path to listen on
+
+<2> +variants+ : (Optional) Specific variants registered in UPS to send to.
+
+<3> +alias+ : (Optional) The aliases to send the message to
+
+<4> +categories+ : (Optional) Specific cateogories registered in UPS to send to.
+
+<5> +device-type+ : (Optional) Specific device types registered in UPS to send to.
+
+<6> +simple-push+ : (Optional) Integer value to be sent as the simple push version. If specified is automatically incremented on each update.
+
+<7> +message+ : (Optional) The message to send to the device when a resource is modified
+
+<8> +alert+ : (Optional) The alert message to send to the device.
+
+<9> (Optional) Any other content to send across in the message
+
+
+==== Securing the Subscriptions Endpoint
+
+The +/push/subscriptions+ endpoint should be secured so that only admins have access to it. This is to prevent any authenticated, or even unauthenticated, users from being able to send notification requests to any or all other devices.
+
+[source]
+{
+  "priority": 1,
+  "uriPattern": "/myApp/push/subscriptions*",
+  "requestType": "CREATE,READ,UPDATE,DELETE",
+  ""allowedRoles": "'myApp/admin'" <!--1-->
+}
+
+<1> The roles to allow access to the +/push/subscriptions+ resources.
+
+
