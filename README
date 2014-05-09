@@ -1,6 +1,6 @@
 # How to build this site
 
-Ensure you have Ruby 1.9ish
+Ensure you have Ruby 2.0ish
 
 1. Run this to ensure bundler is installed
 
