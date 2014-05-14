@@ -10,38 +10,25 @@ layout: base
       %p
         LiveOak plays well with others.
 
-    %h1 Vert.x Integration
+    %h1 WildFly
  
     %p 
-      Since LiveOak is an inherently asynchronous
-      platform, it pairs well with Vert.x in several ways.
+      WildFly is used as a container.
 
-    %h2 Implement Resource as Vertx Modules
-
-    %p
-      LiveOak, when run standalone, completely embodies
-      and instance of Vertx, and exposes itself to Vertx
-      modules through the <code>eventBus</code>.
-
-    %p 
-      With this integration, you can write resources
-      as pure Vertx modules, using other Vertx modules
-      to accomplish work.  By following the LiveOak
-      eventBus/JSON protocol, your Vertx-based resources
-      will be exposed through the LiveOak REST server,
-      including STOMP and browser-push.
-
-
-    %h2 Run LiveOak as a Vertx module
+    %h2 Server structure
 
     %p
-      If you have a primarily Vertx-based application,
-      and enjoy the existing Vertx deployment schemes,
-      LiveOak itself is additionally packaged as a Vertx
-      module which can be launched within your existing
-      Vertx infrastructure. As with the standalone mode,
-      your custom modules communicate with the LiveOak 
-      REST/STOMP/Push server through the eventBus using
-      a JSON protocol.
+      Applications are deployed under 'apps' directory
+
+    %h1 KeyCloak
+
+    %p
+      KeyCloak is providing authentication and authorization for all LiveOak resources.
+
+
+    %h1 AeroGear Unified Push Server
+
+    %p
+      Developers can easily integrate with Apple and Google Cloud Messages for native push in mobile applications.
 
 
