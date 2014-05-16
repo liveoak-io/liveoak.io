@@ -1,0 +1,14 @@
+= 'Tutorial: Push Notifications'
+:awestruct-layout: two-column
+:toc:
+
+toc::[]
+
+== TODO
+
+* Deploy LiveOak to OpenShift
+* Deploy UPS tp OpenShift
+* Configure GCM stuff
+* Create chat application in LiveOak
+* Grab chat-android example, apply configuration changes and build it
+* Deploy to your android device or emulator

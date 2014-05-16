@@ -1,0 +1,65 @@
+= Subscriptions
+:awestruct-layout: two-column
+:toc:
+
+toc::[]
+
+== All About Subscriptions
+
+The LiveOak BaaS supports subscribing to resources, in order
+to be notified about changes to resources. A subscription is
+of course just another resource.  Which means, if you want turtles
+all the way down, you can subscribe to subscriptions.
+
+A subscription has a path that should match one-or-more resources
+and may include the any number of `*` wildcard segments.
+
+Example paths include:
+
+* `/people/*`
+* `/people/bob`
+* `/states/*/capitals`
+
+Once a subscription is created, LiveOak will pay attention to
+resources that match the the subscription path, and provide
+notifications of changes (create, update, delete) to resources
+that match.
+
+The way notification is delivered is dependent upon which method
+for subscribing was used: STOMP or HTTP.
+
+=== Subscribing to resources over STOMP
+
+In the browser, using the LiveOak JavaScript SDK, subscriptions
+to resources are created using the `subscribe()` method:
+
+[source,javascript]
+liveoak.subscribe( '/people/*', function(person) {
+  // fixme, how do we tell what sort of change occurred?
+} );
+
+=== Subscribing to resources over HTTP
+
+Subscriptions can also be delivered over HTTP, and these subscriptions
+are created over HTTP by creating a subscription resource.
+
+[source]
+POST /subscriptions
+{
+  'destination': 'http://myserver.com/my-people/',
+  'path': '/people/*'
+}
+
+When events occur that matches the subscription path,
+a similar action is performed against the `destination`
+URL.  For instance, if a new person resource is created
+at `/people/bob`, then your server would receive a `PUT`
+at `http://myserver.com/my-people/bob` with the same data.
+
+While the person may have been created using a POST to
+`/people` on the LiveOak server, that is translated to a `PUT`
+upon notification so as to ensure matching resource identifiers.
+
+Likewise, if `/people/bob` is deleted from the LiveOak server,
+your server would receive a `DELETE` at
+`http://myserver.com/my-people/bob`.

@@ -1,0 +1,11 @@
+= Resources
+:awestruct-layout: two-column
+:toc:
+
+toc::[]
+
+== All About Resources
+
+=== Properties
+
+=== Members
