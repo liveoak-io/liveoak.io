@@ -1,7 +1,34 @@
-= Deploying example applications
+= Example applications
 :awestruct-layout: two-column
 :toc:
 
 toc::[]
 
-== TODO
+== Example applications
+
+LiveOak project comes with several example applications that are available in the
+link:https://github.com/liveoak-io/liveoak-examples[github] repository.
+
+Each of those applications come with it's own instructions on how to properly deploy them. Please take a look at the
+README.md file that each example provides.
+
+=== Chat Application
+
+//TODO: screenshots
+
+* link:https://github.com/liveoak-io/liveoak-examples/tree/master/chat/chat-html[HTML Chat] - Basic html client for chat application
+Leverages WebSocket based subscriptions to get notifications about new content. Stores chat content in storage service provided
+by LiveOak. Probably the most minimal and basic html application leveraging LiveOak services you could imagine. Perfect to quickly
+try out the server and start exploring its capabilities.
+
+* link:https://github.com/liveoak-io/liveoak-examples/tree/master/chat/chat-html-secured[Secured Chat] - Similar as above however
+leveraging authentication and authorization capabilities of the backend. Non admin users have only access to their conversations.
+
+* link:https://github.com/liveoak-io/liveoak-examples/tree/master/chat/chat-android[Android client] - Native android application
+leveraging push notifications (Google Cloud Messaging). Requires external
+link:http://aerogear.org/docs/specs/aerogear-server-push/[AeroGear UnifiedPush Server] instance and quite a few
+ manual configuration steps to work.
+
+=== Gallery
+
+
