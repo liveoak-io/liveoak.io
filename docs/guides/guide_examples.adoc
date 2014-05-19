@@ -9,26 +9,53 @@ toc::[]
 LiveOak project comes with several example applications that are available in the
 link:https://github.com/liveoak-io/liveoak-examples[github] repository.
 
-Each of those applications come with it's own instructions on how to properly deploy them. Please take a look at the
-README.md file that each example provides.
+Each of those applications come with instructions on how to properly deploy them. You can find more information in
+README.md files directly in the repository.
 
 === Chat Application
 
 //TODO: screenshots
 
-* link:https://github.com/liveoak-io/liveoak-examples/tree/master/chat/chat-html[HTML Chat] - Basic html client for chat application
-Leverages WebSocket based subscriptions to get notifications about new content. Stores chat content in storage service provided
-by LiveOak. Probably the most minimal and basic html application leveraging LiveOak services you could imagine. Perfect to quickly
-try out the server and start exploring its capabilities.
+Simple chat application. Demonstrates usage of LiveOak storage service, subscriptions APIs and basic security.
+Comes with 3 variants:
 
-* link:https://github.com/liveoak-io/liveoak-examples/tree/master/chat/chat-html-secured[Secured Chat] - Similar as above however
-leveraging authentication and authorization capabilities of the backend. Non admin users have only access to their conversations.
+* link:https://github.com/liveoak-io/liveoak-examples/tree/master/chat/chat-html[HTML client] - Leverages WebSocket based
+subscriptions to get notifications about new content. Probably the most minimal and basic HTML application leveraging
+LiveOak services that can be imagined. Perfect to quickly try out the server and start exploring its capabilities.
+
+* link:https://github.com/liveoak-io/liveoak-examples/tree/master/chat/chat-html-secured[Secured Chat] - Extension of HTML client.
+Leverages authentication and authorization capabilities of the backend. For example non admin users have only access to content
+ of theirs conversations, while admin user can access all of the data.
 
 * link:https://github.com/liveoak-io/liveoak-examples/tree/master/chat/chat-android[Android client] - Native android application
-leveraging push notifications (Google Cloud Messaging). Requires external
+implemented purely using Android SDK. Leverages native push notifications (Google Cloud Messaging) to display new content.
+Requires external
 link:http://aerogear.org/docs/specs/aerogear-server-push/[AeroGear UnifiedPush Server] instance and quite a few
  manual configuration steps to work.
 
 === Gallery
+
+Simple gallery application allowing browsing and uploading photos. Demonstrates binary data storage capabilities of LiveOak APIs
+
+* link:https://https://github.com/liveoak-io/liveoak-examples/tree/master/gallery[HTML client]
+
+* link:https://github.com/liveoak-io/liveoak-examples/tree/master/gallery-cordova[Android client] - Implemented using
+ Apache Cordova
+
+=== ToDoMVC
+
+Variant of famous link:http://todomvc.com[ToDoMVC] example implemented using LiveOak as a backend. Besides using storage service
+it also demonstrates basic security policies by restricting access to particular task lists.
+
+* link:https://github.com/liveoak-io/liveoak-examples/tree/master/todomvc[HTML Client]
+
+* link:https://github.com/liveoak-io/liveoak-examples/tree/master/todomvc-cordova[Android client] - Implemented using
+ Apache Cordova
+
+=== Various
+
+* link:https://github.com/liveoak-io/liveoak-examples/tree/master/auth[Authentication] - demonstrates some basic functionality
+related to authentication to Keycloak/Liveoak. It's simple Javascript application, which can be used to login into Keycloak
+and obtain OAuth access token in JWT format from Keycloak.
 
 
