@@ -1,7 +1,15 @@
-= 'Tutorial: Developing HTML gallery application'
+= Demo: Gallery application
 :awestruct-layout: two-column
 :toc:
 
 toc::[]
 
-== TODO
+== Gallery
+
+Simple gallery application allowing browsing and uploading photos. Demonstrates binary data storage capabilities of LiveOak APIs
+
+* link:https://https://github.com/liveoak-io/liveoak-examples/tree/master/gallery[HTML client]
+
+* link:https://github.com/liveoak-io/liveoak-examples/tree/master/gallery-cordova[Android client] - Implemented using
+ Apache Cordova
+

@@ -1,0 +1,49 @@
+= Installing Java
+:awestruct-layout: two-column
+:toc:
+
+toc::[]
+
+
+== Windows
+
+Go to link:http://www.oracle.com/technetwork/java/javase/downloads/index.html[]
+
+Select `JDK Downloads`. You get redirected to another page.
+
+Accept the License Agreement, then choose `windows-x64` download.
+
+When download completes run the installer and follow the steps.
+
+
+== Linux
+
+Fedora comes with `OpenJDK` package as part of the repository. To install type:
+
+`su -c "yum install java-1.8.0-openjdk java-1.8.0-openjdk-devel"`
+
+Then, it’s best to make this version of Java the default version used by all applications via alternatives:
+
+`su -c "alternatives --config java"`
+
+Another way to use the correct version of Java is to put it on the `PATH` e.g.:
+
+`export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.5`
+
+`export PATH=$JAVA_HOME/bin:$PATH`
+
+
+
+== Mac OS X
+
+Go to link:http://www.oracle.com/technetwork/java/javase/downloads/index.html[]
+
+Select `JDK Downloads`. You get redirected to another page.
+
+Accept the License Agreement, then choose `macosx-x64` download.
+
+When download completes run the installer and follow the instructions.
+
+To use the correct Java version from Terminal set `JAVA_HOME` environment variable:
+
+`export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home`
