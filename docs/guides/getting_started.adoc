@@ -1,0 +1,45 @@
+= Getting Started with LiveOak
+:awestruct-layout: two-column
+:toc:
+
+toc::[]
+
+== Getting LiveOak
+
+LiveOak is all about making it easier to develop mobile client applications by providing ready made, easy to consume
+cloud services that most mobile applications today require.
+
+LiveOak can be deployed locally on a developer machine, or in the cloud - there is an example available for deploying it to OpenShift Online.
+
+For this guide we’ll use a local installation which can be downloaded from link:http://liveoak.io/downloads[].
+
+
+== Installing and Running LiveOak
+
+It’s very easy to get started with LiveOak.
+
+Start by unpacking `LiveOak-1.0.0-Alpha1.zip`, that will create a directory called `liveoak` on your disk.
+
+All you have to do now is run it:
+
+`liveoak/bin/standalone.sh`
+
+LiveOak requires Java 8. You can test your `java` version by running:
+
+`java -version`
+
+If you don’t have Java 8 on your system, follow the instructions link:/docs/guides/installing_java[here] to install it.
+
+
+When LiveOak is started for the first time it will look for any existing MongoDB on your system. If it doesn’t find one,
+it will automatically download `MongoDB` from link:http://mongodb.org[mongodb.org], and install it into `$HOME/.liveoak/mongo` directory,
+it will then continue booting up.
+
+Downloading `MongoDB` takes a while, otherwise LiveOak itself starts up in just a few seconds.
+
+Once started, point your browser to link:http://localhost:8080[].
+
+You should get a simple page listing the currently available LiveOak applications. For a start, there is ‘admin’ application which contains LiveOak Admin Console.
+
+
+link:/docs/guides/tutorial_chat[Let’s create and deploy another application], to see how easy it is!
