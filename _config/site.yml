@@ -17,6 +17,7 @@ name: LiveOak
 title: LiveOak
 org: Red Hat
 base_url: ''
+google_analytics: 'UA-10656779-1'
 asciidoctor:
 #  :compact: true
   :eruby: erubis

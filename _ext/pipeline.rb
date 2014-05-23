@@ -6,4 +6,6 @@ Awestruct::Extensions::Pipeline.new do
   extension Awestruct::Extensions::Indexifier.new
   # Indexifier *must* come before Atomizer
   extension Awestruct::Extensions::Atomizer.new :posts, '/blog.atom'
+  helper Awestruct::Extensions::GoogleAnalytics
+
 end
