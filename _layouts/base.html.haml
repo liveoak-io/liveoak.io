@@ -7,10 +7,20 @@
   %meta(charset='utf-8')
   %meta(name='viewport' content='width=device-width, initial-scale=1.0')
   %title=site.title
+
+  %link{:rel=>'stylesheet', :href=>"http://static.jboss.org/css/tabzilla.css"}
+  %script(src="http://static.jboss.org/theme/js/libs/jquery/jquery-1.9.1.min.js")
+  %script(src="http://static.jboss.org/js/_jbossorg-tabzilla.js")
+
   %link{:rel=>'stylesheet', :href=>"#{site.base_url}/stylesheets/app.css"}
   %script(src="#{site.base_url}/javascripts/vendor/custom.modernizr.js")
   %link{:rel=>'author', :type=>'text/plain', :href=>"#{site.base_url}/humans.txt"}
 %body.antialiased
+  .dropup
+    #tab.tabnav-closed{:href=>"#"}
+      Red Hat
+    %script
+      window.addEventListener('load', function() { renderTabzilla("Example", "example") }, false);
   %nav.top-bar
     %ul.title-area
       %li.name
@@ -20,7 +30,7 @@
         %a{:href=>'#'}<
           %span
     %section.top-bar-section
-      %ul.right
+      %ul.left
         %li.divider
           %li
             %a{:href=>"#{site.base_url}/"} Home
@@ -58,6 +68,11 @@
         &copy; #{site.org} #{Date.today.year}
         %br
         Built on Foundation. Baked by Awestruct.
+  #companyfooter.container
+    .redhatlogo{:style=>"text-align:center;"}
+      #logospacer
+      %a{:href=>"http://www.redhat.com/"}
+        %img{:src=>"http://static.jboss.org/theme/images/common/redhat_logo.png"}
   %script
     document.write('<script src=' + ('__proto__' in {} ? '#{site.base_url}/javascripts/vendor/zepto' : '#{site.base_url}/javascripts/vendor/jquery') + '.js><\/script>')
   %script{:src=>"#{site.base_url}/javascripts/foundation/foundation.js"}
