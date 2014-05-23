@@ -1,13 +1,17 @@
 profiles:
   development:
+    metrics_base_url:  http://www.qa.redhat.com
   staging:
     base_url: http://staging.liveoak.io/
+    metrics_base_url:  http://www.stage.redhat.com
     deploy:
       host: liveoak.io
       path: /var/www/domains/liveoak.io/staging/htdocs/ 
       uncommitted: true
   production:
     base_url: http://liveoak.io/
+    metrics_base_url:  http://www.redhat.com
+    google_analytics: 'UA-10656779-1'
     deploy:
       host: liveoak.io
       path: /var/www/domains/liveoak.io/www/htdocs/ 
@@ -17,7 +21,6 @@ name: LiveOak
 title: LiveOak
 org: Red Hat
 base_url: ''
-google_analytics: 'UA-10656779-1'
 asciidoctor:
 #  :compact: true
   :eruby: erubis

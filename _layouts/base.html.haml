@@ -85,6 +85,5 @@
     %script{:src=>"#{site.base_url}/javascripts/foundation/foundation.#{component}.js"}
   %script
     $(document).foundation()
-  - if site.google_analytics
-    =google_analytics_async
+  = partial("metrics.html.haml")
 </html>
