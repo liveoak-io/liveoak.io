@@ -1,4 +1,4 @@
-= Demo: Chat Application
+= Demo Chat Application
 :awestruct-layout: two-column
 :toc:
 
@@ -114,7 +114,7 @@ Next, use `Google Developers Console` to configure a new GCM application as inst
 
 Now we have to return to UPS Console, and create a new application.
 
-image::guides/ups/applications.png[AeroGear UPS Applications]
+image::guides/ups_applications.png[AeroGear UPS Applications]
 
 Click `Create ...` button, type `liveoak-chat` for an application name, and click `Create` again.
 
@@ -179,13 +179,21 @@ For this project we use Gradle build tool, which is the new official Android SDK
 Ideally Gradle would use whatever Android build tools you have installed on your system, but that's not the case, so we have to
 perform another step before we can finally build our Chat for Android.
 
-You have to instruct Gradle to use a version of Android build tools installed on your system. To see which version of tools you have issue this command:
+
+Our Gradle build script requires Android Build Tools version 19.1.0. You can install them into your Android SDK with this:
+
+`sudo $ANDROID_HOME/tools/android -s update sdk -u -a -t 'build-tools-19.1.0'`
+
+
+Another option is to instruct Gradle to use another version of Android Build Tools already installed in your Android SDK.
+
+To see which version of build-tools you have issue this command:
 
 `ls $ANDROID_HOME/build-tools`
 
-Take note of the highest version that you have e.g. 19.1.0.
+Take note of the highest version that you have e.g. 19.0.2.
 
-Now open `app/build.gradle`, find line containing `buildToolsVersion`, and set its value to your highest version.
+Then, open `app/build.gradle`, find line containing `buildToolsVersion`, and set its value to your version.
 
 
 Now we can build the project:
@@ -195,13 +203,76 @@ Now we can build the project:
 
 After successful build, install it to a running emulator or connected physical device:
 
-$ANDROID_HOME/platform-tools/adb install app/build/apk/app-debug-unaligned.apk
+`$ANDROID_HOME/platform-tools/adb install -r app/build/apk/app-debug-unaligned.apk`
+
+
+image:guides/chat_android.png[LiveOak Chat for Android]
+
+
+=== Troubleshoot
+
+==== Where is Android app on my phone?
+
+Look for a green application icon with a title 'LiveOak Chat'
+
+==== Android app shows error message and exits
+
+Most likely reason is that the application can't connect to the server. Try the following steps to resolve connectivity issues.
+
+Open a web browser on your device, and point it to link:http://IP_ADDRESS:8080/chat-html[] where `IP_ADDRESS` is a local
+network address where your LiveOak instance is running.
+
+You can determine that address by running:
+
+`ifconfig`
+
+
+If you can't get to Chat web application this way, make sure you start your LiveOak instance using `-b 0.0.0.0`:
+
+`dist/target/liveoak/bin/standalone.sh -b 0.0.0.0`
+
+If you have a firewall enabled, make sure it permits inbound connections to port 8080 - a simple way is to temporarily turn it off.
+
+
+If remote access to Chat web application works, then make sure the changes you made to `ChatApplication.java` correctly specify the IP_ADDRESS and port:
+
+`UPS_URL = "http://IP_ADDRESS:8080/unifiedpush-server-0.10.3"`
+`LIVEOAK_HOST = "IP_ADDRESS"`
+`LIVEOAK_PORT = 8080`
+
+
+Then, another possibility is that you missed one or more of the configuration steps.
+
+Check link:http://localhost:8080/admin#/applications/chat-html/push[LiveOak Admin Push configuration page], and make sure it has all the fields
+filled out, and has a Connected status.
+
+You may also re-check link:http://localhost:8080/unifiedpush-server-0.10.3[AeroGear UPS configuration] and compare values with those in
+link:https://console.developers.google.com/project[Google Developers Console] to make sure all is properly configured.
+
+
+==== Android app seems to be working, but does not receive any messages
+
+Try to completely uninstall any previous version of LiveOak Chat from your device / emulator, and reinstall it again.
+
+Chat application uses Google Cloud Messaging (GCM) to receive messages from LiveOak server. It uses `aerogear-android` library
+which caches some GCM related information that may become invalid when application is reconfigured through LiveOak UPS Admin.
+
+Uninstalling, and reinstalling the application will clean any such information.
+
+
+==== Android app is working, but receives all messages twice
+
+Reinstalling LiveOak Chat may result in multiple different GCM registration ids for the same device. AeroGear UPS will dispatch messages to all
+registered GCM registration ids. LiveOak Chat should probably detect such situation, and unregister redundant old registration ids.
+
+link:http://localhost:8080/unifiedpush-server-0.10.3/#/mobileApps[AeroGear UPS Admin] can be used to disable individual
+GCM registration ids - also called Device Tokens. That can be done in administration page for `liveoak-chat-android` variant.
 
 
 
+=== Sources
 
-
-You can find latest sources for this demo application on link:https://github.com/liveoak-io/liveoak-examples/tree/master/chat/chat-android[GitHub].
+You can find latest `chat-android` sources for this demo application on link:https://github.com/liveoak-io/liveoak-examples/tree/master/chat/chat-android[GitHub].
 
 
 (

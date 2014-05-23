@@ -1,15 +1,114 @@
-= Demo: Gallery application
+= Demo Gallery application
 :awestruct-layout: two-column
 :toc:
 
 toc::[]
 
-== Gallery
+Gallery application is a simple image gallery allowing browsing and uploading photos.
 
-Simple gallery application allowing browsing and uploading photos. Demonstrates binary data storage capabilities of LiveOak APIs
+It demonstrates LiveOak's binary data storage capabilities.
 
-* link:https://https://github.com/liveoak-io/liveoak-examples/tree/master/gallery[HTML client]
+Gallery application comes in two forms:
 
-* link:https://github.com/liveoak-io/liveoak-examples/tree/master/gallery-cordova[Android client] - Implemented using
- Apache Cordova
+* As a link:https://https://github.com/liveoak-io/liveoak-examples/tree/master/gallery[HTML web application]
 
+* As an link:https://github.com/liveoak-io/liveoak-examples/tree/master/gallery-cordova[Android application] - implemented using
+ Apache Cordova, which means it's essentially the same as HTML web application, only slightly modified, and repackaged as a native Android application.
+
+
+== Gallery Web Application
+
+Let’s start by deploying liveoak-examples/gallery to LiveOak first. This will not only deploy static web content to be served by LiveOak,
+but also configure the necessary LiveOak services (mongo-gridfs service for example) as REST endpoints used by Gallery web application.
+
+To deploy the application simply copy `gallery` directory to LiveOak application deployment directory:
+
+`cp -r liveoak-examples/gallery $LIVEOAK_HOME/apps/`
+
+And start LiveOak:
+
+`$LIVEOAK_HOME/bin/standalone.sh -b 0.0.0.0`
+
+By using -b 0.0.0.0 we make LiveOak endpoints available on all network interfaces so that they can be accessed from mobile devices within your local network.
+
+Point your browser to link:http://localhost:8080/gallery/app/index.html[].
+
+You should see a simple photo gallery application, that allows you to upload images to LiveOak.
+
+image::guides/gallery_web.png[Gallery Web - desktop]
+
+
+By using a '+' button in bottom right corner you can upload new images to the server.
+
+image::guides/gallery_web_filepicker.png[Gallery Web - desktop add images]
+
+You can access the web application from your Android device by going to that same link - except instead of `localhost` use an
+ip address of your LiveOak server instance.
+
+image::guides/gallery_web_on_android.png[Gallery Web - on Android device]
+
+Android Chrome browser offers various options when adding a new image.
+
+image::guides/gallery_android_web_add_image.png[Gallery Web - Android add image]
+
+Selecting `Documents` opens a file picker activity.
+
+image::guides/gallery_android_filepicker.png[Galler Web - Android file picker]
+
+Exact looks and functionality depend on what software is installed on the device.
+
+
+image::guides/android_camera_gallery.png[]
+
+
+
+== Gallery for Android using Cordova
+
+link:http://cordova.apache.org[Cordova] is an open source project under the umbrella of Apache organization, that provides
+a framework for using HTML5, CSS, and JavaScript to create cross-platform native mobile applications.
+
+We’ll build and run `liveoak-examples/gallery-cordova` example to demonstrate how to use Cordova for mobile client, and LiveOak for server.
+
+For server endpoints we’ll depend on `liveoak-examples/gallery` HTML application from previous chapter, so make sure you have that one
+up and running.
+
+
+Now we’re going to build `liveoak-examples/gallery-cordova`. But first, we need to install the necessary tools.
+
+Cordova uses node.js based build system, and comes as a set of Node Package Manager (npm) packages.
+
+Follow the link:/docs/guides/installing_cordova[instructions here] to install Cordova on your system.
+
+Once you have cordova tools on your system install Cordova into our project.
+
+`cd liveoak-examples/gallery-cordova`
+`mkdir platforms plugins`
+`cordova plugin add org.apache.cordova.inappbrowser`
+`cordova plugin add org.apache.cordova.camera`
+`cordova plugin add org.apache.cordova.file`
+
+
+Make sure you have ANDROID_HOME environment variable set, and have ANDROID_HOME/tools, and ANDROID_HOME/platform-tools
+on your PATH:
+
+`export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools`
+
+Then, configure project for Android build:
+
+`cordova platform add android`
+
+
+It's now time to connect your device via USB, or run an Android emulator instance.
+
+This last step will build an Android application, and install it on your device / emulator.
+
+`cordova run android`
+
+
+You should see Gallery application start on your device / emulator.
+
+image::guides/gallery_android.png[Gallery for Android - using Cordova]
+
+Thanks to `org.apache.cordova.file` plugin Gallery application can use a native image picker activity.
+
+image::guides/gallery_android_gallery.png[Gallery Android - native image picker]

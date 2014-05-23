@@ -16,7 +16,7 @@ Accept the License Agreement, then choose `windows-x64` download.
 When download completes run the installer and follow the steps.
 
 
-== Linux
+== Fedora 20
 
 Fedora comes with `OpenJDK` package as part of the repository. To install type:
 
@@ -32,6 +32,20 @@ Another way to use the correct version of Java is to put it on the `PATH` e.g.:
 
 `export PATH=$JAVA_HOME/bin:$PATH`
 
+
+== Ubuntu 14.04
+
+There is no official OpenJDK 8 package available at the moment, but there is Launchpad PPA available for Oracle’s JDK 8 distribution:
+
+`sudo add-apt-repository ppa:webupd8team/java`
+`sudo apt-get update`
+`sudo apt-get install oracle-java8-installer`
+
+Make it a default Java on the system using alternatives:
+
+`sudo update-java-alternatives -s java-8-oracle`
+
+For more information visit: link:http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html[]
 
 
 == Mac OS X
