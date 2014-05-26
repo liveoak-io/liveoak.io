@@ -19,6 +19,8 @@ README.md files directly in the repository.
 Simple chat application. Demonstrates usage of LiveOak storage service, subscriptions APIs and basic security.
 Comes with 3 variants:
 
+image::guides/chat_html.png[Chat HTML]
+
 * link:https://github.com/liveoak-io/liveoak-examples/tree/master/chat/chat-html[HTML client] - Leverages WebSocket based
 subscriptions to get notifications about new content. Probably the most minimal and basic HTML application leveraging
 LiveOak services that can be imagined. Perfect to quickly try out the server and start exploring its capabilities.
@@ -26,6 +28,8 @@ LiveOak services that can be imagined. Perfect to quickly try out the server and
 * link:https://github.com/liveoak-io/liveoak-examples/tree/master/chat/chat-html-secured[Secured Chat] - Extension of HTML client.
 Leverages authentication and authorization capabilities of the backend. For example non admin users have only access to content
  of theirs conversations, while admin user can access all of the data.
+
+image:guides/chat_android.png[LiveOak Chat for Android]
 
 * link:https://github.com/liveoak-io/liveoak-examples/tree/master/chat/chat-android[Android client] - Native android application
 implemented purely using Android SDK. Leverages native push notifications (Google Cloud Messaging) to display new content.
@@ -37,7 +41,11 @@ link:http://aerogear.org/docs/specs/aerogear-server-push/[AeroGear UnifiedPush S
 
 Simple gallery application allowing browsing and uploading photos. Demonstrates binary data storage capabilities of LiveOak APIs
 
+image::guides/gallery_web.png[Gallery Web - desktop]
+
 * link:https://https://github.com/liveoak-io/liveoak-examples/tree/master/gallery[HTML client]
+
+image::guides/gallery_web_on_android.png[Gallery Web - on Android device]
 
 * link:https://github.com/liveoak-io/liveoak-examples/tree/master/gallery-cordova[Android client] - Implemented using
  Apache Cordova

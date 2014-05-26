@@ -1,4 +1,4 @@
-= 'Tutorial: Deploying LiveOak to OpenShift'
+= Tutorial: Deploying LiveOak to OpenShift
 :awestruct-layout: two-column
 :toc:
 

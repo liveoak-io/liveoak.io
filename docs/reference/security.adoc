@@ -4,4 +4,9 @@
 
 toc::[]
 
+== Overview
+
+Security in LiveOak is build on top of link:http://keycloak.jboss.org/[KeyCloak] project. Authorization can be defined using
+flexible URI and ACL polices.
+
 == TODO

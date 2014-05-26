@@ -1,4 +1,4 @@
-= 'Tutorial: Push Notifications'
+= Tutorial: Push Notifications
 :awestruct-layout: two-column
 :toc:
 

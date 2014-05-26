@@ -5,3 +5,6 @@
 toc::[]
 
 == TODO
+
+Please refer to the link:/docs/guides/getting_started[Getting Started] Guide.
+
