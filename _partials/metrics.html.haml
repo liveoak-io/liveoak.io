@@ -54,3 +54,9 @@
 
 -# End SiteCatalyst code version: H.25.4
 
+:javascript
+  $('a').on('click', function(){
+    var id= this.id;
+    if (id != null && id != "")
+    _gaq.push(['_trackEvent', 'liveoak.io', 'download', id]);
+  });
