@@ -1,11 +1,208 @@
-= Tutorial: Deploying LiveOak to OpenShift
+= Deploying LiveOak to OpenShift
 :awestruct-layout: two-column
 :toc:
 
 toc::[]
 
-== Building OpenShift cartridge
-
 == Deploying LiveOak to OpenShift
 
+The following instructions assume that you have an account with OpenShift Online (https://openshift.redhat.com). If you are running your own OpenShift Origin server you may need to slightly modify things like URLs to match your own environment.
+
+If you are planning on trying out the examples, it is highly recommended to call your gear +'liveoak'+ and to install the examples quickstart. Otherwise the examples will require some more manual steps to configure.
+
+There are two main ways to install the OpenShift LiveOak Cartridge: through the OpenShift Console or through the RHC command line tool.
+
+=== Installing the OpenShift LiveOak Cartridge with RHC
+
+If you wish to create a gear based on the LiveOak Cartridge without the example quickstarts installed, the follow command can be used:
+
+[source]
+rhc create-app -g LARGE liveoak http://cartreflect-claytondev.rhcloud.com/github/liveoak-io/openshift-liveoak-cartridge
+
+{empty} +
+This will create a large gear named +liveoak+. Although the LiveOak cartridge can run on the small gear, it is recommended to run on a medium or large if possible.
+
+If you wish to play around with the examples, it is highly recommended to create the gear with the examples quickstart. This will configure the examples and make getting them up and running much easier. To create the gear with the examples quickstart, the following command can be used:
+
+[source]
+rhc create-app -g LARGE liveoak http://cartreflect-claytondev.rhcloud.com/github/liveoak-io/openshift-liveoak-cartridge --from-code https://github.com/liveoak-io/openshift-liveoak-examples-quickstart
+
+{empty} +
+
+
+=== Installing the OpenShift LiveOak Cartridge through the OpenShift Console
+
+The following steps will take your through installing the LiveOak Cartridge using the OpenShift Console
+
+* Log in to the OpenShift Console: https://openshift.redhat.com
+* Click on 'Create Your First Application Now" or "Add Application" depending on if you have any existing applications or not
+
+image::guides/openshift/openshift_first_app.png[Openshift Console Screenshot]
+{empty} +
+
+* LiveOak is currently available as an Alpha and as such we have not applied yet to become an official OpenShift cartridge. In order to install the LiveOak OpenShift cartridge you will need to scroll to the bottom of the page to the 'Code Anything' section
+
+image::guides/openshift/openshift_code_anything.png[Openshift Console Screenshot]
+{empty} +
+
+* In this section, enter the following URL and then click 'Next':
+[source]
+http://cartreflect-claytondev.rhcloud.com/github/liveoak-io/openshift-liveoak-cartridge
+
+{empty} +
+
+* On the next page you will need to give your gear a name to be accessed as a public URL. We recommend using 'liveoak' here as the examples are already configured to use that.
+
+image::guides/openshift/openshift_create_gear.png[Openshift Console Screenshot]
+{empty} +
+
+* A quick start exists which will pre-configure the liveoak instance for the examples. If you wish to install the example quickstart, then enter the following URL under the source code section:
+
+[source]
+https://github.com/liveoak-io/openshift-liveoak-examples-quickstart
+
+{empty} +
+
+* Any gear size will work with the LiveOak cartridge, but a medium or large gear is highly recommended
+
+* Click 'Create Application' and wait a few minutes for your gear to be created.
+
+* Once you gear is created, you will be presented with a generic OpenShift page on how to make code changes and manage your app. At the top of the page you will need to click the link "Continue to the application overview page"
+
+image::guides/openshift/openshift_continue_to_app.png[Openshift Console Screenshot]
+{empty} +
+
+* You will now be presented with an overview page for your gear.
+
+image::guides/openshift/openshift_gear_page.png[Openshift Console Screenshot]
+{empty} +
+
+* Click the link at the top to load your liveoak page. If you installed the example quick start you will see all the examples listed here. If you did not install the example quickstart, then you should only see the 'admin' link here.
+
+image::guides/openshift/openshift_liveoak.png[Openshift Console Screenshot]
+{empty} +
+
+IMPORTANT: +you need to click on the 'admin' link right now and change the default username and password ('admin':'admin').+
+
+image::guides/openshift/openshift_liveoak_console_login.png[Openshift Console Screenshot]
+{empty} +
+
+* After you change your admin password, you will be presented with either the list of applications (if the example quickstart was used) or an page asking for you to create a new Application.
+
+image::guides/openshift/openshift_liveoak_console_apps.png[Openshift Console Screenshot]
+{empty} +
+
+== Managing your LiveOak applications on Openshift
+
+There are two main ways to manage applications in LiveOak, through the admin console or through the application.json files for the application. We recommend using the LiveOak Admin Console to configure your applications.
+
+If you wish to create an application using an application.json file, then you can do so using the OpenShift Source repo for your gear. You will need to check out the git repo located in the 'Source Code' section of your application page. Here you have an 'apps' directory where you can configure your applications.
+
+NOTE: Currently you can only create a new application using this method, already existing applications will not be modified.
+
+image::guides/openshift/openshift_source_code.png[Openshift Console Screenshot]
+{empty} +
+
+If you wish to modify the application.json file on an already existing application, you will need to ssh in your application itself and make modifications there. Once you have ssh'ed into your gear, the 'apps' folder can be found at "./liveoak/versions/1.0.0/apps"
+
+image::guides/openshift/openshift_ssh.png[Openshift Console Screenshot]
+{empty} +
+
+
 == Deploying LiveOak examples
+
+As a BaaS, LiveOak is meant to manage the backend of your application. In the steps above, when you added the Examples quickstart, you were configuring the LiveOak part of the examples. In the following steps, you will be presented with how to get the HTML5 client applications for the examples up and running. For the quickstarts, each HTML5 client example has been configured to run on its own separate gear.
+
+For these examples it is expected that the LiveOak examples quickstart was used when creating your liveoak gear. If not, you will need to check out the git repo for your LiveOak gear, add the example configurations from the example quickstart (https://github.com/liveoak-io/openshift-liveoak-examples-quickstart) and then commit those changes to your gear. This will cause your gear to be shutdown, the examples deployed and the gear restarted.
+
+The examples assume that the name of your gear running LiveOak is called 'liveoak' and that your example gears and liveoak gears are installed under the same account. The README.md for the example quickstarts will explain how to configure the examples if your LiveOak is running at a different URL.
+
+For the example quickstarts, a small gear should be more than enough.
+
+The example quickstarts can be found at the following locations:
+
+* https://github.com/liveoak-io/openshift-liveoak-client-chat-quickstart
+
+* https://github.com/liveoak-io/openshift-liveoak-client-chat-secured-quickstart
+
+* https://github.com/liveoak-io/openshift-liveoak-client-gallery-quickstart
+
+* https://github.com/liveoak-io/openshift-liveoak-client-todomvc-quickstart
+
+
+=== Creating an Example Quickstart Gear with RHC
+
+* To create a gear to run the chat example quickstart: 
+
+[source]
+rhc create-app chat DIY --from-code https://github.com/liveoak-io/openshift-liveoak-client-chat-quickstart
+
+{empty} +
+
+* To create a gear to run the secured chat example quickstart: 
+
+[source]
+rhc create-app schat DIY --from-code https://github.com/liveoak-io/openshift-liveoak-client-chat-secured-quickstart
+
+{empty} +
+
+* To create a gear to run the Gallery example quickstart: 
+
+[source]
+rhc create-app gallery DIY --from-code https://github.com/liveoak-io/openshift-liveoak-client-gallery-quickstart
+
+{empty} +
+
+* To create a gear to run the ToDoMVC example quickstart: 
+
+[source]
+rhc create-app todo DIY --from-code https://github.com/liveoak-io/openshift-liveoak-client-todomvc-quickstart
+
+{empty} +
+
+
+=== Creating an Example Quickstart from the OpenShift Console
+
+The steps to setup the example quickstarts in the OpenShift Console are similar to the way the main LiveOak gear was created.
+
+
+* Login into the OpenShift Console
+
+* From your main application page, click 'Add Application'
+
+* Scroll down to the bottom of the page and click the 'Do-It-Yourself' option
+
+image::guides/openshift/openshift_diy.png[Openshift Console Screenshot]
+{empty} +
+
+* When you go to create a public url for your gear, the name doesn't really matter for the examples. For the chat example you can can just call it 'chat'
+
+* The important part is to fill in the source code section. The following are the git urls you will want for each example
+
+** chat: https://github.com/liveoak-io/openshift-liveoak-client-chat-quickstart
+
+** chat-secured: https://github.com/liveoak-io/openshift-liveoak-client-chat-secured-quickstart
+
+** gallery: https://github.com/liveoak-io/openshift-liveoak-client-gallery-quickstart
+
+** ToDoMVC: https://github.com/liveoak-io/openshift-liveoak-client-todomvc-quickstart
+
+image::guides/openshift/openshift_create_diy.png[Openshift Console Screenshot]
+{empty} +
+
+* For these examples, the small gear is more than enough.
+
+* Then click 'Create Application' and wait for your gear to be created.
+
+== Configuring the Examples
+
+Some of the examples require a few more steps to be done in order to setup some mongo databases or to authorize your particular gear in LiveOak. Please see the README.md for each of the example quickstarts for more information:
+
+* chat: https://github.com/liveoak-io/openshift-liveoak-client-chat-quickstart
+
+* chat-secured: https://github.com/liveoak-io/openshift-liveoak-client-chat-secured-quickstart
+
+* gallery: https://github.com/liveoak-io/openshift-liveoak-client-gallery-quickstart
+
+* ToDoMVC: https://github.com/liveoak-io/openshift-liveoak-client-todomvc-quickstart
+
