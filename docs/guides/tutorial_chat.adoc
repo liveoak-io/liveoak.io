@@ -120,7 +120,7 @@ Next, use link:https://console.developers.google.com/project[Google Developers C
 instructed link:http://aerogear.org/docs/guides/aerogear-push-android/google-setup/[here].
 
 
-=== Setting Up Chat App in AaroGear UPS
+=== Setting Up Chat App in AeroGear UPS
 
 Now we have to return to link:http://localhost:8080/unifiedpush-server-0.10.3[UPS Admin Console], and create a new application.
 
