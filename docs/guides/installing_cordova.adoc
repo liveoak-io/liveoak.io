@@ -5,15 +5,6 @@
 toc::[]
 
 
-== Windows
-
-Install `node.js` by going to link:http://nodejs.org/download[] and downloading a windows installer.
-
-After finishing installation open CMD, or PowerShell, and run:
-
-`npm install -g cordova`
-
-
 == Fedora 20
 
 `su -c ‘yum install npm’`
@@ -38,3 +29,12 @@ If the previous command fails try:
 `sudo brew postinstall node`
 
 `sudo npm install -g cordova`
+
+
+== Windows
+
+Install `node.js` by going to link:http://nodejs.org/download[] and downloading a windows installer.
+
+After finishing installation open CMD, or PowerShell, and run:
+
+`npm install -g cordova`

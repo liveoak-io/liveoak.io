@@ -5,17 +5,6 @@
 toc::[]
 
 
-== Windows
-
-Go to link:http://www.oracle.com/technetwork/java/javase/downloads/index.html[]
-
-Select `JDK Downloads`. You get redirected to another page.
-
-Accept the License Agreement, then choose `windows-x64` download.
-
-When download completes run the installer and follow the steps.
-
-
 == Fedora 20
 
 Fedora comes with `OpenJDK` package as part of the repository. To install type:
@@ -61,3 +50,14 @@ When download completes run the installer and follow the instructions.
 To use the correct Java version from Terminal set `JAVA_HOME` environment variable:
 
 `export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home`
+
+
+== Windows
+
+Go to link:http://www.oracle.com/technetwork/java/javase/downloads/index.html[]
+
+Select `JDK Downloads`. You get redirected to another page.
+
+Accept the License Agreement, then choose `windows-x64` download.
+
+When download completes run the installer and follow the steps.

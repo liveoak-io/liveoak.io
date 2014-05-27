@@ -43,9 +43,12 @@ Downloading `MongoDB` takes a while, otherwise LiveOak itself starts up in just 
 
 Once LiveOak is started, point your browser to link:http://localhost:8080[].
 
-You should get a simple page listing the currently available LiveOak applications. For a start, there is ‘admin’ application which contains LiveOak Admin Console.
+You should get a simple page listing the currently available LiveOak applications. For a start, there is ‘admin’ application which contains
+link:http://localhost:8080/admin[LiveOak Admin Console].
 
-LiveOak Admin Console requires you to log in. Use `admin` as username, and password. The first time you log in you'll be prompted to change the password.
+link:http://localhost:8080/admin[LiveOak Admin Console] requires you to log in. Use `admin` as username, and password.
+The first time you log in you'll be prompted to change the password.
 
+link:http://localhost:8080/admin[LiveOak Admin Console] has quite a short idle timeout, so you may have to login again quite often.
 
 link:/docs/guides/tutorial_chat[Let’s create and deploy another application], to see how easy it is.

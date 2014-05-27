@@ -6,22 +6,9 @@
 toc::[]
 
 
-=== Windows
-
-Visit link:http://ant.apache.org/bindownload.cgi[Apache Ant Download page], and download a .zip archive.
-
-Unpack it into a destination directory e.g. c:\tools\apache-ant-1.9.4.
-
-Make sure it's `bin` directory is on your PATH:
-
-`set PATH=%PATH%;c:\tools\apache-ant-1.9.4\bin`
-
-
-
 === Fedora 20
 
 `su -c "yum install ant"`
-
 
 
 === Ubuntu 14.04
@@ -29,7 +16,18 @@ Make sure it's `bin` directory is on your PATH:
 `sudo apt-get install ant`
 
 
-
 === Mac OS X
 
 brew install ant
+
+
+=== Windows
+
+Visit link:http://ant.apache.org/bindownload.cgi[Apache Ant Download page], and download a .zip archive.
+
+Unpack it into a destination directory e.g. c:\tools\apache-ant-1.9.4.
+
+Make sure its `bin` directory is on your PATH:
+
+`set PATH=%PATH%;c:\tools\apache-ant-1.9.4\bin`
+
