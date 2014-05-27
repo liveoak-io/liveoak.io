@@ -1,0 +1,90 @@
+= Installing Android SDK Tools
+
+:awestruct-layout: two-column
+:toc:
+
+toc::[]
+
+
+Visit the link:http://developer.android.com/sdk/index.html[official Android SDK site].
+
+There are two types of bundles available for download. For the purpose of building and running our examples it's enough to
+install `SDK Tools Only`.
+
+By default the site offers for download an ADT Bundle which includes Eclipse IDE, and Android extensions for Eclipse called Android Development Tool (ADT).
+
+Eclipse is one of at least three options for an IDE, the other two being IntelliJ IDEA, and an IntelliJ IDEA derivative
+called Android Studio which is still in early access preview.
+
+After downloading SDK Tools, you have to run `android` configuration tool to install the initial platform SDK, and build tools.
+
+
+== Getting SDK Tools
+
+To download `SDK Tools` expand `Download for Other Platforms section`, and download a package for you operating system from `SDK Tools Only` section.
+
+
+=== Windows
+
+Run the downloaded installer, and perform installation. When done, use Windows Start button, and type `Android` in a search box.
+That should find `Android SDK` tool. Run it.
+
+
+=== Fedora 20
+
+After downloading a linux .tgz archive unpack it. The newly created directory is your ANDROID_HOME. For example:
+
+`cd /opt`
+`su -c 'tar xvzf ~/Downloads/android-sdk_r22.6.2-linux.tgz'`
+`export ANDROID_HOME=/opt/android-sdk-linux`
+`export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools`
+
+Now run the `android` tool as a superuser
+
+`su -c android`
+
+
+=== Ubuntu 14.04
+
+After downloading a linux .tgz archive unpack it. The newly created directory is your ANDROID_HOME. For example:
+
+`cd /opt`
+`sudo tar xvzf ~/Downloads/android-sdk_r22.6.2-linux.tgz`
+`export ANDROID_HOME=/opt/android-sdk-linux`
+`export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools`
+
+Now run the `android` tool as a superuser
+
+`sudo android`
+
+
+=== Mac OS X
+
+After downloading a Mac OS X .zip archive unpack it. The newly created directory is your ANDROID_HOME. For example:
+
+`cd /opt`
+`sudo tar xvzf ~/Downloads/android-sdk_r22.6.2-macosx.tgz`
+`export ANDROID_HOME=/opt/android-sdk-macosx`
+`export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools`
+
+Now run the `android` tool as a superuser
+
+`sudo android`
+
+
+== Installing Android platforms, and Build Tools
+
+When ‘android’ tool starts, make sure to mark for installation the `Android 4.4.2 (API 19)`, and `Android SDK Build-Tools` version '19.1'.
+
+You can leave other options as they are.
+
+Then choose ‘Install XX packages’ button to download, and install the packages.
+
+
+== Other necessary tools
+
+Android SDK supports different build tools, which don't come as part of the download.
+
+One needed with Cordova is Apache Ant. Make sure to install `ant` before building Cordova examples.
+
+See link:/docs/guides/installing_ant[Installing Ant] for more.
