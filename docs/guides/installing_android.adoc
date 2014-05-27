@@ -11,10 +11,10 @@ Visit the link:http://developer.android.com/sdk/index.html[official Android SDK 
 There are two types of bundles available for download. For the purpose of building and running our examples it's enough to
 install `SDK Tools Only`.
 
-By default the site offers for download an ADT Bundle which includes Eclipse IDE, and Android extensions for Eclipse called Android Development Tool (ADT).
+By default the site offers for download an `ADT Bundle` which includes Eclipse IDE, and Android extensions for Eclipse called Android Development Tools (ADT).
 
-Eclipse is one of at least three options for an IDE, the other two being IntelliJ IDEA, and an IntelliJ IDEA derivative
-called Android Studio which is still in early access preview.
+Eclipse is just one of at least three options for an Android friendly IDE, the other two being IntelliJ IDEA, and an IntelliJ IDEA derivative
+called link:https://developer.android.com/sdk/installing/studio.html[Android Studio] which is still in early access preview.
 
 After downloading SDK Tools, you have to run `android` configuration tool to install the initial platform SDK, and build tools.
 
@@ -27,7 +27,7 @@ To download `SDK Tools` expand `Download for Other Platforms section`, and downl
 === Windows
 
 Run the downloaded installer, and perform installation. When done, use Windows Start button, and type `Android` in a search box.
-That should find `Android SDK` tool. Run it.
+That should find `Android SDK` configuration tool. Run it. Then, follow instructions in the next chapter.
 
 
 === Fedora 20
@@ -78,7 +78,9 @@ When ‘android’ tool starts, make sure to mark for installation the `Android 
 
 You can leave other options as they are.
 
-Then choose ‘Install XX packages’ button to download, and install the packages.
+Then press ‘Install XX packages’ button to download, and install the packages.
+
+You need to accept all the licences for all components to get installed.
 
 
 == Other necessary tools

@@ -18,11 +18,15 @@ For this guide we’ll use a local installation which can be downloaded from lin
 
 It’s very easy to get started with LiveOak.
 
-Start by unpacking `LiveOak-1.0.0-Alpha1.zip`, that will create a directory called `liveoak` on your disk.
+Start by unpacking the downloaded binary `.zip` or `.tgz` archive, which will create a `liveoak` directory on your disk.
+We'll refer to this directory as `$LIVEOAK`.
 
 All you have to do now is run it:
 
-`liveoak/bin/standalone.sh`
+`$LIVEOAK/bin/standalone.sh -b 0.0.0.0`
+
+The second parameter is there to make server socket accessible on all the network interfaces, so you can connect to LiveOak from your
+ mobile device or an emulator.
 
 LiveOak requires Java 8. You can test your `java` version by running:
 
@@ -37,9 +41,11 @@ it will then continue booting up.
 
 Downloading `MongoDB` takes a while, otherwise LiveOak itself starts up in just a few seconds.
 
-Once started, point your browser to link:http://localhost:8080[].
+Once LiveOak is started, point your browser to link:http://localhost:8080[].
 
 You should get a simple page listing the currently available LiveOak applications. For a start, there is ‘admin’ application which contains LiveOak Admin Console.
 
+LiveOak Admin Console requires you to log in. Use `admin` as username, and password. The first time you log in you'll be prompted to change the password.
 
-link:/docs/guides/tutorial_chat[Let’s create and deploy another application], to see how easy it is!
+
+link:/docs/guides/tutorial_chat[Let’s create and deploy another application], to see how easy it is.
