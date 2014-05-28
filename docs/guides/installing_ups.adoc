@@ -1,0 +1,51 @@
+= Installing AeroGear UnifiedPush Server (UPS)
+:awestruct-layout: two-column
+:toc:
+
+toc::[]
+
+
+To set up link:http://aerogear.org/push[AeroGear UnifiedPush Server] do the following.
+
+Download UnifiedPush Server .war, and a WildFly datasource configuration file:
+
+`curl -L http://dl.bintray.com/aerogear/AeroGear-UnifiedPush/org/jboss/aerogear/unifiedpush/unifiedpush-server/0.10.3/unifiedpush-server-0.10.3.war -o ~/Downloads/unifiedpush-server-0.10.3.war`
+
+`curl https://raw.githubusercontent.com/aerogear/aerogear-unifiedpush-server/0.10.x/databases/unifiedpush-h2-ds.xml -o ~/Downloads/unifiedpush-h2-ds.xml`
+
+Also download a dependency .jar that's required to get it all working inside LiveOak distribution:
+
+`curl http://search.maven.org/remotecontent?filepath=org/codehaus/jackson/jackson-xc/1.9.13/jackson-xc-1.9.13.jar -o ~/Downloads/jackson-xc-1.9.13.jar`
+
+
+Now stop your 'LiveOak' server if it's running.
+
+Explode the .war into `deployments` directory.
+
+`mkdir $LIVEOAK/standalone/deployments/unifiedpush-server-0.10.3.war`
+
+`cd $LIVEOAK/standalone/deployments/unifiedpush-server-0.10.3.war`
+
+`unzip ~/Downloads/unifiedpush-server-0.10.3.war`
+
+Add a dependency jar:
+
+`cp ~/Downloads/jackson-xc-1.9.13.jar $LIVEOAK/standalone/deployments/unifiedpush-server-0.10.3.war/WEB-INF/lib/`
+
+Create .dodeploy file
+
+`touch $LIVEOAK/standalone/deployments/unifiedpush-server-0.10.3.war.dodeploy`
+
+And finally deploy the datasource file
+
+`cp ~/Downloads/unifiedpush-h2-ds.xml $LIVEOAK/standalone/deployments/`
+
+
+Restart 'LiveOak', and point your browser to link:http://localhost:8080/unifiedpush-server-0.10.3[]
+
+image::guides/ups_login.png[AeroGear UnifiedPush Server, 75%, align="center"]
+
+Use `admin` : `123` to log in.
+
+Next, use link:https://console.developers.google.com/project[Google Developers Console] to configure a new GCM application as
+instructed link:http://aerogear.org/docs/guides/aerogear-push-android/google-setup/[here].

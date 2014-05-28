@@ -35,30 +35,30 @@ Point your browser to link:http://localhost:8080/gallery/app/index.html[].
 
 You should see a simple photo gallery application, that allows you to upload images to 'LiveOak'.
 
-image::guides/gallery_web.png[Gallery Web - desktop]
+image::guides/gallery_web.png[Gallery Web - desktop, 75%, align="center"]
 
 
 By using a '+' button in bottom right corner you can upload new images to the server.
 
-image::guides/gallery_web_filepicker.png[Gallery Web - desktop add images]
+image::guides/gallery_web_filepicker.png[Gallery Web - desktop add images, 75%, align="center"]
 
 You can access the web application from your Android device by going to that same link - except instead of `localhost` use an
 ip address of your 'LiveOak' server instance.
 
-image::guides/gallery_web_on_android.png[Gallery Web - on Android device]
+image::guides/gallery_web_on_android.png[Gallery Web - on Android device, 75%, align="center"]
 
 Android Chrome browser offers various options when adding a new image.
 
-image::guides/gallery_android_web_add_image.png[Gallery Web - Android add image]
+image::guides/gallery_android_web_add_image.png[Gallery Web - Android add image, 75%, align="center"]
 
 Selecting `Documents` opens a file picker activity.
 
-image::guides/gallery_android_filepicker.png[Galler Web - Android file picker]
+image::guides/gallery_android_filepicker.png[Gallery Web - Android file picker, 75%, align="center"]
 
 Exact looks and functionality of file picker component used depend on what software is installed on the device.
 
 
-image::guides/android_camera_gallery.png[]
+image::guides/android_camera_gallery.png[Gallery Web - Android Camera gallery, 75%, align="center"]
 
 
 
@@ -109,11 +109,11 @@ This last step will build an Android application, and install it on your device 
 
 You should see 'Gallery' application start on your device / emulator.
 
-image::guides/gallery_android.png[Gallery for Android - using Cordova]
+image::guides/gallery_android.png[Gallery for Android - using Cordova, 75%, align="center"]
 
 Thanks to `org.apache.cordova.file` plugin 'Gallery' application can use a native image picker activity.
 
-image::guides/gallery_android_gallery.png[Gallery Android - native image picker]
+image::guides/gallery_android_gallery.png[Gallery Android - native image picker, 75%, align="center"]
 
 
 Next up: link:/docs/guides/tutorial_todomvc[ToDoMVC demo application]

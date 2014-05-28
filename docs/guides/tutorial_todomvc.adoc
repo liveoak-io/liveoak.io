@@ -34,7 +34,7 @@ Point your browser to link:http://localhost:8080/todomvc[].
 
 We would expect to see 'todomvc' web application. But instead we get the following screen:
 
-image::guides/todomvc_first_login.png[]
+image::guides/todomvc_first_login.png[TodoMVC - First Login, 75%, align="center"]
 
 The reason is that the application is configured through link:https://github.com/liveoak-io/liveoak-examples/blob/master/todomvc/application.json[application.json]
 file to require authentication for all access - it doesn't allow any anonymous access, but we have not configured the login mechanism through
@@ -44,35 +44,35 @@ Let's configure security by pointing the browser to link:http://localhost:8080/a
 
 We are met with a login form. Use `admin` as username and a password - unless you changed it to something else already.
 
-image::guides/admin_login.png[LiveOak Admin - Log In]
+image::guides/admin_login.png[LiveOak Admin - Log In, 75%, align="center"]
 
 If this is the first time you're logging into link:http://localhost:8080/admin[LiveOak Admin Console], you'll have to change the password.
 
-image::guides/admin_update_password.png[LiveOak Admin - Update password]
+image::guides/admin_update_password.png[LiveOak Admin - Update password, 75%, align="center"]
 
 link:http://localhost:8080/admin[LiveOak Admin Console] has quite a short idle timeout, so you may have to login again quite often.
 
 After successful login you find yourself on 'Applications' admin page.
 
-image::guides/admin_applications.png[LiveOak Admin - Applications]
+image::guides/admin_applications.png[LiveOak Admin - Applications, 75%, align="center"]
 
 Click `Edit Settings` icon button. Application currently has no Roles configured.
 
-image::guides/admin_application_settings.png[LiveOak Admin - Application Settings]
+image::guides/admin_application_settings.png[LiveOak Admin - Application Settings, 75%, align="center"]
 
 Use `Add Role` button to add two roles named `admin`, and `user`.
 
 Then make `user` role active by default for new users.
 
-image::guides/admin_application_settings_toggle_default_role.png[LiveOak Admin - Toggle default role]
+image::guides/admin_application_settings_toggle_default_role.png[LiveOak Admin - Toggle default role, 75%, align="center"]
 
 Click `Save` and switch from `General Settings` section to `Clients` section.
 
-image::guides/admin_application_clients.png[LiveOak Admin - Application Clients]
+image::guides/admin_application_clients.png[LiveOak Admin - Application Clients, 75%, align="center"]
 
 Use `Add Client` button to add a new client configuration.
 
-image::guides/admin_application_new_client.png[LiveOak Admin - New Application Client]
+image::guides/admin_application_new_client.png[LiveOak Admin - New Application Client, 75%, align="center"]
 
 Set `todomvc-html-client` as a 'Client Name'.
 
@@ -87,7 +87,7 @@ Finally, check both `admin`, and `user` role for 'Scope'. And click `Save`.
 
 If you now try again link:http://localhost:8080/todomvc[] you'll get a working Login screen.
 
-image::guides/todomvc_working_login.png[TodoMVC - Login]
+image::guides/todomvc_working_login.png[TodoMVC - Login, 75%, align="center"]
 
 
 At this point we don't have any users yet, but we do have registration of new users available on the Login page. This allows anyone to
@@ -97,29 +97,29 @@ But we want to create an 'admin' user for our application first.
 
 Let's login to link:http://localhost:8080/auth[KeyCloak Admin Console] at link:http://localhost:8080/auth[]
 
-image::guides/keycloak_admin.png[KeyCloak Admin Console]
+image::guides/keycloak_admin.png[KeyCloak Admin Console, 75%, align="center"]
 
 Select `Administration Console`, then use `admin` as username - the same as for link:http://localhost:8080/admin[LiveOak Admin Console].
 
 When logged in select `liveoak-apps` realm in top navigation.
 
-image::guides/keycloak_admin_apps.png[KeyCloak Admin Console]
+image::guides/keycloak_admin_apps.png[KeyCloak Admin Console, 75%, align="center"]
 
 Now go to `Users` section
 
-image::guides/keycloak_admin_app_users.png[KeyCloak Admin Console - Users]
+image::guides/keycloak_admin_app_users.png[KeyCloak Admin Console - Users, 75%, align="center"]
 
 And use `Add User` button to create a new user. Enter new 'Username' and click `Save`.
 
-image::guides/keycloak_admin_add_user.png[KeyCloak Admin Console - Add User]
+image::guides/keycloak_admin_add_user.png[KeyCloak Admin Console - Add User, 75%, align="center"]
 
 Then switch to `Credentials` tab, and specify a temporary password. The user will have to change the password on a first login.
 
-image::guides/keycloak_admin_reset_password.png[KeyCloak Admin Console - Reset Password]
+image::guides/keycloak_admin_reset_password.png[KeyCloak Admin Console - Reset Password, 75%, align="center"]
 
 At this point our user `bob` can login to link://localhost:8080/todomvc[], and access the web application.
 
-image::guides/todomvc_bob.png[TodoMVC]
+image::guides/todomvc_bob.png[TodoMVC, 75%, align="center"]
 
 'You might get an error message here. Let's just ignore it for now.'
 
@@ -130,17 +130,17 @@ We can make him an 'admin' which will allow him full access to any other user's 
 Let's go back to link:http://localhost:8080/auth/admin[KeyCloak Admin Console] again, and go to `Users` section of `liveoak-apps` realm, and click `View all users` to
 list all current users.
 
-image::guides/keycloak_view_all_users.png[KeyCloak Admin Console - View all users]
+image::guides/keycloak_view_all_users.png[KeyCloak Admin Console - View all users, 75%, align="center"]
 
 Select `bob`, and switch to `Role Mappings` tab.
 
-image::guides/keycloak_role_mappings.png[KeyCloak Admin Console - Role Mappings]
+image::guides/keycloak_role_mappings.png[KeyCloak Admin Console - Role Mappings, 75%, align="center"]
 
 Under 'Application Roles' select `todomvc`.
 
 Then move `admin` from 'Available Roles' list to 'Assigned Roles' list.
 
-image::guides/keycloak_assigned_roles.png[KeyCloak Admin Console - Assigned Roles]
+image::guides/keycloak_assigned_roles.png[KeyCloak Admin Console - Assigned Roles, 75%, align="center"]
 
 While here, repeat the steps, and create two more users. User `john` which should only have `user` role assigned,
 and user `alice` which should have no roles assigned at all - i.e. should have a default `user` role removed from 'Assigned Roles' list.
@@ -150,17 +150,17 @@ Don't forget to set their temporary passwords via `Credentials` tab.
 
 Now, let's login to link:http://localhost:8080/todomvc[TodoMVC] as user `bob` again, and create one todo item.
 
-image::guides/todomvc_bob_first_todo.png[Bob's first Todo]
+image::guides/todomvc_bob_first_todo.png[Bob's first Todo, 75%, align="center"]
 
 Then log out, and login as `john`. And create a new item.
 
-image::guides/todomvc_john.png[John's first Todo]
+image::guides/todomvc_john.png[John's first Todo, 75%, align="center"]
 
 Note that John only sees his own items.
 
 Log out, and login as `bob` again.
 
-image::guides/todomvc_see_all_bob.png[Bob the admin]
+image::guides/todomvc_see_all_bob.png[Bob the admin, 75%, align="center"]
 
 You can see that Bob can read all existing todo items from all users. He can also edit, and delete any item he wants.
 
@@ -215,8 +215,11 @@ This last step will build an Android application, and install it on your device 
 
 You should see 'TodoMVC' application start on your device / emulator.
 
-image::guides/todomvc_android_login.png[TodoMVC Android - Login]
+image::guides/todomvc_android_login.png[TodoMVC Android - Login, 75%, align="center"]
 
 When you login as 'bob' or 'john' you see the same list of items as if logged in through a web browser.
 
-image::guides/todomvc_android_todos.png[TodoMVC Android - Todos]
+image::guides/todomvc_android_todos.png[TodoMVC Android - Todos, 75%, align="center"]
+
+
+Next, you can try link:/docs/guides/tutorial_openshift[deploying examples to OpenShift].
