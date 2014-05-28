@@ -1,0 +1,96 @@
+= LiveOak 1.0.0.Alpha01 is Live!
+Bob McWhirter & Bolesław Dawidowicz
+
+We are proud to announce first public release of link:http://liveoak.io[LiveOak] - a fully opensource MBaaS solution from
+link:http://redhat.com[Red Hat].
+
+== What is MBaaS?
+
+Mobile Backend as a Service enables rapid application development by providing key backend services out of the box.
+All easily configurable, secured and exposed with REST endpoints.
+
+image::guides/chat_html_admin_storage_collections.png[Chat HTML - Admin Storage Collections, 75%, align="center"]
+{empty}
+
+== Which services exactly?
+
+link:http://liveoak.io[LiveOak] provides storage service, currently based on link:http://www.mongodb.org/[MongoDB].
+However, we plan to support other databases and NoSQL solutions
+ as well in the future. It's exposed through REST endpoints and provides access to rich query capabilities.
+ Applications can use subscriptions based on WebSockets (or native mobile push, see below) to get notifications
+ about updates to content in storage services.
+
+Here's a good example of how easy it is to create a simple application by leveraging storage and subscriptions with
+link:http://liveoak.io[LiveOak]:
+
+video::96213933[vimeo]
+{empty}
+
+Security is another key aspect of a BaaS solution. link:http://liveoak.io[LiveOak] integrates and embeds link:http://keycloak.org[Keycloak].
+link:http://keycloak.org[Keycloak] is a fully fledged authentication and authorization server built on top of OAuth2 and JSON Web
+Token (JWT) specifications. link:http://liveoak.io[LiveOak] also provides a flexible policy framework, with built in URL and ACL based
+policies to cover most use-cases. This makes it easy to secure REST endpoints out of the box, and also provides extensibility if needed.
+
+image::guides/admin_application_new_client.png[LiveOak Admin - New Application Client, 75%, align="center"]
+{empty}
+
+In order to support native push capabilities across different mobile platforms, such as iOS and Android,
+link:http://liveoak.io[LiveOak] integrates link:http://aerogear.org/docs/specs/aerogear-server-push/[AeroGear's UnifiedPush Server (UPS)].
+Through link:http://aerogear.org/docs/specs/aerogear-server-push/[UPS] developers are able to configure, and register
+mobile applications, route and filter the sending of native push messages using a fully REST based API, its native SDKs,
+ and their link:http://cordova.apache.org/[Cordova] plugin. The link:http://aerogear.org/docs/specs/aerogear-server-push/[UPS] also has its own administrative
+ console that integrates link:http://keycloak.org[Keycloak]. Look for more
+ integration with link:http://aerogear.org/[AeroGear] in the future as well.
+
+Important aspect of link:http://liveoak.io[LiveOak] is that everything is exposed as proper REST endpoints. We
+aim to provide developers with clean and well thought out APIs.
+
+On top of all of this we provide a powerful and extensive Management Console UI. It was designed from the ground up with
+ usability in mind. However you are not forced to use it. We aim to expose all management operations via a proper REST API.
+
+image::guides/chat_html_admin_dashboard.png[Chat HTML - Admin Dashboard, 75%, align="center"]
+{empty}
+
+== Cloud
+
+link:http://liveoak.io[LiveOak] has been designed from the beginning as a first class citizen for cloud infrastructure. We provide an
+link:https://openshift.redhat.com/[OpenShift]
+ cartridge, and a link:https://www.docker.io/[Docker] image should be available soon.
+
+video::96631372[vimeo]
+{empty}
+
+video::96638444[vimeo]
+{empty}
+
+== How can I try it out?
+
+First of all check out our link:http://liveoak.io/[website]. You can find several link:/docs[screencasts], link:/docs[getting started guides and tutorials] there.
+
+link:http://liveoak.io[LiveOak] also comes with few link:/docs/guides/guide_examples/[example applications] that can be quickly tried out.
+We have a simple link:/docs/guides/tutorial_chat/[chat application], our
+ own variant of the well known link:/docs/guides/tutorial_todomvc[TodoMVC application] and a link:/docs/guides/tutorial_gallery[gallery application]
+ showing binary storage capabilities. All of these are also available as Android applications - either native or link:http://cordova.apache.org/[Cordova].
+
+link:/docs/guides/tutorial_chat/#preparing-chat-android-app-for-buil[Android chat client] deserves a special mention as it demonstrates integration with
+link:http://aerogear.org/docs/specs/aerogear-server-push/[AeroGear Unified Push Server] to receive
+native push notifications.
+
+image:guides/chat_android.png[LiveOak Chat for Android, 50%, align="center"]
+{empty}
+
+== What are your plans for the future?
+
+We have plenty of ideas. A few key ones:
+
+* Custom business logic.
+* More storage options
+* API usage metrics and basic analytics
+* Many new Management Console capabilities
+* SDKs and tooling
+* Better provisioning and automation
+...
+
+Please link:/downloads[download it] and link:/docs/guides/getting_started[try it out], then go to our link:/community[community page],
+subscribe to the mailing list and share your feedback!
+

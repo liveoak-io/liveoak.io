@@ -14,8 +14,6 @@ README.md files directly in the repository.
 
 === Chat Application
 
-//TODO: screenshots
-
 Simple chat application. Demonstrates usage of LiveOak storage service, subscriptions APIs and basic security.
 Comes with 3 variants listed below. You can also find a more detailed tutorial explaining some of those
 link:/docs/guides/tutorial_chat[here].
