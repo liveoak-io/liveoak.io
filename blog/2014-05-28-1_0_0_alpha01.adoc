@@ -26,6 +26,9 @@ link:http://liveoak.io[LiveOak]:
 video::96213933[vimeo]
 {empty}
 
+video::96691967[vimeo]
+{empty}
+
 Security is another key aspect of a BaaS solution. link:http://liveoak.io[LiveOak] integrates and embeds link:http://keycloak.org[Keycloak].
 link:http://keycloak.org[Keycloak] is a fully fledged authentication and authorization server built on top of OAuth2 and JSON Web
 Token (JWT) specifications. link:http://liveoak.io[LiveOak] also provides a flexible policy framework, with built in URL and ACL based
