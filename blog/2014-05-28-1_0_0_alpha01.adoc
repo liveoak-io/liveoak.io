@@ -1,7 +1,7 @@
-= LiveOak 1.0.0.Alpha01 is Live!
+= LiveOak is Live!
 Bob McWhirter & Bolesław Dawidowicz
 
-We are proud to announce first public release of link:http://liveoak.io[LiveOak] - a fully opensource MBaaS solution from
+We are proud to announce first public alpha release of link:http://liveoak.io[LiveOak] - a fully opensource MBaaS solution from
 link:http://redhat.com[Red Hat].
 
 == What is MBaaS?
