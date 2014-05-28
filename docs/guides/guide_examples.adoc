@@ -17,7 +17,8 @@ README.md files directly in the repository.
 //TODO: screenshots
 
 Simple chat application. Demonstrates usage of LiveOak storage service, subscriptions APIs and basic security.
-Comes with 3 variants:
+Comes with 3 variants listed below. You can also find a more detailed tutorial explaining some of those
+link:/docs/guides/tutorial_chat[here].
 
 
 
@@ -28,6 +29,7 @@ subscriptions to get notifications about new content. Probably the most minimal 
 LiveOak services that can be imagined. Perfect to quickly try out the server and start exploring its capabilities.
 
 image::guides/chat_html.png[Chat HTML, 75%, align="center"]
+{empty}
 
 ==== link:https://github.com/liveoak-io/liveoak-examples/tree/master/chat/chat-html-secured[Secured Chat]
 
@@ -43,37 +45,44 @@ link:http://aerogear.org/docs/specs/aerogear-server-push/[AeroGear UnifiedPush S
  manual configuration steps to work.
 
 image:guides/chat_android.png[LiveOak Chat for Android, 50%, align="center"]
+{empty}
 
 
 === Gallery
 
-Simple gallery application allowing browsing and uploading photos. Demonstrates binary data storage capabilities of LiveOak APIs
+Simple gallery application allowing browsing and uploading photos. Demonstrates binary data storage capabilities of LiveOak APIs.
+Please check out a more detailed tutorial explaining deployment of those examples link:/docs/guides/tutorial_gallery[here].
 
 ==== link:https://https://github.com/liveoak-io/liveoak-examples/tree/master/gallery[HTML client]
 
 image::guides/gallery_web.png[Gallery Web - desktop, 75%, align="center"]
+{empty}
 
 ==== link:https://github.com/liveoak-io/liveoak-examples/tree/master/gallery-cordova[Android client]
 
 Implemented using Apache Cordova
 
 image::guides/gallery_web_on_android.png[Gallery Web - on Android device, 75%, align="center"]
+{empty}
 
 
 === ToDoMVC
 
 Variant of famous link:http://todomvc.com[ToDoMVC] example implemented using LiveOak as a backend. Besides using storage service
-it also demonstrates basic security policies by restricting access to particular task lists.
+it also demonstrates basic security policies by restricting access to particular task lists. Please check out a more detailed
+tutorial explaining deployment of those examples link:/docs/guides/tutorial_gallery[here].
 
 
 ==== link:https://github.com/liveoak-io/liveoak-examples/tree/master/todomvc[HTML Client] +
 
 image::guides/todomvc_see_all_bob.png[Bob the admin, 75%, align="center"]
+{empty}
 
 ==== link:https://github.com/liveoak-io/liveoak-examples/tree/master/todomvc-cordova[Android client]
 Implemented using Apache Cordova
 
 image::guides/todomvc_android_todos.png[TodoMVC Android - Todos, 75%, align="center"]
+{empty}
 
 
 
