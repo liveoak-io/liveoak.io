@@ -15,4 +15,4 @@ of the community, whether they contribute code, bug-reports, bug-fixes or docume
 To participate in the project in any capacity, please join the project mailing-list
 or IRC channels.
 
-More information can be found on our link:/Community[Community page].  
+More information can be found on our link:/community[Community page].  
