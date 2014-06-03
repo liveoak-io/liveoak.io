@@ -13,6 +13,6 @@ Red Hat product-management has a voice, it is akin to the same voice of any memb
 of the community, whether they contribute code, bug-reports, bug-fixes or documentation.
 
 To participate in the project in any capacity, please join the project mailing-list
-or IRC channels.
+or IRC channel.
 
 More information can be found on our link:/community[Community page].  
