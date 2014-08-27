@@ -1,0 +1,17 @@
+= Endpoint Scripts
+:awestruct-layout: two-column
+:toc:
+
+toc::[]
+
+== Overview
+
+These types of scripts expose an endpoint for for client application to access. This allows for custom application logic to be performed whenever a client access this endpoint.
+
+Somethings these types of endpoints are useful for:
+
+* exposing a multi-step operation as a single operation to the client.
+* performing operations on internal liveoak resources which are not normally exposed publically to clients
+* calling out to other services through liveoak 
+
++COMING SOON+
