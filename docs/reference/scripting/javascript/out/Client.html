@@ -126,7 +126,7 @@ Cannot be instantiated by the user, must be fetched from the Script's library.
         <dl>
             
 <dt>
-    <h4 class="name" id="create"><span class="type-signature">(inner) </span>create<span class="signature">(path, resource, parameters)</span><span class="type-signature"> &rarr; {<a href="liveoak.Resource.html">liveoak.Resource</a>}</span></h4>
+    <h4 class="name" id="delete"><span class="type-signature">(static) </span>delete<span class="signature">(path, parameters)</span><span class="type-signature"> &rarr; {<a href="liveoak.Resource.html">liveoak.Resource</a>}</span></h4>
 
     
 </dt>
@@ -134,7 +134,7 @@ Cannot be instantiated by the user, must be fetched from the Script's library.
 
     
     <div class="description">
-        Creates a new resource at the specified path
+        Deletes the resource at the specified path
     </div>
     
 
@@ -185,29 +185,6 @@ Cannot be instantiated by the user, must be fetched from the Script's library.
             
 
             <td class="description last">the resource path</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>resource</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="liveoak.Resource.html">liveoak.Resource</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">the resource to create</td>
         </tr>
 
     
@@ -283,7 +260,143 @@ Cannot be instantiated by the user, must be fetched from the Script's library.
     
             
 <div class="param-desc">
-    The newly created resource
+    The deleted resource
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="liveoak.Resource.html">liveoak.Resource</a></span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="delete"><span class="type-signature">(static) </span>delete<span class="signature">(path)</span><span class="type-signature"> &rarr; {<a href="liveoak.Resource.html">liveoak.Resource</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Deletes the resource at the specified path
+    </div>
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>path</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the resource path</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    The deleted resource
 </div>
 
 
@@ -390,6 +503,188 @@ Cannot be instantiated by the user, must be fetched from the Script's library.
             
 
             <td class="description last">the resource to create</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+    
+
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    The newly created resource
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="liveoak.Resource.html">liveoak.Resource</a></span>
+
+
+    </dd>
+</dl>
+
+        
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="create"><span class="type-signature">(inner) </span>create<span class="signature">(path, resource, parameters)</span><span class="type-signature"> &rarr; {<a href="liveoak.Resource.html">liveoak.Resource</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Creates a new resource at the specified path
+    </div>
+    
+
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>path</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the resource path</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>resource</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="liveoak.Resource.html">liveoak.Resource</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the resource to create</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>parameters</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Map.&lt;String, Object></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the parameters to include</td>
         </tr>
 
     
@@ -738,301 +1033,6 @@ Cannot be instantiated by the user, must be fetched from the Script's library.
             
 <div class="param-desc">
     The resource
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="liveoak.Resource.html">liveoak.Resource</a></span>
-
-
-    </dd>
-</dl>
-
-        
-
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="remove"><span class="type-signature">(inner) </span>remove<span class="signature">(path)</span><span class="type-signature"> &rarr; {<a href="liveoak.Resource.html">liveoak.Resource</a>}</span></h4>
-
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Deletes the resource at the specified path
-    </div>
-    
-
-    
-
-    
-
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>path</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">the resource path</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-    
-
-    
-<dl class="details">
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    The deleted resource
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="liveoak.Resource.html">liveoak.Resource</a></span>
-
-
-    </dd>
-</dl>
-
-        
-
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="remove"><span class="type-signature">(inner) </span>remove<span class="signature">(path, parameters)</span><span class="type-signature"> &rarr; {<a href="liveoak.Resource.html">liveoak.Resource</a>}</span></h4>
-
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Deletes the resource at the specified path
-    </div>
-    
-
-    
-
-    
-
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>path</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">the resource path</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>parameters</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Map.&lt;String, Object></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">the parameters to include</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-    
-
-    
-<dl class="details">
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    The deleted resource
 </div>
 
 
@@ -1417,7 +1417,7 @@ Cannot be instantiated by the user, must be fetched from the Script's library.
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha9</a> on Wed Aug 27 2014 14:04:17 GMT-0400 (EDT)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha9</a> on Thu Aug 28 2014 16:57:43 GMT-0400 (EDT)
 </footer>
 
 <script> prettyPrint(); </script>
