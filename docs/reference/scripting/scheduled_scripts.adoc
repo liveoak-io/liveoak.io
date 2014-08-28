@@ -1,12 +1,13 @@
 = Scheduled Scripts
 :awestruct-layout: two-column
 :toc:
+:toc-placement!:
 
 toc::[]
 
 == Overview
 
-Scheduled scripts allow for scripts to be executed at a specific time and/or periodically. 
+Scheduled scripts allow for scripts to be executed at a specific time and/or periodically.
 
 Example of things these types of endpoints are useful for:
 

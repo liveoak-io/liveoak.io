@@ -1,6 +1,7 @@
 = Endpoint Scripts
 :awestruct-layout: two-column
 :toc:
+:toc-placement!:
 
 toc::[]
 
@@ -12,6 +13,6 @@ Somethings these types of endpoints are useful for:
 
 * exposing a multi-step operation as a single operation to the client.
 * performing operations on internal liveoak resources which are not normally exposed publically to clients
-* calling out to other services through liveoak 
+* calling out to other services through liveoak
 
 +COMING SOON+

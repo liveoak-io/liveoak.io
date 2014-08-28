@@ -2,6 +2,7 @@
 
 :awestruct-layout: two-column
 :toc:
+:toc-placement!:
 
 toc::[]
 

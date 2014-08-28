@@ -1,6 +1,7 @@
 = Demo Chat Application
 :awestruct-layout: two-column
 :toc:
+:toc-placement!:
 
 toc::[]
 

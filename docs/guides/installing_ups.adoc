@@ -1,6 +1,7 @@
 = Installing AeroGear UnifiedPush Server (UPS)
 :awestruct-layout: two-column
 :toc:
+:toc-placement!:
 
 toc::[]
 

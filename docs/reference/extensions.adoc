@@ -1,6 +1,7 @@
 = Extensions
 :awestruct-layout: two-column
 :toc:
+:toc-placement!:
 
 toc::[]
 
@@ -29,7 +30,7 @@ the extension the following:
 
 * The ID under which it is being installed
 * An MSC `ServiceTarget` in which to install services
-* An MSC `ServiceName` referencing the system-level configuration 
+* An MSC `ServiceName` referencing the system-level configuration
   object for the extension.
 
 The extension may choose to install shared MSC services through
@@ -41,7 +42,7 @@ performed for any application wishing to use the extension.
 
 == Application-level Initialization
 
-When an extension is provisioned for a specific application, 
+When an extension is provisioned for a specific application,
 its second `extend(...)` method is called, provided an
 `ApplicationExtensionContext`.  This context provides the extension
 the following:
@@ -94,14 +95,10 @@ The LiveOak system itself manages updates to this configuration.  When the confi
 is changed, the service providing it becomes temporarily unavailable, and the new configuration
 is installed in its place.
 
-If extension services are dependent upon the configuration directly, using 
+If extension services are dependent upon the configuration directly, using
 the MSC `addDependency(...)` method, this change of configuration will cause a ripple
 of services temporarily going offline, and then coming back up with the new configuration
 injected into them.
 
 IMPORTANT: The team is still working on a less catastrophic way to update configuration
 without forcing a restart of an entire tree of services.
-
-
-
-

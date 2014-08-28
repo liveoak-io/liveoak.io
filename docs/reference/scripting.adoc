@@ -1,6 +1,7 @@
 = Server Side Scripting
 :awestruct-layout: two-column
 :toc:
+:toc-placement!:
 
 toc::[]
 
@@ -12,7 +13,7 @@ These scripts allows the application developer to perform such tasks as:
 
 * Inspecting the incoming request and response.
 * Modifying the incoming request and response.
-* Denying the incoming request or response. 
+* Denying the incoming request or response.
 * Accessing any of the LiveOak resources. This allows for such things as reading and writing to the LiveOak storage resources as well as configuring Security settings and setting up things like UPS integration.
 * Expose external resources through LiveOak.
 * Aggregating content from multiple LiveOak resources or external services

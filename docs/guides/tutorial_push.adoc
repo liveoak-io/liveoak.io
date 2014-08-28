@@ -1,6 +1,7 @@
 = Tutorial: Push Notifications
 :awestruct-layout: two-column
 :toc:
+:toc-placement!:
 
 toc::[]
 

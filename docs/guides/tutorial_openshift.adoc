@@ -1,6 +1,7 @@
 = Deploying LiveOak to OpenShift
 :awestruct-layout: two-column
 :toc:
+:toc-placement!:
 
 toc::[]
 
@@ -132,28 +133,28 @@ The example quickstarts can be found at the following locations:
 
 === Creating an Example Quickstart Gear with RHC
 
-* To create a gear to run the chat example quickstart: 
+* To create a gear to run the chat example quickstart:
 
 [source]
 rhc create-app chat DIY --from-code https://github.com/liveoak-io/openshift-liveoak-client-chat-quickstart
 
 {empty} +
 
-* To create a gear to run the secured chat example quickstart: 
+* To create a gear to run the secured chat example quickstart:
 
 [source]
 rhc create-app schat DIY --from-code https://github.com/liveoak-io/openshift-liveoak-client-chat-secured-quickstart
 
 {empty} +
 
-* To create a gear to run the Gallery example quickstart: 
+* To create a gear to run the Gallery example quickstart:
 
 [source]
 rhc create-app gallery DIY --from-code https://github.com/liveoak-io/openshift-liveoak-client-gallery-quickstart
 
 {empty} +
 
-* To create a gear to run the ToDoMVC example quickstart: 
+* To create a gear to run the ToDoMVC example quickstart:
 
 [source]
 rhc create-app todo DIY --from-code https://github.com/liveoak-io/openshift-liveoak-client-todomvc-quickstart
@@ -205,4 +206,3 @@ Some of the examples require a few more steps to be done in order to setup some 
 * gallery: https://github.com/liveoak-io/openshift-liveoak-client-gallery-quickstart
 
 * ToDoMVC: https://github.com/liveoak-io/openshift-liveoak-client-todomvc-quickstart
-

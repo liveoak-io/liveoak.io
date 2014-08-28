@@ -1,12 +1,13 @@
 = Manually Configuring an Application for Scripting
 :awestruct-layout: two-column
 :toc:
+:toc-placement!:
 
 toc::[]
 
 == Overview
 
-It is possible to manually modify an application to add in scripting support by setting up a couple of configuration files. 
+It is possible to manually modify an application to add in scripting support by setting up a couple of configuration files.
 
 The various scripting examples (https://github.com/liveoak-io/liveoak-examples/tree/master/scripting) are good examples which already use this approach.
 
@@ -29,7 +30,7 @@ resources: {
                 script-directory: "${application.dir}/scripts"
         }
     },
-    ...  
+    ...
 ```
 
 This will specify that your application requires the _'scripts'_ module and it should look in the _'script-directory'_ location for the scripts to use.

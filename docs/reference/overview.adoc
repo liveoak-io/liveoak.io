@@ -1,6 +1,7 @@
 = Documentation
 :awestruct-layout: two-column
 :toc:
+:toc-placement!:
 
 toc::[]
 
@@ -29,9 +30,9 @@ At least with HTTP 1.1, the polling nature of REST is not
 necessarily as performant and reactive as applications would
 desire. Strategies such as long-polling have worked around this
 in the past.  WebSockets and Server-Sent Events (SSE) now provide
-alternatives for pushing bits from the server to the client 
+alternatives for pushing bits from the server to the client
 in real-time. LiveOak has overlaid RESTful concepts on top
-of these push technologies. 
+of these push technologies.
 
 This addition of push semantics basically adds one more verb
 to the standard array of REST verbs:  SUBSCRIBE.
@@ -50,8 +51,3 @@ CRUD operations. Each resource may have a set of properties
 and may have a set of children.
 
 Resources are controlled by Extensions, described more fully further in the doc.
-
-
-
-
-

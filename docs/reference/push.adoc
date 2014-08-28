@@ -1,6 +1,7 @@
 = Push Notifications
 :awestruct-layout: two-column
 :toc:
+:toc-placement!:
 
 toc::[]
 
@@ -27,7 +28,7 @@ Since LiveOak needs to be able to send messages to a UPS instance, it will need 
 
 === Configuring the UPS module using application.json
 
-The following is an example of how to setup the +application.json+ file to configure a UPS module under the +/push+ context 
+The following is an example of how to setup the +application.json+ file to configure a UPS module under the +/push+ context
 
 [source,xml]
 .application.json
@@ -151,7 +152,7 @@ If you want to name your specific subscription, use a PUT with the alias name as
 PUT /push/aliases/XXXXXXXX-XXXX-.../MySubscription
 {
   "resource-path" : "/myApp/myStorage/myData/*",
-  ... 
+  ...
 }
 
 
@@ -202,7 +203,7 @@ NOTE: TODO: figure out the proper way to do this, need for either the uri-policy
 
 === The Subscriptions Endpoint
 
-The +/push/subscription+ endpoint allows for the creation of subscriptions without the restrictions on the alias like in the +/push/aliases+ endpoint. Without the alias restriction, subscriptions created here can be configured to be sent to individual users or groups of users. *As such, it is highly recommended to secure this endpoint so that only admins have access to these resources*. 
+The +/push/subscription+ endpoint allows for the creation of subscriptions without the restrictions on the alias like in the +/push/aliases+ endpoint. Without the alias restriction, subscriptions created here can be configured to be sent to individual users or groups of users. *As such, it is highly recommended to secure this endpoint so that only admins have access to these resources*.
 
 These types of subscriptions meant for more generic, group subscriptions in which an admin should be configuring and not each individual device. An example could be a message sent to all devices when an important announcement is made, or a message sent to all android devices when an update is available.
 
@@ -259,5 +260,3 @@ The +/push/subscriptions+ endpoint should be secured so that only admins have ac
 }
 
 <1> The roles to allow access to the +/push/subscriptions+ resources.
-
-

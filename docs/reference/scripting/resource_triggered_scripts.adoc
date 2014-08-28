@@ -1,6 +1,7 @@
 = Resource Triggered Scripts
 :awestruct-layout: two-column
 :toc:
+:toc-placement!:
 
 toc::[]
 
@@ -86,5 +87,3 @@ Type:Function
 +post-delete+: function postDelete(response, libraries) {...}
 +on-error+: function onError(response,libraries) {...}
 |======================
-
-

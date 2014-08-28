@@ -1,6 +1,7 @@
 = Getting Started with LiveOak
 :awestruct-layout: two-column
 :toc:
+:toc-placement!:
 
 toc::[]
 
