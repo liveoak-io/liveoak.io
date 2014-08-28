@@ -54,19 +54,24 @@ function Client() {
    */   
   function update(path, resource, parameters){};
 
-  /**
-   * Deletes the resource at the specified path
-   * @param {String} path - the resource path
-   * @returns {liveoak.Resource} The deleted resource
-   */   
-  function remove(path){};
-
-  /**
-   * Deletes the resource at the specified path
-   * @param {String} path - the resource path
-   * @param {Map<String, Object>} parameters - the parameters to include
-   * @returns {liveoak.Resource} The deleted resource
-   */   
-  function remove(path, parameters){};
-
 }
+
+/**
+ * Deletes the resource at the specified path
+ * @memberof Client
+ * @name delete
+ * @function
+ * @param {String} path - the resource path
+ * @param {Map<String, Object>} parameters - the parameters to include
+ * @returns {liveoak.Resource} The deleted resource
+ */
+
+/**
+ * Deletes the resource at the specified path
+ * @memberof Client
+ * @name delete
+ * @function
+ * @param {String} path - the resource path    
+ * @returns {liveoak.Resource} The deleted resource
+ */
+
