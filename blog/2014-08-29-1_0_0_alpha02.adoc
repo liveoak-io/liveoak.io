@@ -1,0 +1,35 @@
+= Alpha02
+Ken Finnigan
+
+We are proud to announce the second public alpha release of link:http://liveoak.io[LiveOak]!
+
+== Release Highlights
+
+Some of the highlights of Alpha02 are:
+
+* Initial support for PostgreSQL as a storage Resource
+* Business Logic scripting for all Resources
+* LiveOak examples are now installable from within the Console
+* Managing Users directly in the Console
+* Improved UX when editing data through the Console
+
+Along with many other improvements and bug fixes.
+
+For a full list of all the resolved issues, see the link:https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12314622&version=12323820[Release Notes].
+
+=== PostgreSQL Storage Resource
+//TODO Marko
+
+=== Business Logic Scripting
+//TODO Matt
+
+== On the way to 1.0.0.Final?
+
+Some of the key features we're looking to introduce before we go final:
+
+* API usage metrics and basic analytics
+* SDKs and tooling
+
+
+Please link:/downloads[download it] and link:/docs/guides/getting_started[try it out], then go to our link:/community[community page],
+subscribe to the mailing list and share your feedback!
