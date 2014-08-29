@@ -18,7 +18,19 @@ Along with many other improvements and bug fixes.
 For a full list of all the resolved issues, see the link:https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12314622&version=12323820[Release Notes].
 
 === PostgreSQL Storage Resource
-//TODO Marko
+
+We are introducing another storage mechanism in addition to MongoDB. You can now use PostgreSQL database for storage. The REST API is very similar to the one for MongoDB, you can even use the same query lanaguage.
+
+The major difference is that the database schema has to be explicitly defined, and redefined as application evolves over time. The REST endpoint uses table definitions, primary keys, and foreign key constraints to expose table rows as JSON objects with one-to-many, and many-to-one relationships represented as nested objects with many layers of nesting.
+
+Best way to get started is to take a look at the link:/docs/reference/postgresql[REST API documentation].
+
+A good place to see some usage examples is a link:https:/github.com/liveoak-io/liveoak/modules/pgsql/src/test/java/io/liveoak/pgsql/HttpPgSqlTest.java[main test class].
+
+There is no integration with Admin Console yet, and none of the example applications uses PostgreSQL yet.
+
+Feature set, though, is pretty good already, and is worth checking out. Any feedback is most welcome as we want to make this API very powerful yet as simple to use as possible.
+
 
 === Business Logic Scripting
 
