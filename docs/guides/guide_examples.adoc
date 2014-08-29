@@ -89,5 +89,5 @@ image::guides/todomvc_android_todos.png[TodoMVC Android - Todos, 75%, align="cen
 
 ==== link:https://github.com/liveoak-io/liveoak-examples/tree/master/auth[Authentication]
 
-Demonstrates some basic functionalityrelated to authentication to Keycloak/Liveoak. It's simple Javascript application, which can be used to login into Keycloak
+Demonstrates some basic functionality related to authentication between Keycloak LiveOak. It's simple Javascript application, which can be used to login into Keycloak
 and obtain OAuth access token in JWT format from Keycloak.
