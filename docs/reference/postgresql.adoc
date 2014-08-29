@@ -242,7 +242,7 @@ We get back a JSON describing the created table schema:
 
 Note how we get back more information than what we sent to the server. We get all the values of all the fields. Where we didn't specify a value in submitted JSON the default was used.
 
-There is also a read-only field called 'ddl' that contains a
+There is also a read-only field called 'ddl' that contains a create table statement for your convenience.
 
 Table schema is described by four fields:
 
@@ -375,7 +375,7 @@ If a column name ends with '_id' then this ending is chopped off and the first p
 
 If column name doesn't end with '_id' then the referred table id is used as a field name (e.g. if foreign key column 'userid' references a table called 'users', then the field name will be called 'users' rather than 'userid'.
 
-In addition to row columns, the JSON item also contains synthetic fields for one-to-many relationships. These are references to items in other collections, representing tables with foreign keys referring to our table. There are corresponding columns in our table in this case. For these fields the name is equal to the other collection's id.
+In addition to row columns, the JSON item also contains synthetic fields for one-to-many relationships. These are references to items in other collections, representing tables with foreign keys referring to our table. There are no corresponding columns in master table in this case. For these fields the name is equal to the other collection's id.
 
 For example, if there is a table 'messages' with column 'user_id' pointing to a table 'users', then each item in 'users' collection will contain a synthetic field named 'messages' containing a list of items corresponding to messages linked to that user.
 
@@ -412,7 +412,7 @@ A response to successful call returns the full state of newly created item - all
       "rooms" : [ ]
     }
 
-In this case we assume there are two additional tables present in our database with foreign key constraint referencing the 'users' table. The ids of those tables are used to name a 'synthetic' collection fields 'messages', and 'rooms'. This is how many-to-one relationships are automatically resolved.
+In this case we assume there are two additional tables present in our database with foreign key constraint referencing the 'users' table. The ids of those tables are used to name a 'synthetic' collection fields 'messages', and 'rooms'. This is how one-to-many relationships are automatically resolved.
 
 Since this item was only just created it can't possibly have any references pointing to it yet, therefore these two fields are empty.
 
@@ -449,9 +449,9 @@ We can also create the related one-to-many items with one single JSON message, b
 
 When creating related items using nesting the foreign key columns connecting master-child tables will be filled automatically, so in this case there is no need to specify in message instance a back link to the wrapping user instance via 'user' field on the message.
 
-Also notice how we 'room' within a message we only specify a 'self' / 'href' field. This is called a _resource reference_. Table 'messages' has a many-to-one relationship with 'rooms', which means that 'messages' table contains a foreign key column 'room_id' that links to table 'rooms'.
+Also notice how in 'room' within a message we only specify a 'self' / 'href' field. This is called a _resource reference_. Table 'messages' has a many-to-one relationship with 'rooms', which means that 'messages' table contains a foreign key column 'room_id' that links to table 'rooms'.
 
-Currently creating instances related via many-to-one relationship is not supported. Support for this may be added in the future.
+Currently creating nested instances related via many-to-one relationship is not supported. Support for this may be added in the future.
 
 == Updating records (items)
 
@@ -498,7 +498,7 @@ DELETE http://localhost:8080/demo-app/sqldata/TABLEID/ITEMID
 
 Delete operation will automatically cascade delete any items that link to the item being deleted.
 
-For the future an option could be added to instead of deleting the dependent records the referring foreign key columns would be set to null on referring records.
+For the future an option could be added to instead of deleting the dependent records they would have their referring foreign key columns set to null.
 
 == Retrieving data
 
@@ -565,7 +565,7 @@ This example will return 'messages' list field but for each instance returned it
 
 'fields' parameter is also used for controlling expansion of resource references. Symbol * at any level means - return all column fields, and only return resource references for synthetic fields. To expand those in full another '(*)' has to be appended, and that can be nested ad-infinitum.
 
-There are two fields that currently can't be filterer out using this method - these are 'id', and 'self'.
+There are two fields that currently can't be filtered out using this method - these are 'id', and 'self'.
 That may be addressed in the future.
 
 === Querying
@@ -582,11 +582,11 @@ Some examples of queries (note the need to url-encode the value of 'q' parameter
 
 That would return all messages from user 'MadHatter'. Note that 'user' field on 'message' is a synthetic field derived from a foreign key column 'user_id' that points to another table. Column 'nick' is in 'users' table, not in 'messages' table. A join select is performed in the background to execute this query.
 
-Another example using multiple condition:
+Another example using multiple conditions:
 
     curl -v -G 'http://localhost:8080/demo-app/sqldata/messages' --data-urlencode 'q={"user.nick": "MadHatter", create_time: {$gt: "2014-08-30"}}'
 
-That would further limit the result to those messages that are also fresher than the specified date.
+That would further limit the results to those messages that are also fresher than the specified date.
 
 We can use $or, and $not, and make a more complex query:
 
@@ -605,7 +605,7 @@ For example:
 That would return messages starting with latest.
 
 
-Currently only targeted collection column fields can be specified for sorting. The following would work:
+Currently only targeted collection column fields can be specified for sorting. The following wouldn't work:
 
     ?sort=user.nick
 
@@ -694,7 +694,7 @@ Four different actions are supported: _create_, _update_, _merge_, and _delete_.
 
 === Checking for errors
 
-Batch endpoint processes items one at a time, and generates success report for each one. When creating or dropping tables, the items may be reordered to avoid constraint violation errors.
+Batch endpoint processes items one at a time, and generates a status report for each one. When creating or dropping tables, the items may be reordered to avoid constraint violation errors.
 
 Statuses are returned in response as members in the same order they were executed.
 
@@ -778,7 +778,7 @@ They will be processed one by one. If some item fails to be created the result s
 
 If an item with the same id exists already that will result in error for that item.
 
-Every item has to have 'self' / 'href' present as it is this uri() that uniquely identifies an item.
+Every item has to have 'self' / 'href' present as it is this uri that uniquely identifies an item.
 
     curl -v -X POST 'http://localhost:8080/demo-app/sqldata/_batch?action=create' -T - << EOF
 
@@ -826,11 +826,11 @@ Every item has to have 'self' / 'href' present as it is this uri() that uniquely
     EOF
 
 
-One-to-many child items can be included as full state child items into the wrapping item, and they will be created.
+One-to-many child items can be included as full state child items of the wrapping item, and they will be created.
 
-It is up to a caller to ensure that any dependencies of each item are fulfilled by the time it's that item's turn to be processed.
+It is up to a caller to ensure that any dependencies of each item are fulfilled by the time that item is processed.
 
-In the above example we first create a new user, then create a new room that refers to just created user, and finally we create a message that refers to both user, and room that were just created.
+In the above example we first create a new user, then create a new room that refers to just created user, and finally we create a message that refers to both user, and room.
 
 If ordering of these three items was any different there would be dependency errors during processing.
 
