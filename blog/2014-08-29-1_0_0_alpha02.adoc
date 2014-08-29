@@ -21,26 +21,26 @@ For a full list of all the resolved issues, see the link:https://issues.jboss.or
 
 We are introducing another storage mechanism in addition to MongoDB. You can now use PostgreSQL database for storage. The REST API is very similar to the one for MongoDB, you can even use the same query lanaguage.
 
-The major difference is that the database schema has to be explicitly defined, and redefined as application evolves over time. The REST endpoint uses table definitions, primary keys, and foreign key constraints to expose table rows as JSON objects with one-to-many, and many-to-one relationships represented as nested objects with many layers of nesting.
+The major difference is that the database schema has to be explicitly defined, and redefined as the application evolves over time. The REST endpoint uses table definitions, primary keys, and foreign key constraints to expose table rows as JSON objects with one-to-many, and many-to-one relationships represented as nested objects with many layers of nesting.
 
-Best way to get started is to take a look at the link:/docs/reference/postgresql[REST API documentation].
+The best way to get started is to take a look at the link:/docs/reference/postgresql[REST API documentation].
 
-A good place to see some usage examples is a link:https:/github.com/liveoak-io/liveoak/modules/pgsql/src/test/java/io/liveoak/pgsql/HttpPgSqlTest.java[main test class].
+A good place to see some usage examples is in the link:https://github.com/liveoak-io/liveoak/blob/master/modules/pgsql/src/test/java/io/liveoak/pgsql/HttpPgSqlTest.java[main test class].
 
-There is no integration with Admin Console yet, and none of the example applications uses PostgreSQL yet.
+There is no integration with the LiveOak Admin Console yet, and none of the example applications uses PostgreSQL yet.
 
-Feature set, though, is pretty good already, and is worth checking out. Any feedback is most welcome as we want to make this API very powerful yet as simple to use as possible.
+The feature set, though, is very good already, and is worth checking out. Any feedback is most welcome as we want to make this API very powerful, yet as simple to use as possible.
 
 
 === Business Logic Scripting
 
 New in this alpha is server side scripting support. Currently we only support scripts which can be triggered by resource invocations, but look out for being able to trigger scripts based on a schedule or triggered when a custom REST endpoint is called!
 
-Documentation for LiveOak Server Side Scripting can be found link:/docs/reference/scripting[link]
+Documentation for LiveOak Server Side Scripting can be found link:/docs/reference/scripting[here].
 
-Resource triggered scripts allow you to have custom scripts run against a resource or group of resources when an action is performed against that resource. This allows you to run scripts before or after any of the CRUD operation as well as when an exception occurs during one of these operations. 
+Resource triggered scripts allow you to have custom scripts run against a resource or group of resources when an action is performed against that resource. This allows you to run scripts before or after any of the CRUD operation as well as when an exception occurs during one of these operations.
 
-Checkout all our scripting examples which are available link:https://github.com/liveoak-io/liveoak-examples/tree/master/scripting[here]. These examples go through how to check and modify the request and response, how to access and modify other LiveOak resources (including how to create and modify existing storage data), and more.
+Checkout all our scripting examples which are available link:https://github.com/liveoak-io/liveoak-examples/tree/master/scripting[here], or installable from within the LiveOak Admin Console. These examples go through how to check and modify the request and response, how to access and modify other LiveOak resources (including how to create and modify existing storage data), and more.
 
 
 Right now it requires a bit of effort to manage and edit scripts since they can only be done through the file system or via authenticated REST endpoints. But we should have an awesome console editor available soon. The docs for how to manage scripting through the filesystem can be found link:/docs/reference/scripting/manual_configuration/[here] and the REST endpoint specification can be found link:/docs/reference/scripting/rest/[here].
@@ -52,6 +52,9 @@ Let use know what feature or additional functionality you would want for scripti
 Some of the key features we're looking to introduce before we go final:
 
 * API usage metrics and basic analytics
+* Code editor for Business Logic scripts
+* Even more awesome functionality within the Admin Console
+* Managing application config via git
 * SDKs and tooling
 
 
