@@ -26,7 +26,7 @@ All you have to do now is run it:
 
 `$LIVEOAK/bin/standalone.sh -b 0.0.0.0`
 
-The second parameter is there to make server socket accessible on all the network interfaces, so you can connect to LiveOak from your
+The second parameter is there to make the server socket accessible on all the network interfaces, so you can connect to LiveOak from your
  mobile device or an emulator.
 
 LiveOak requires Java 8. You can test your `java` version by running:
