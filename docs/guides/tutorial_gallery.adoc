@@ -22,15 +22,31 @@ Gallery application comes in two forms:
 Let’s start by deploying `$LIVEOAK_EXAMPLES/gallery` to 'LiveOak' first. This will not only deploy static web content to be served by 'LiveOak',
 but also configure the necessary 'LiveOak' services ('mongo-gridfs' service for example) as REST endpoints used by both Gallery web, and Android applications.
 
+=== Installation
+
+There are two ways that the gallery application can be installed:
+
+1. Manually
++
 To deploy the application simply copy `gallery` directory to 'LiveOak' application deployment directory:
-
-`cp -r $LIVEOAK_EXAMPLES/gallery $LIVEOAK/apps/`
-
++
+  cp -r $LIVEOAK_EXAMPLES/gallery $LIVEOAK/apps/
++
 And start 'LiveOak':
++
+ $LIVEOAK/bin/standalone.sh -b 0.0.0.0
++
+NOTE: By using -b 0.0.0.0 we make 'LiveOak' endpoints available on all network interfaces so that they can be accessed from mobile devices within your local network.
++
+2. LiveOak Admin Console
++
+Start LiveOak:
++
+ $LIVEOAK/bin/standalone.sh -b 0.0.0.0
++
+Point your browser to link:http://localhost:8080/admin#/example-applications[], select `Gallery` and then `Install`.
 
-`$LIVEOAK/bin/standalone.sh -b 0.0.0.0`
-
-By using -b 0.0.0.0 we make 'LiveOak' endpoints available on all network interfaces so that they can be accessed from mobile devices within your local network.
+=== Usage
 
 Point your browser to link:http://localhost:8080/gallery/app/index.html[].
 
