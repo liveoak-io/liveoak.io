@@ -57,7 +57,7 @@ var liveOak = new LiveOak({
 
 {empty} +
 
-Also edit file `$LIVEOAK_HOME/conf/extensions/keycloak.js` and edit `keycloak-url` property to look like:
+Also edit file `$LIVEOAK_HOME/conf/extensions/keycloak.json` and edit `keycloak-url` property to look like:
 
 [source]
 keycloak-url: 'http://localhost:8081/auth',
