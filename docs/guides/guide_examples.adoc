@@ -7,7 +7,7 @@ toc::[]
 
 == Example applications
 
-LiveOak project comes with several example applications that are available in the
+LiveOak comes with example applications that can be installed from within the Admin Console, they are also available in the
 link:https://github.com/liveoak-io/liveoak-examples[github] repository.
 
 Each of those applications come with instructions on how to properly deploy them. You can find more information in
