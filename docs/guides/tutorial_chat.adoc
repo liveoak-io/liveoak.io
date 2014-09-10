@@ -25,7 +25,7 @@ This is a perfect application to try out 'LiveOak' server and start exploring it
 Let’s start by unpacking 'LiveOak' examples .zip archive from link:http://liveoak.io/downloads[LiveOak Downloads page].
 That will create a directory called `liveoak-examples` which we'll refer to as $LIVEOAK_EXAMPLES.
 
-Copy `$LIVEOAK_EXAMPLES/chat/chat-html` directory to `$LIVEOAK/apps` directory - next to existing `admin`.
+Copy `$LIVEOAK_EXAMPLES/chat/chat-html` directory to `$LIVEOAK_HOME/apps` directory - next to existing `admin`.
 
 Restart 'LiveOak' server (use CTRL-C), and visit link:http://localhost:8080[] again.
 
@@ -69,7 +69,7 @@ image::guides/chat_html_admin_storage.png[Chat HTML - Admin Storage, 75%, align=
 We can see that we have one storage resource configured, bound to `/storage` subroot of `/chat-html`, and using `MongoDB` at `localhost:27017`.
 
 Where did this configuration come from?
-It is specified in `$LIVEOAK/apps/chat-html/application.json` file which serves as a master configuration file for the application.
+It is specified in `$LIVEOAK_HOME/apps/chat-html/application.json` file which serves as a master configuration file for the application.
 
 We can create storage resources directly through link:http://localhost:8080/admin[LiveOak Admin Console] as well, but for now let's browse
 through `chat-html` application’s data created thus far.
@@ -238,7 +238,7 @@ You can determine that address by running:
 
 If you can't get to Chat web application this way, make sure you start your 'LiveOak' instance using `-b 0.0.0.0`:
 
-`$LIVEOAK/bin/standalone.sh -b 0.0.0.0`
+`$LIVEOAK_HOME/bin/standalone.sh -b 0.0.0.0`
 
 If you have a firewall enabled, make sure it permits inbound connections to port 8080 - a simple way is to temporarily turn it off.
 

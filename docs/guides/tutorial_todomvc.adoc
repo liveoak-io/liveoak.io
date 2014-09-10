@@ -24,11 +24,11 @@ the necessary 'LiveOak' services as REST endpoints.
 
 To deploy the application copy `todomvc` directory to 'LiveOak' application deployment directory:
 
-`cp -r $LIVEOAK_EXAMPLES/todomvc $LIVEOAK/apps/`
+`cp -r $LIVEOAK_EXAMPLES/todomvc $LIVEOAK_HOME/apps/`
 
 And start 'LiveOak':
 
-`$LIVEOAK/bin/standalone.sh -b 0.0.0.0`
+`$LIVEOAK_HOME/bin/standalone.sh -b 0.0.0.0`
 
 
 Point your browser to link:http://localhost:8080/todomvc[].
