@@ -20,11 +20,11 @@ For this guide we’ll use a local installation which can be downloaded from lin
 It’s very easy to get started with LiveOak.
 
 Start by unpacking the downloaded binary `.zip` or `.tgz` archive, which will create a `liveoak` directory on your disk.
-We'll refer to this directory as `$LIVEOAK`.
+We'll refer to this directory as `$LIVEOAK_HOME`.
 
 All you have to do now is run it:
 
-`$LIVEOAK/bin/standalone.sh -b 0.0.0.0`
+`$LIVEOAK_HOME/bin/standalone.sh -b 0.0.0.0`
 
 The second parameter is there to make the server socket accessible on all the network interfaces, so you can connect to LiveOak from your
  mobile device or an emulator.

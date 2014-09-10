@@ -30,11 +30,11 @@ There are two ways that the gallery application can be installed:
 +
 To deploy the application simply copy `gallery` directory to 'LiveOak' application deployment directory:
 +
-  cp -r $LIVEOAK_EXAMPLES/gallery $LIVEOAK/apps/
+  cp -r $LIVEOAK_EXAMPLES/gallery $LIVEOAK_HOME/apps/
 +
 And start 'LiveOak':
 +
- $LIVEOAK/bin/standalone.sh -b 0.0.0.0
+ $LIVEOAK_HOME/bin/standalone.sh -b 0.0.0.0
 +
 NOTE: By using -b 0.0.0.0 we make 'LiveOak' endpoints available on all network interfaces so that they can be accessed from mobile devices within your local network.
 +
@@ -42,7 +42,7 @@ NOTE: By using -b 0.0.0.0 we make 'LiveOak' endpoints available on all network i
 +
 Start LiveOak:
 +
- $LIVEOAK/bin/standalone.sh -b 0.0.0.0
+ $LIVEOAK_HOME/bin/standalone.sh -b 0.0.0.0
 +
 Point your browser to link:http://localhost:8080/admin#/example-applications[], select `Gallery` and then `Install`.
 

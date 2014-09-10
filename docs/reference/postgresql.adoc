@@ -27,7 +27,7 @@ There is also a special '_batch' endpoint for <<bulk-operations,bulk operations>
 
 PgSql service is automatically made available to applications through extensions mechanism.
 
-There is a file pgsql.json in $LIVEOAK/conf/extensions directory which triggers installation of PgSqlExtension.
+There is a file pgsql.json in $LIVEOAK_HOME/conf/extensions directory which triggers installation of PgSqlExtension.
 
 
 To make use of the extension, an application has to configure a resource of type 'pgsql' in its application.json file e.g.:

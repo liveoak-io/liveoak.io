@@ -23,23 +23,23 @@ Now stop your 'LiveOak' server if it's running.
 
 Explode the .war into `deployments` directory.
 
-`mkdir $LIVEOAK/standalone/deployments/unifiedpush-server-0.10.3.war`
+`mkdir $LIVEOAK_HOME/standalone/deployments/unifiedpush-server-0.10.3.war`
 
-`cd $LIVEOAK/standalone/deployments/unifiedpush-server-0.10.3.war`
+`cd $LIVEOAK_HOME/standalone/deployments/unifiedpush-server-0.10.3.war`
 
 `unzip ~/Downloads/unifiedpush-server-0.10.3.war`
 
 Add a dependency jar:
 
-`cp ~/Downloads/jackson-xc-1.9.13.jar $LIVEOAK/standalone/deployments/unifiedpush-server-0.10.3.war/WEB-INF/lib/`
+`cp ~/Downloads/jackson-xc-1.9.13.jar $LIVEOAK_HOME/standalone/deployments/unifiedpush-server-0.10.3.war/WEB-INF/lib/`
 
 Create .dodeploy file
 
-`touch $LIVEOAK/standalone/deployments/unifiedpush-server-0.10.3.war.dodeploy`
+`touch $LIVEOAK_HOME/standalone/deployments/unifiedpush-server-0.10.3.war.dodeploy`
 
 And finally deploy the datasource file
 
-`cp ~/Downloads/unifiedpush-h2-ds.xml $LIVEOAK/standalone/deployments/`
+`cp ~/Downloads/unifiedpush-h2-ds.xml $LIVEOAK_HOME/standalone/deployments/`
 
 
 Restart 'LiveOak', and point your browser to link:http://localhost:8080/unifiedpush-server-0.10.3[]
