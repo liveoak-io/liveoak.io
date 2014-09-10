@@ -5,7 +5,7 @@
 
 toc::[]
 
-This is a famous link:http://todomvc.com[ToDoMVC] example implemented using 'LiveOak' as a backend. It uses storage service, but
+This is a famous link:http://todomvc.com[ToDoMVC] example implemented using LiveOak as a backend. It uses storage service, but
 also demonstrates basic security configuration - creating users, and using roles to restrict access to particular task lists.
 
 
@@ -19,21 +19,38 @@ also demonstrates basic security configuration - creating users, and using roles
 
 == TodoMVC Web Application
 
-Let’s start by deploying $LIVEOAK_EXAMPLES/todomvc to 'LiveOak'. This will make static web content available, but also configure
-the necessary 'LiveOak' services as REST endpoints.
+Let’s start by deploying $LIVEOAK_EXAMPLES/todomvc to LiveOak. This will make static web content available, but also configure
+the necessary LiveOak services as REST endpoints.
 
-To deploy the application copy `todomvc` directory to 'LiveOak' application deployment directory:
+=== Installation
 
-`cp -r $LIVEOAK_EXAMPLES/todomvc $LIVEOAK_HOME/apps/`
+There are two ways that the todomvc application can be installed:
 
-And start 'LiveOak':
+1. Manually
++
+To deploy the application simply copy `todomvc` directory to LiveOak application deployment directory:
++
+  cp -r $LIVEOAK_EXAMPLES/todomvc $LIVEOAK_HOME/apps/
++
+And start LiveOak:
++
+ $LIVEOAK_HOME/bin/standalone.sh -b 0.0.0.0
++
+NOTE: By using -b 0.0.0.0 we make LiveOak endpoints available on all network interfaces so that they can be accessed from mobile devices within your local network.
++
+2. LiveOak Admin Console
++
+Start LiveOak:
++
+ $LIVEOAK_HOME/bin/standalone.sh -b 0.0.0.0
++
+Point your browser to link:http://localhost:8080/admin#/example-applications[], select `TodoMVC` and then `Install`.
 
-`$LIVEOAK_HOME/bin/standalone.sh -b 0.0.0.0`
-
+=== Usage
 
 Point your browser to link:http://localhost:8080/todomvc[].
 
-We would expect to see 'todomvc' web application. But instead we get the following screen:
+We would expect to see the 'todomvc' web application. But instead we get the following screen:
 
 image::guides/todomvc_first_login.png[TodoMVC - First Login, 75%, align="center"]
 
@@ -57,31 +74,29 @@ After successful login you find yourself on 'Applications' admin page.
 
 image::guides/admin_applications.png[LiveOak Admin - Applications, 75%, align="center"]
 
-Click `Edit Settings` icon button. Application currently has no Roles configured.
+Select `todomvc` application to open the dashboard, then select the `Security` icon in the left sidebar and select the `Roles` tab. Application currently has no Roles configured.
 
-image::guides/admin_application_settings.png[LiveOak Admin - Application Settings, 75%, align="center"]
+image::guides/todomvc_security_roles.png[LiveOak Admin - Application Settings, 75%, align="center"]
 
-Use `Add Role` button to add two roles named `admin`, and `user`.
+Use `New Role` button to add two roles named `admin`, and `user`.
 
 Then make `user` role active by default for new users.
 
-image::guides/admin_application_settings_toggle_default_role.png[LiveOak Admin - Toggle default role, 75%, align="center"]
+image::guides/todomvc_security_roles_toggle_default_role.png[LiveOak Admin - Toggle default role, 75%, align="center"]
 
-Click `Save` and switch from `General Settings` section to `Clients` section.
+Switch from `Security` to `Clients` in left sidebar.
 
-image::guides/admin_application_clients.png[LiveOak Admin - Application Clients, 75%, align="center"]
+image::guides/todomvc_application_clients.png[LiveOak Admin - Application Clients, 75%, align="center"]
 
-Use `Add Client` button to add a new client configuration.
+Use `New Client` button to add a new client configuration.
 
-image::guides/admin_application_new_client.png[LiveOak Admin - New Application Client, 75%, align="center"]
+image::guides/todomvc_application_clients_new.png[LiveOak Admin - New Application Client, 75%, align="center"]
 
 Set `todomvc-html-client` as a 'Client Name'.
 
 For 'Platform' click `HTML5` icon.
 
-Specify a single 'Redirect URI': `http://localhost:8080/todomvc/*`, and use the suggested value for 'Web Origins'.
-
-Make sure to click 'Add' for these two.
+Specify a single 'Redirect URI': `http://localhost:8080/todomvc/*`, and specify `http://localhost:8080` for 'Web Origins'.
 
 Finally, check both `admin`, and `user` role for 'Scope'. And click `Save`.
 
@@ -96,27 +111,15 @@ register as a regular user - one with `user` role automatically assigned.
 
 But we want to create an 'admin' user for our application first.
 
-Let's login to link:http://localhost:8080/auth[KeyCloak Admin Console] at link:http://localhost:8080/auth[]
+Let's go back to the link:http://localhost:8080/admin[LiveOak Admin Console] and open the `Security` section for `todomvc`.
 
-image::guides/keycloak_admin.png[KeyCloak Admin Console, 75%, align="center"]
+Select the `Users` tab
 
-Select `Administration Console`, then use `admin` as username - the same as for link:http://localhost:8080/admin[LiveOak Admin Console].
+image::guides/todomvc_security_users.png[LiveOak Admin Console - Users, 75%, align="center"]
 
-When logged in select `liveoak-apps` realm in top navigation.
+And use `New User` button to create a new user. Enter new 'Username', a temporary password and click `Save`. The user will have to change the password on a first login.
 
-image::guides/keycloak_admin_apps.png[KeyCloak Admin Console, 75%, align="center"]
-
-Now go to `Users` section
-
-image::guides/keycloak_admin_app_users.png[KeyCloak Admin Console - Users, 75%, align="center"]
-
-And use `Add User` button to create a new user. Enter new 'Username' and click `Save`.
-
-image::guides/keycloak_admin_add_user.png[KeyCloak Admin Console - Add User, 75%, align="center"]
-
-Then switch to `Credentials` tab, and specify a temporary password. The user will have to change the password on a first login.
-
-image::guides/keycloak_admin_reset_password.png[KeyCloak Admin Console - Reset Password, 75%, align="center"]
+image::guides/todomvc_security_users_add.png[LiveOak Admin Console - Add User, 75%, align="center"]
 
 At this point our user `bob` can login to link://localhost:8080/todomvc[], and access the web application.
 
@@ -128,25 +131,19 @@ Thus far `bob` is a regular user, which means he can create new todo items, and 
 
 We can make him an 'admin' which will allow him full access to any other user's items as well.
 
-Let's go back to link:http://localhost:8080/auth/admin[KeyCloak Admin Console] again, and go to `Users` section of `liveoak-apps` realm, and click `View all users` to
-list all current users.
+Let's go back to link:http://localhost:8080/admin[LiveOak Admin Console] again, and go to `Users` tab of `Security` for `todomvc`.
+`bob` will be present in the list of users.
 
-image::guides/keycloak_view_all_users.png[KeyCloak Admin Console - View all users, 75%, align="center"]
+image::guides/todomvc_security_users_all.png[LiveOak Admin Console - View all users, 75%, align="center"]
 
-Select `bob`, and switch to `Role Mappings` tab.
+Select `bob` to edit the user, and select `user` and `admin` for `Roles`. Click `Save`.
 
-image::guides/keycloak_role_mappings.png[KeyCloak Admin Console - Role Mappings, 75%, align="center"]
-
-Under 'Application Roles' select `todomvc`.
-
-Then move `admin` from 'Available Roles' list to 'Assigned Roles' list.
-
-image::guides/keycloak_assigned_roles.png[KeyCloak Admin Console - Assigned Roles, 75%, align="center"]
+image::guides/todomvc_security_users_roles.png[LiveOak Admin Console - Assigned Roles, 75%, align="center"]
 
 While here, repeat the steps, and create two more users. User `john` which should only have `user` role assigned,
 and user `alice` which should have no roles assigned at all - i.e. should have a default `user` role removed from 'Assigned Roles' list.
 
-Don't forget to set their temporary passwords via `Credentials` tab.
+Don't forget to set their temporary passwords.
 
 
 Now, let's login to link:http://localhost:8080/todomvc[TodoMVC] as user `bob` again, and create one todo item.
@@ -176,7 +173,7 @@ Since `alice` has no roles, she has no access to application functions, even tho
 link:http://cordova.apache.org[Cordova] is an open source project under the umbrella of Apache organization, that provides
 a framework for using HTML5, CSS, and JavaScript to create cross-platform native mobile applications.
 
-We’ll build and run `$LIVEOAK_EXAMPLES/todomvc-cordova` example to demonstrate how to use 'Cordova' for mobile client, and 'LiveOak' for a server.
+We’ll build and run `$LIVEOAK_EXAMPLES/todomvc-cordova` example to demonstrate how to use 'Cordova' for mobile client, and LiveOak for a server.
 
 For server endpoints we’ll depend on `todomvc` HTML application from previous chapter, so make sure to first get that one
 up and running.

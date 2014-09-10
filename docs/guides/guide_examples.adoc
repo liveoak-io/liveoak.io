@@ -84,10 +84,42 @@ image::guides/todomvc_android_todos.png[TodoMVC Android - Todos, 75%, align="cen
 {empty}
 
 
+=== Business Logic
+
+Various example applications that can be used to see the functionality provided by LiveOak Business Logic.
+
+==== link:https://github.com/liveoak-io/liveoak-examples/tree/master/scripting/helloscript[Hello Script]
+
+Basic example of Business Logic showing how to access the request and response objects within Javascript.
+
+
+==== link:https://github.com/liveoak-io/liveoak-examples/tree/master/scripting/formatscript[Format Script]
+
+Shows how Business Logic can be used to enforce a specific format for data storage requests. It will validate the format
+of data within the request and throw an exception if it is not appropriate.
+
+
+==== link:https://github.com/liveoak-io/liveoak-examples/tree/master/scripting/metadatascript[Metadata Script]
+
+Adds `last-modified-by` and `last-modified-at` to the data being created or updated as part of the request. The Business Logic
+also removes these metadata properties from the response if the user role is not `admin` by accessing the security context of the request.
+
+
+==== link:https://github.com/liveoak-io/liveoak-examples/tree/master/scripting/useragentsscript[UserAgent Script]
+
+Business Logic script to retrieve the UserAgent information from the request and update a counter, within a separate LiveOak Resource
+from the one receiving the request, showing how many times a UserAgent has made requests to the Resource.
+
+
+==== link:https://github.com/liveoak-io/liveoak-examples/tree/master/scripting/ephemeralscript[Ephemeral Script]
+
+Business Logic to make entries within a collection non-editable, but also remove them as soon as they have been read by anyone that is not
+in the `admin` role.
+
 
 === Various
 
 ==== link:https://github.com/liveoak-io/liveoak-examples/tree/master/auth[Authentication]
 
-Demonstrates some basic functionality related to authentication between Keycloak LiveOak. It's simple Javascript application, which can be used to login into Keycloak
+Demonstrates some basic functionality related to authentication between Keycloak and LiveOak. It's simple Javascript application, which can be used to login into Keycloak
 and obtain OAuth access token in JWT format from Keycloak.

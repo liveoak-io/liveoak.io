@@ -19,7 +19,7 @@ Also download a dependency .jar that's required to get it all working inside Liv
 `curl http://search.maven.org/remotecontent?filepath=org/codehaus/jackson/jackson-xc/1.9.13/jackson-xc-1.9.13.jar -o ~/Downloads/jackson-xc-1.9.13.jar`
 
 
-Now stop your 'LiveOak' server if it's running.
+Now stop your LiveOak server if it's running.
 
 Explode the .war into `deployments` directory.
 
@@ -42,7 +42,7 @@ And finally deploy the datasource file
 `cp ~/Downloads/unifiedpush-h2-ds.xml $LIVEOAK_HOME/standalone/deployments/`
 
 
-Restart 'LiveOak', and point your browser to link:http://localhost:8080/unifiedpush-server-0.10.3[]
+Restart LiveOak, and point your browser to link:http://localhost:8080/unifiedpush-server-0.10.3[]
 
 image::guides/ups_login.png[AeroGear UnifiedPush Server, 75%, align="center"]
 

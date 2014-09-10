@@ -5,10 +5,10 @@
 
 toc::[]
 
-'LiveOak' comes with a set of examples, that demonstrate how to develop web, and mobile applications using 'LiveOak' services.
+LiveOak comes with a set of examples, that demonstrate how to develop web, and mobile applications using LiveOak services.
 Chat application comes in two forms - as a simple web application, and as an Android native mobile application.
 
-Both of these are non-trivial applications in terms of backend services they use, but with 'LiveOak' these services are provided out-of-the-box.
+Both of these are non-trivial applications in terms of backend services they use, but with LiveOak these services are provided out-of-the-box.
 The developer only has to configure the services, and use them. There is no application specific server-side code involved. That means the
 developer can focus on the client where interaction with the user happens, while the server part is already done.
 
@@ -19,15 +19,38 @@ to get notifications about new content, cloud messaging push service, and basic 
 
 == Chat HTML Application
 
-This is a perfect application to try out 'LiveOak' server and start exploring its capabilities.
+This is a perfect application to try out LiveOak server and start exploring its capabilities.
 
+=== Installation
 
-Let’s start by unpacking 'LiveOak' examples .zip archive from link:http://liveoak.io/downloads[LiveOak Downloads page].
+There are two ways that the chat html application can be installed:
+
+1. Manually
++
+Start by unpacking LiveOak examples .zip archive from link:http://liveoak.io/downloads[LiveOak Downloads page].
 That will create a directory called `liveoak-examples` which we'll refer to as $LIVEOAK_EXAMPLES.
++
+Copy `$LIVEOAK_EXAMPLES/chat/chat-html` directory to `$LIVEOAK_HOME/apps` directory - next to existing `admin`:
++
+  cp -r $LIVEOAK_EXAMPLES/chat/chat-html $LIVEOAK_HOME/apps/
++
+And start LiveOak:
++
+ $LIVEOAK_HOME/bin/standalone.sh -b 0.0.0.0
++
+NOTE: By using -b 0.0.0.0 we make LiveOak endpoints available on all network interfaces so that they can be accessed from mobile devices within your local network.
++
+2. LiveOak Admin Console
++
+Start LiveOak:
++
+ $LIVEOAK_HOME/bin/standalone.sh -b 0.0.0.0
++
+Point your browser to link:http://localhost:8080/admin#/example-applications[], select `HTML Chat` and then `Install`.
 
-Copy `$LIVEOAK_EXAMPLES/chat/chat-html` directory to `$LIVEOAK_HOME/apps` directory - next to existing `admin`.
+=== Usage
 
-Restart 'LiveOak' server (use CTRL-C), and visit link:http://localhost:8080[] again.
+Visit link:http://localhost:8080[] again.
 
 You should now see a new application next to `admin` in the application list. Click on it.
 
@@ -40,15 +63,15 @@ Open the url in another window, side by side with the first, type some text in t
 You should see the sent text display in both windows instantly.
 
 `chat-html` is a link:https://en.wikipedia.org/wiki/Single-page_application[single page web application] - it provides static html,
-javascript, and css content which is served by 'LiveOak' as simple static files. This is configured through
+javascript, and css content which is served by LiveOak as simple static files. This is configured through
 link:https://raw.githubusercontent.com/liveoak-io/liveoak-examples/master/chat/chat-html/application.json[application.json] configuration
-file which instructs 'LiveOak' what ready-made services to expose through REST for this application.
+file which instructs LiveOak what ready-made services to expose through REST for this application.
 
 Serving of static files is one of these services. Another one is persistent storage backed by `MongoDB`.
 
 Keep in mind that `chat-html` doesn’t contain any application specific server-side logic - all the javascript files are for client browser,
 not for the server, yet the application stores chat messages on the server, and broadcasts content updates to other clients through server.
-All thanks to out-of-the-box services that 'LiveOak' provides.
+All thanks to out-of-the-box services that LiveOak provides.
 
 We can use link:http://localhost:8080/admin[LiveOak Admin Console] to configure application resources, and browse application data on the server.
 Let’s go to link:http://localhost:8080/admin[]
@@ -89,7 +112,7 @@ You can find latest sources for `chat-html` on link:https://github.com/liveoak-i
 == Chat Android Application
 
 
-Demo application we deployed to 'LiveOak' in a previous chapter configured 'LiveOak' services to provide REST endpoints for `chat-html`.
+Demo application we deployed to LiveOak in a previous chapter configured LiveOak services to provide REST endpoints for `chat-html`.
 
 We will create another mobile application that will communicate with those same server endpoints, but will run as a native application on Android.
 
@@ -98,7 +121,7 @@ GCM is natively supported on most Android devices, and allows native application
 had no data connectivity, or was turned off when messages were sent to it. It also makes it possible for a native application to be
 ‘woken up’ when a message arrives - even if an application may not be running at that moment.
 
-'LiveOak' provides the necessary REST endpoints for message dispatching. It uses link:http://aerogear.org/push[AeroGear UnifiedPush Server]
+LiveOak provides the necessary REST endpoints for message dispatching. It uses link:http://aerogear.org/push[AeroGear UnifiedPush Server]
 component to perform the actual native cloud messaging dispatch. link:http://aerogear.org/push[AeroGear UnifiedPush Server] supports
 not only GCM, but also link:https://en.wikipedia.org/wiki/Apple_Push_Notification_Service[Apple Push Notification Service],
 and in the future possibly other cloud messaging providers. That makes it possible to dispatch messages to many different native platforms
@@ -107,13 +130,13 @@ without having to write, and deploy as much as a single line of application spec
 
 === Installing AeroGear UnifiedPush Server (UPS)
 
-In this tutorial we assume that 'AeroGear UnifiedPush Server' is installed into 'LiveOak' server, and listens at link:http://localhost:8080/unifiedpush-server-0.10.3[].
+In this tutorial we assume that 'AeroGear UnifiedPush Server' is installed into LiveOak server, and listens at link:http://localhost:8080/unifiedpush-server-0.10.3[].
 
 Follow the link:/docs/guides/installing_ups[instructions here] to download, and install 'AeroGear UPS' so that it can be accessed this way.
 
 This is not the only way to install 'AeroGear UPS'. It could live in its own application server instance on a different port, and a different URL.
- It could be deployed on OpenShift, and used that way. 'LiveOak' can use 'AeroGear UPS' regardless of its host, or port as long as
- its REST APIs are accessible. But deploying it differently than into 'LiveOak' server may make it more difficult for you to follow this
+ It could be deployed on OpenShift, and used that way. LiveOak can use 'AeroGear UPS' regardless of its host, or port as long as
+ its REST APIs are accessible. But deploying it differently than into LiveOak server may make it more difficult for you to follow this
  tutorial, as all the URLs referring to 'AeroGear UPS' will be incorrect.
 
 Before continuing, make sure that you have followed the instructions to configure a 'Google Cloud Messaging' application via 'Google Developers Console'.
@@ -144,7 +167,7 @@ image::guides/ups_chat_add_variant.png[AeroGear UPS Add Variant, 75%, align="cen
 Thus far we have configured GCM support in link:https://console.developers.google.com/project[Google Developers Console],
 and configured link:http://localhost:8080/unifiedpush-server-0.10.3[AeroGear UnifiedPush Server] to use Google’s GCM services for our application.
 
-We still have to configure our `chat-html` 'LiveOak' application to talk to link:http://localhost:8080/unifiedpush-server-0.10.3[AeroGear UPS].
+We still have to configure our `chat-html` LiveOak application to talk to link:http://localhost:8080/unifiedpush-server-0.10.3[AeroGear UPS].
 
 
 === Setting Up Chat App in LiveOak
@@ -229,14 +252,14 @@ Look for a green application icon with a title 'LiveOak Chat'
 Most likely reason is that the application can't connect to the server. Try the following steps to resolve connectivity issues.
 
 Open a web browser on your device, and point it to link:http://IP_ADDRESS:8080/chat-html[] where `IP_ADDRESS` is a local
-network address where your 'LiveOak' instance is running.
+network address where your LiveOak instance is running.
 
 You can determine that address by running:
 
 `ifconfig`
 
 
-If you can't get to Chat web application this way, make sure you start your 'LiveOak' instance using `-b 0.0.0.0`:
+If you can't get to Chat web application this way, make sure you start your LiveOak instance using `-b 0.0.0.0`:
 
 `$LIVEOAK_HOME/bin/standalone.sh -b 0.0.0.0`
 
@@ -263,7 +286,7 @@ link:https://console.developers.google.com/project[Google Developers Console] to
 
 Try to completely uninstall any previous version of 'LiveOak Chat' from your device / emulator, and reinstall it again.
 
-Chat application uses 'Google Cloud Messaging' (GCM) to receive messages from 'LiveOak' server. It uses `aerogear-android` library
+Chat application uses 'Google Cloud Messaging' (GCM) to receive messages from LiveOak server. It uses `aerogear-android` library
 which caches some GCM related information that may become invalid when application is reconfigured through 'LiveOak UPS Admin'.
 
 Uninstalling, and reinstalling the application will clean any such information.

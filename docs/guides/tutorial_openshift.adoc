@@ -9,7 +9,7 @@ toc::[]
 
 The following instructions assume that you have an account with OpenShift Online (https://openshift.redhat.com). If you are running your own OpenShift Origin server you may need to slightly modify things like URLs to match your own environment.
 
-If you are planning on trying out the examples, it is highly recommended to call your gear +'liveoak'+ and to install the examples quickstart. Otherwise the examples will require some more manual steps to configure.
+If you are planning on trying out the examples, it is highly recommended to call your gear +LiveOak+ and to install the examples quickstart. Otherwise the examples will require some more manual steps to configure.
 
 There are two main ways to install the OpenShift LiveOak Cartridge: through the OpenShift Console or through the RHC command line tool.
 
@@ -52,7 +52,7 @@ http://cartreflect-claytondev.rhcloud.com/github/liveoak-io/openshift-liveoak-ca
 
 {empty} +
 
-* On the next page you will need to give your gear a name to be accessed as a public URL. We recommend using 'liveoak' here as the examples are already configured to use that.
+* On the next page you will need to give your gear a name to be accessed as a public URL. We recommend using LiveOak here as the examples are already configured to use that.
 
 image::guides/openshift/openshift_create_gear.png[Openshift Console Screenshot]
 {empty} +
@@ -116,7 +116,7 @@ As a BaaS, LiveOak is meant to manage the backend of your application. In the st
 
 For these examples it is expected that the LiveOak examples quickstart was used when creating your liveoak gear. If not, you will need to check out the git repo for your LiveOak gear, add the example configurations from the example quickstart (https://github.com/liveoak-io/openshift-liveoak-examples-quickstart) and then commit those changes to your gear. This will cause your gear to be shutdown, the examples deployed and the gear restarted.
 
-The examples assume that the name of your gear running LiveOak is called 'liveoak' and that your example gears and liveoak gears are installed under the same account. The README.md for the example quickstarts will explain how to configure the examples if your LiveOak is running at a different URL.
+The examples assume that the name of your gear running LiveOak is called LiveOak and that your example gears and liveoak gears are installed under the same account. The README.md for the example quickstarts will explain how to configure the examples if your LiveOak is running at a different URL.
 
 For the example quickstarts, a small gear should be more than enough.
 
