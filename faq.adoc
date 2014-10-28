@@ -36,10 +36,8 @@ easily and deploy them within an instance of LiveOak.
 
 == How mature is LiveOak?
 
-LiveOak is pretty nascent at the moment.  Being a Red Hat
-project, we prefer to be as open as possible, as early as
-possible. Thus, at the current moment, LiveOak has few
-services and hasn't been battle-tested.
+LiveOak is maturing with every release, focusing on Mobile Data
+related functionality for the initial releases.
 
 You can currently choose to play with LiveOak by building it
 from source, for the most up to date, or by downloading
@@ -90,7 +88,7 @@ synchronous programming models, this requires threads to be
 blocked, ready-and-waiting to shovel some data to or from the
 client.  Each thread has a cost.
 
-Using asynchronous libraries, such as Netty and Vert.x,
+Using asynchronous libraries, such as Netty,
 LiveOak can reduce this overhead, and easily support many
 thousands of idle connections without becoming overloaded.
 
