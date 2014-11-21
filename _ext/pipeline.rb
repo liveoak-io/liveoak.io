@@ -1,12 +1,8 @@
-require 'zurb-foundation'
+require 'bootstrap-sass'
 
 Awestruct::Extensions::Pipeline.new do
-  extension Awestruct::Extensions::Posts.new '/blog'
-  extension Awestruct::Extensions::Paginator.new :posts, '/blog'
-  extension Awestruct::Extensions::Indexifier.new( [ /^\/docs\/reference\/scripting\/javascript\/out\/.*$/ ] )
-  helper Awestruct::Extensions::Partial
+  # extension Awestruct::Extensions::Posts.new '/news'
+  # extension Awestruct::Extensions::Indexifier.new
   # Indexifier *must* come before Atomizer
-  extension Awestruct::Extensions::Atomizer.new :posts, '/blog.atom'
-  helper Awestruct::Extensions::GoogleAnalytics
-
+  # extension Awestruct::Extensions::Atomizer.new :posts, '/feed.atom'
 end

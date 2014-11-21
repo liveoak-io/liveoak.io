@@ -1,52 +1,27 @@
 ---
 layout: base
 ---
+.hero-unit
+  %h1 You're awestruct!
+  %p This site is all setup to use Bootstrap 2 with Awestruct.
+  %p
+    %a.btn.btn-primary.btn-large{ :href=>'http://awestruct.org' }
+      %i.icon-info-sign.icon-white
+      Learn more &raquo;
 .row
-  .large-4.columns{:style=>'background:url("/images/tree.png") right center no-repeat'}
-    %h1 LiveOak
-    %h1.subheader Backend as a Service
-  .large-8.columns.right
-    .panel
-      %p
-        LiveOak is a backend-as-a-service stack that simplifies
-        development for mobile and standard web clients. Its goal
-        is to enable client-side access to traditional backend
-        services without having to write server-side code.
-      %p
-        LiveOak's fundamental architectural approach is REST to
-        the core. LiveOak provides publish/subscribe,
-        push-to-the-mobile-client, and REST-based APIs to shuffle data between
-        mobile handsets, traditional desktops, and other servers in a local
-        cluster or in the cloud.
-
-.row
-  .large-4.columns
-    %h3 Services
+  .span4
+    %h2 About
+    %p Awestruct is a framework for creating static HTML sites. It's inspired by the awesome Jekyll utility in the same genre.
+    %p Additionally, Awestruct integrates technologies such as Compass, Markdown and Haml.
     %p
-      LiveOak is a set of backend enterprise services, soon to include user
-      management, data storage, blob storage, real-time push, push
-      notifications via APNS/GCM, and analytics.
+      %a.btn{ :href=>'http://awestruct.org' } View details &raquo; 
+  .span4
+    %h2 Goal
+    %p The goal of Awestruct is to make it trivially easy to bake out non-trivial static websites. In addition to providing template-driven site creation (using Haml), Awestruct provides facilities for easily priming the site creation with additional non-page data.
     %p
-      %a.button{:href=>'/services'} View details &raquo;
-
-  .large-4.columns
-    %h3 Languages
+      %a.btn{ :href=>'http://awestruct.org' } View details &raquo; 
+  .span4
+    %h2 Concept
+    %p The core concept of Awestruct is that of structures, specifically Ruby OpenStruct structures. The struct aspect allows arbitrary, schema-less data to be associated with a specific page or the entire site.
     %p
-      LiveOak applications are targeted to the JVM on the server side
-      and applications can be written in multiple languages, including
-      Java, JavaScript, Objective-C, and Android Java.
-    %p
-      %a.button{:href=>'/languages'} View details &raquo;
-
-  .large-4.columns
-    %h3 Integrations
-    %p
-      LiveOak builds on top of other technologies.
-      %a{:href=>'http://www.wildfly.org/'}WildFly
-      as an underlying container. Embedded
-      %a{:href=>'http://keycloak.jboss.org/'}KeyCloak
-      server for security.
-      %a{:href=>'http://aerogear.org/push/'}AeroGear Unified Push Server
-      for native push on mobile devices.
-    %p
-      %a.button{:href=>'/integrations'} View details &raquo;
+      %a.btn{ :href=>'http://awestruct.org' } View details &raquo; 
