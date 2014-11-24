@@ -1,0 +1,446 @@
+@import "bootstrap/bootstrap.less";
+
+// Font
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
+@import url(http://fonts.googleapis.com/css?family=Exo+2:400,300,600);
+
+// JBoss tab
+@import url(http://static.jboss.org/css/tabzilla.css);
+
+@font-family-sans-serif: 'Open Sans', sans-serif;
+@font-family-exo: 'Exo 2', sans-serif;
+
+@font-weight-light: 300;
+@font-weight-regular: 400;
+@font-weight-bold: 600;
+
+@primary-color:                   #4CAF50;//500
+@primary-color-dark:              #388E3C;//700
+@primary-color-light:             #A5D6A7;//200
+@accent-color:                    #FF9800;//orange 500
+
+@gray-divider:                    #ddd;
+@gray-subtitle:                   #999;
+@gray-text:                       #484848;
+
+@brand-primary: @primary-color;
+
+@zindex-sub-navbar:               900;
+
+@headings-font-weight: @font-weight-regular;
+
+@btn-default-color:               @primary-color-light;
+@btn-default-bg:                  @primary-color-dark;
+@btn-default-border:              @primary-color-dark;
+
+
+//helpers ==================================================================
+.reset{
+  margin: 0;
+  padding: 0;
+}
+
+
+//general stuff ==================================================================
+
+body{
+  margin-top: 60px;
+  font-weight: @font-weight-light;
+  font-family: @font-family-exo;
+  color: @gray-text;
+}
+
+.alt{
+  color: @gray-subtitle;
+}
+
+.section-header{
+  color: @primary-color;
+  text-transform: uppercase;
+  font-weight: @font-weight-light;
+  border-bottom: 1px solid @gray-divider;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  margin-top: 0;
+}
+
+strong{
+  font-weight: @font-weight-bold;
+}
+
+section{
+  padding: 30px 0;
+}
+
+footer{
+  padding: 60px 0;
+}
+
+
+//NavBar ==================================================================
+
+
+// Basics of a navbar
+@navbar-height:                             66px;
+
+.navbar {
+  border: none;
+  box-shadow: 0 0 4px rgba(0,0,0,.3);
+  background-color: #fff;
+
+  a {
+    color: @gray-subtitle;
+    font-weight: @font-weight-bold;
+
+    &:hover {
+      color: @primary-color-dark;
+    }
+  }
+
+  li.active a {
+    color: @primary-color;
+  }
+}
+
+.navbar-brand {
+  background: url(../imgs/liveoak-logo.svg) no-repeat 15px center;
+  text-indent: -999999px;
+  margin-top: 8px;
+  margin-right: 15px;
+  .size(65px; 50px);
+}
+
+.navbar-toggle {
+  border-color: @gray-subtitle;
+
+  .icon-bar {
+    background-color: @gray-subtitle;
+  }
+}
+
+@dropdown-link-hover-bg:         #eee;
+@dropdown-link-color:            @gray-subtitle;
+@dropdown-link-hover-color:      @primary-color-dark;
+
+.dropdown-menu li a {
+  line-height: 1.5714285714;
+}
+
+
+//Main Banner ==================================================================
+
+
+.main-banner{
+  background: #3f9250 url(../imgs/banner-bg.jpg) repeat-x left top;
+  color: #fff;
+  text-align: center;
+  padding: 75px 0;
+
+  @media (max-width: 640px) {
+    padding: 40px 0;
+  }
+
+
+  h1{
+    font-size: 60px;
+    font-weight: @font-weight-light;
+    margin-bottom: 50px;
+    line-height: 1.1;
+    margin-top: 0;
+    text-shadow: 0px 3px 5px rgba(0,0,0,0.15);
+
+    @media (max-width: @screen-sm-max) { /* 991px */
+      font-size: 56px;
+    }
+
+    @media (max-width: @screen-xs-max) { /* 767px */
+      margin-left: 15px;
+      margin-right: 15px;
+      margin-top: 5px;
+      font-size: 48px;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 640px) {
+      font-size: 36px;
+      margin-bottom: 25px;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    span {
+      @media (min-width: @screen-sm-min) { /* 768px */
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .buttons {
+    margin-bottom: 10px;
+
+    .btn-lg {
+      font-size: 20px;
+      border: 2px solid #fff;
+      width: 215px;
+      padding: 14px;
+      opacity: 0.9;
+      margin-right: 7px;
+      margin-left: 7px;
+      margin-bottom: 10px;
+
+      &.btn-primary {
+        background-color: #fff;
+        color: @primary-color;
+      }
+
+      &.btn-default {
+        background-color: transparent;
+        border-color: #fff;
+        color: #fff;
+      }
+
+      &:hover {
+        opacity: 1;
+        -webkit-transition: 0.1s linear;
+        -moz-transition: 0.1s linear;
+        transition: 0.1s linear;
+      }
+    }
+  }
+
+  .version {
+    color: rgba(255,255,255,0.5);
+    font-size: 14px;
+    font-style: normal;
+
+    .fa {
+      margin-right: 5px;
+    }
+  }
+}
+
+
+//.boxes ==================================================================
+
+.boxes {
+  padding-top: 1px;
+  padding-bottom: 0;
+
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .box {
+    padding: 0;
+
+    .content {
+      #gradient > .vertical(#f5f5f5; #e2e2e2);
+      border: 1px solid #fff;
+      height: 200px;
+      text-align: center;
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: auto 200px;
+    }
+
+    &#server-side .content {
+      background-image: url(../imgs/box-server.jpg);
+
+      @media only screen and (-Webkit-min-device-pixel-ratio: 1.5),
+      only screen and (-moz-min-device-pixel-ratio: 1.5),
+      only screen and (-o-min-device-pixel-ratio: 3/2),
+      only screen and (min-device-pixel-ratio: 1.5) {
+        background-image: url(../imgs/box-server@2x.jpg);
+      }
+    }
+
+    &#services .content {
+      background-image: url(../imgs/box-services.jpg);
+
+      @media only screen and (-Webkit-min-device-pixel-ratio: 1.5),
+      only screen and (-moz-min-device-pixel-ratio: 1.5),
+      only screen and (-o-min-device-pixel-ratio: 3/2),
+      only screen and (min-device-pixel-ratio: 1.5) {
+        background-image: url(../imgs/box-services@2x.jpg);
+      }
+    }
+
+    &#cloud .content {
+      background-image: url(../imgs/box-cloud.jpg);
+
+      @media only screen and (-Webkit-min-device-pixel-ratio: 1.5),
+      only screen and (-moz-min-device-pixel-ratio: 1.5),
+      only screen and (-o-min-device-pixel-ratio: 3/2),
+      only screen and (min-device-pixel-ratio: 1.5) {
+        background-image: url(../imgs/box-cloud@2x.jpg);
+      }
+    }
+
+    h3 {
+      font-size: 20px;
+      margin-top: 20px;
+      margin-bottom: 2px;
+
+      @media (max-width: @screen-sm-max) { /* 991px */
+        font-size: 18px;
+      }
+
+    }
+
+    p, a {
+      font-size: 14px;
+    }
+
+    p {
+      color: @gray-subtitle;
+    }
+  }
+}
+
+
+//.description ==================================================================
+
+.description {
+  background: url(../imgs/home-separator.png) no-repeat center bottom;
+  background-size: 100% 1px;
+}
+
+.description p {
+  font-size: 20px;
+  line-height: 1.6;
+  text-align: center;
+  padding: 0 20%;
+  margin: 5px 0;
+
+  @media (max-width: @screen-md-max) { /* 1199px */
+    padding: 0 14%;
+  }
+
+  @media (max-width: @screen-sm-max) { /* 991px */
+    padding: 0 30px;
+  }
+
+  @media (max-width: @screen-xs-max) { /* 768px */
+    padding: 0 15px;
+    font-size: 16px;
+  }
+
+}
+
+
+//.features ==================================================================
+
+.main-features {
+
+  h2 {
+    font-size: 36px;
+    font-weight: @font-weight-light;
+    text-align: center;
+    margin-bottom: 50px;
+
+    @media (max-width: @screen-xs-max) { /* 768px */
+      font-size: 30px;
+      margin-bottom: 40px;
+      margin-top: 10px;
+    }
+  }
+
+  ul {
+    padding-left: 0;
+
+    li {
+      list-style: none;
+      text-align: center;
+      margin-bottom: 30px;
+
+      .fa {
+        font-size: 40px;
+      }
+
+      h4 {
+        font-size: 16px;
+        font-weight: @font-weight-bold;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+
+//submenu ==================================================================
+
+
+.docs{
+  .col-md-6{
+    margin-bottom: 30px;
+  }
+}
+
+.sidebar{
+  @media (min-width: @screen-md-min) {
+    position: sticky; top: 130px;
+  }
+}
+
+.submenu{
+
+  //main titles
+  h5{
+    text-transform: uppercase;
+    font-weight: @font-weight-light;
+    a{
+      color: @primary-color-light;
+      display: block;
+    } //a
+    &.active a{
+      color: @accent-color;
+    }
+  }//h5
+
+  ul{
+    .reset;
+    list-style: none;
+
+    a{
+      display: block;
+      padding: 5px 0;
+      border-right: 2px solid #fff;
+    }
+
+    li{
+      &.active>a{
+        border-right: 2px solid @accent-color;
+        color: @accent-color
+      }
+    }
+
+    .menu-title>a{
+      font-weight: @font-weight-bold;
+      color: @primary-color-dark;
+    }
+
+    ul{
+      padding-left: 10px;
+    }
+
+  }//ul
+}
+
+
+//RedHat logo ==================================================================
+
+.redhat{
+  background: #333;
+}
+
+
+//JBoss banner ==================================================================
+
+.dropup {
+  margin-top: 6px!important;
+}
+
+#tabnav-panel.tabnav-opened {
+  margin-bottom: -7px;
+}

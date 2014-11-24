@@ -31,3 +31,4 @@ asciidoctor:
     sectanchors: ''
     linkattrs: ''
     source-highlighter: highlight.js
+    imagesdir: /imgs
