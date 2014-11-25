@@ -7,6 +7,13 @@ new features.
 
 === Code
 
+Being an open source project, we love contributors. If you would like to be a part of
+the LiveOak project, all it takes to get started is checking out the code from:
+
+https://github.com/liveoak-io/liveoak[https://github.com/liveoak-io/liveoak.git]
+
+Details on the process of contributing can be found in the project https://github.com/liveoak-io/liveoak/blob/master/README.md[README].
+
 === Website
 
 This website is built with http://awestruct.org/[Awestruct], http://getbootstrap.com/[Bootstrap],
@@ -15,10 +22,7 @@ and http://asciidoctor.org/[Asciidoctor].
 As the LiveOak website is also a community effort, which can be improved by anyone, you can checkout
 the entire website:
 
-[source]
---
-https://github.com/liveoak-io/liveoak.io
---
+https://github.com/liveoak-io/liveoak.io[https://github.com/liveoak-io/liveoak.io.git]
 
 === Issues
 
@@ -51,17 +55,11 @@ functionality, design and architecture.
 
 To subscribe directly to the LiveOak Developer mailing list, send an empty message to:
 
-[source]
---
-dev-subscribe@liveoak.io
---
+mailto:dev-subscribe@liveoak.io[]
 
 To unsubscribe from the LiveOak Developer mailing list, send an empty message to:
 
-[source]
---
-dev-unsubscribe@liveoak.io
---
+mailto:dev-unsubscribe@liveoak.io[]
 
 ===== Issues List
 
@@ -70,24 +68,17 @@ with this list, so we only send a notification on creation of a new issue.
 
 To subscribe directly to the LiveOak Issues mailing list, send an empty message to:
 
-[source]
---
-issues-subscribe@liveoak.io
---
+mailto:issues-subscribe@liveoak.io[]
 
 To unsubscribe from the LiveOak Issues mailing list, send an empty message to:
 
-[source]
---
-issues-unsubscribe@liveoak.io
---
+mailto:issues-unsubscribe@liveoak.io[]
 
 ===== Archives
 
 Archives of the Developer and Issues lists can be found at Nabble, which also provides
 an alternative way of reading, posting, and subscribing to our lists:
 
-[source]
---
 http://mail-archive.liveoak.io/
---
+
+{nbsp}
