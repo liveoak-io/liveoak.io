@@ -14,6 +14,8 @@ https://github.com/liveoak-io/liveoak[https://github.com/liveoak-io/liveoak.git]
 
 Details on the process of contributing can be found in the project https://github.com/liveoak-io/liveoak/blob/master/README.md[README].
 
+The current build status of LiveOak can be viewed link:builds[here].
+
 === Website
 
 This website is built with http://awestruct.org/[Awestruct], http://getbootstrap.com/[Bootstrap],

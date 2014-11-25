@@ -1,0 +1,19 @@
+---
+layout: two_column
+title: CI Builds
+---
+%p
+  Keep up with the latest builds from our CI server.
+.row
+  %table#builds
+    %tr
+      %th
+        Build
+      %th
+        When
+      %th
+        Status
+      %th
+        Commit
+
+%script{ :src=>"#{site.base_url}/javascripts/ci.js", :type=>'application/javascript'}
