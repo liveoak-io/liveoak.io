@@ -1,0 +1,93 @@
+== Contribute
+
+LiveOak is an open source software community that accepts all users and developers. Our goal is for LiveOak
+to be the best mobile service platform. You can contribute in multiple ways: by using LiveOak, asking or
+answering questions, reporting issues, writing documentation, fixing bugs, discussing plans, and developing
+new features.
+
+=== Code
+
+=== Website
+
+This website is built with http://awestruct.org/[Awestruct], http://getbootstrap.com/[Bootstrap],
+and http://asciidoctor.org/[Asciidoctor].
+
+As the LiveOak website is also a community effort, which can be improved by anyone, you can checkout
+the entire website:
+
+[source]
+--
+https://github.com/liveoak-io/liveoak.io
+--
+
+=== Issues
+
+Our canonical issue tracker is https://issues.jboss.org/browse/LIVEOAK[JIRA] by JBoss.
+Roadmap, current issues, releases and such are maintained there.
+
+To encourage a wider audience to report issues, we also ingest from
+https://github.com/liveoak-io/liveoak/issues[GitHub Issues]. GitHub issues is *not*
+our canonical source for tracking progress of LiveOak, but it is routinely scanned
+and issues are migrated to JIRA as needed.
+
+=== Discuss
+
+==== User Forum
+
+For any questions or issues on using LiveOak, please raise them on our
+https://community.jboss.org/en/liveoak[User Forum].
+
+==== IRC
+
+The development team routinely hangs out in the `*#liveoak*` channel on `*irc.freenode.net*`.
+Come on by and ask us any questions you might have about LiveOak.
+
+==== Mailing List
+
+===== Developer List
+
+The Developer list is where the developers (and contributors) to LiveOak discuss features,
+functionality, design and architecture.
+
+To subscribe directly to the LiveOak Developer mailing list, send an empty message to:
+
+[source]
+--
+dev-subscribe@liveoak.io
+--
+
+To unsubscribe from the LiveOak Developer mailing list, send an empty message to:
+
+[source]
+--
+dev-unsubscribe@liveoak.io
+--
+
+===== Issues List
+
+The Issues list is where JIRA sends notifications. We try not to be overly `spammy`
+with this list, so we only send a notification on creation of a new issue.
+
+To subscribe directly to the LiveOak Issues mailing list, send an empty message to:
+
+[source]
+--
+issues-subscribe@liveoak.io
+--
+
+To unsubscribe from the LiveOak Issues mailing list, send an empty message to:
+
+[source]
+--
+issues-unsubscribe@liveoak.io
+--
+
+===== Archives
+
+Archives of the Developer and Issues lists can be found at Nabble, which also provides
+an alternative way of reading, posting, and subscribing to our lists:
+
+[source]
+--
+http://mail-archive.liveoak.io/
+--

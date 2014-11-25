@@ -63,8 +63,19 @@
                   %a{:href => "#"} Advanced Topics
                 %li
                   %a{:href => "#"} Client Libraries
-            %li
-              %a{:href => "#"} Community
+            %li.dropdown
+              %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                Community
+                %span.caret
+              %ul.dropdown-menu{:role => "menu"}
+                %li
+                  %a{:href => "#{site.base_url}/community"} Home
+                %li
+                  %a{:href => "#{site.base_url}/community#governance"} Governance
+                %li
+                  %a{:href => "#{site.base_url}/license"} License
+                %li
+                  %a{:href => "#{site.base_url}/community#contribute"} Contribute
             %li
               %a{:href => "#"} Blog
     ~ content

@@ -1,0 +1,13 @@
+:awestruct-layout: two_column
+= Community
+
+[[governance]]
+include::community/_governance.adoc[]
+
+== License
+
+All code of the LiveOak project is licensed under the Eclipse Public License (EPL),
+the full content of which can be viewed link:../license[here].
+
+[[contribute]]
+include::community/_contribute.adoc[]
