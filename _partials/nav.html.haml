@@ -1,0 +1,53 @@
+%nav.navbar.navbar-fixed-top{:role => "navigation"}
+  .container
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header
+      %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => "#{site.base_url}/index.html"} Home
+    / Collect the nav links, forms, and other content for toggling
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li.active
+          %a{:href => "#{site.base_url}/index.html"} LiveOak
+        %li
+          %a{:href => "#"} Getting Started
+        %li
+          %a{:href => "#{site.base_url}/downloads"} Downloads
+        %li.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#{site.base_url}/docs", :role => "button"}
+            Documentation
+            %span.caret
+          %ul.dropdown-menu{:role => "menu"}
+            %li
+              %a{:href => "#{site.base_url}/docs"} Getting Started
+            %li
+              %a{:href => "#"} Dashboard
+            %li
+              %a{:href => "#"} Developing Apps
+            %li
+              %a{:href => "#"} Customising the Server
+            %li
+              %a{:href => "#"} Advanced Topics
+            %li
+              %a{:href => "#"} Client Libraries
+        %li.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            Community
+            %span.caret
+          %ul.dropdown-menu{:role => "menu"}
+            %li
+              %a{:href => "#{site.base_url}/community"} Home
+            %li
+              %a{:href => "#{site.base_url}/community#governance"} Governance
+            %li
+              %a{:href => "#{site.base_url}/license"} License
+            %li
+              %a{:href => "#{site.base_url}/community#contribute"} Contribute
+            %li
+              %a{:href => "#{site.base_url}/community/builds"} CI Builds
+        %li
+          %a{:href => "#"} Blog

@@ -5,20 +5,7 @@
 <!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
 %html
   %head
-    %meta{ :charset=>'utf-8' }
-    %title LiveOak - The Open Source Mobile Services Platform
-    %meta{ :name=>'viewport', :content=>'width=device-width, initial-scale=1.0' }
-
-    %link{ :rel=>'icon', :type=>'image/x-icon', :href=>"#{site.base_url}/imgs/favicon.ico" }
-    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', :media=>'screen' }
-    %script(src="http://static.jboss.org/theme/js/libs/jquery/jquery-1.9.1.min.js")
-    %script( src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" )
-    %script( src="http://static.jboss.org/js/_jbossorg-tabzilla.js" )
-    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>"#{site.base_url}/stylesheets/styles.css" }
-
-    %link{ :rel=>'author', :type=>'text/plain', :href=>"#{site.base_url}/humans.txt" }
-    /[if lt IE 9]
-      %script{ :type=>'text/javascript', :src=>'//html5shim.googlecode.com/svn/trunk/html5.js' }
+    = partial( page.head_partial.nil? ? 'head.html.haml' : page.head_partial , { "real_page" => page } )
   %body
     .dropup
       #ajbossproject
@@ -27,63 +14,11 @@
         Red Hat
       %script
         window.addEventListener('load', function() { renderTabzilla("LiveOak", "liveoak") }, true);
-    %nav.navbar.navbar-fixed-top{:role => "navigation"}
-      .container
-        / Brand and toggle get grouped for better mobile display
-        .navbar-header
-          %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
-            %span.sr-only Toggle navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.navbar-brand{:href => "#{site.base_url}/index.html"} Home
-        / Collect the nav links, forms, and other content for toggling
-        #bs-example-navbar-collapse-1.collapse.navbar-collapse
-          %ul.nav.navbar-nav
-            %li.active
-              %a{:href => "#{site.base_url}/index.html"} LiveOak
-            %li
-              %a{:href => "#"} Getting Started
-            %li
-              %a{:href => "#"} Downloads
-            %li.dropdown
-              %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-                Documentation
-                %span.caret
-              %ul.dropdown-menu{:role => "menu"}
-                %li
-                  %a{:href => "#"} Introduction
-                %li
-                  %a{:href => "#"} Dashboard
-                %li
-                  %a{:href => "#"} Developing Apps
-                %li
-                  %a{:href => "#"} Customising the Server
-                %li
-                  %a{:href => "#"} Advanced Topics
-                %li
-                  %a{:href => "#"} Client Libraries
-            %li.dropdown
-              %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-                Community
-                %span.caret
-              %ul.dropdown-menu{:role => "menu"}
-                %li
-                  %a{:href => "#{site.base_url}/community"} Home
-                %li
-                  %a{:href => "#{site.base_url}/community#governance"} Governance
-                %li
-                  %a{:href => "#{site.base_url}/license"} License
-                %li
-                  %a{:href => "#{site.base_url}/community#contribute"} Contribute
-                %li
-                  %a{:href => "#{site.base_url}/community/builds"} CI Builds
-            %li
-              %a{:href => "#"} Blog
+
+    = partial( page.nav_partial.nil? ? 'nav.html.haml' : page.nav_partial , { "real_page" => page } )
+
     ~ content
-    %section.redhat
-      .container
-        %p.text-center
-          %a{:href => "http://www.redhat.com/"}
-            %img{:alt => "redhatlogo-white", :src => "#{site.base_url}/imgs/redhatlogo-white.png", :width => "130"}
+
+    = partial( page.footer_partial.nil? ? 'footer.html.haml' : page.footer_partial , { "real_page" => page } )
+
 </html>
