@@ -11,13 +11,13 @@
     / Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav
-        %li.active
+        %li{:class=>"#{'active' if page.output_page.output_path.start_with?('/index') }" }<
           %a{:href => "#{site.base_url}/index.html"} LiveOak
         %li
           %a{:href => "#"} Getting Started
-        %li
+        %li{:class=>"#{'active' if page.output_page.output_path.start_with?('/downloads') }" }<
           %a{:href => "#{site.base_url}/downloads"} Downloads
-        %li.dropdown
+        %li.dropdown{:class=>"#{'active' if page.output_page.output_path.start_with?('/docs') }" }<
           %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#{site.base_url}/docs", :role => "button"}
             Documentation
             %span.caret
@@ -34,7 +34,7 @@
               %a{:href => "#"} Advanced Topics
             %li
               %a{:href => "#"} Client Libraries
-        %li.dropdown
+        %li.dropdown{:class=>"#{'active' if page.output_page.output_path.start_with?('/community') }" }<
           %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
             Community
             %span.caret

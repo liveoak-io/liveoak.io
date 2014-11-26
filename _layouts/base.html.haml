@@ -15,7 +15,7 @@
       %script
         window.addEventListener('load', function() { renderTabzilla("LiveOak", "liveoak") }, true);
 
-    = partial( page.nav_partial.nil? ? 'nav.html.haml' : page.nav_partial , { "real_page" => page } )
+    = partial( page.nav_partial.nil? ? 'nav.html.haml' : page.nav_partial )
 
     ~ content
 
