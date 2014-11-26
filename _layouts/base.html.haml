@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
 %html
   %head
-    = partial( page.head_partial.nil? ? 'head.html.haml' : page.head_partial , { "real_page" => page } )
+    = partial( page.head_partial.nil? ? 'head.html.haml' : page.head_partial )
   %body
     .dropup
       #ajbossproject
@@ -13,12 +13,12 @@
       #tab.tabnav-closed{:href=>"#"}
         Red Hat
       %script
-        window.addEventListener('load', function() { renderTabzilla("LiveOak", "liveoak") }, true);
+        window.addEventListener('load', function() { renderTabzilla("LiveOak", "liveoak", true) }, false);
 
     = partial( page.nav_partial.nil? ? 'nav.html.haml' : page.nav_partial )
 
     ~ content
 
-    = partial( page.footer_partial.nil? ? 'footer.html.haml' : page.footer_partial , { "real_page" => page } )
+    = partial( page.footer_partial.nil? ? 'footer.html.haml' : page.footer_partial )
 
 </html>
