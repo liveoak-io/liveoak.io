@@ -49,5 +49,5 @@
               %a{:href => "#{site.base_url}/community#contribute"} Contribute
             %li
               %a{:href => "#{site.base_url}/community/builds"} CI Builds
-        %li
-          %a{:href => "#"} Blog
+        %li{:class=>"#{'active' if page.output_page.output_path.start_with?('/blog') }" }<
+          %a{:href => "#{site.base_url}/blog"} Blog
