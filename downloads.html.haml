@@ -1,0 +1,144 @@
+---
+layout: base
+---
+.downloads
+%section.main-banner
+  .container
+    %h1 Downloads
+    %p The current release, previous versions and how to have LiveOak installed and running.
+%section.docs
+  .container
+    .row
+      .col-md-3.sidebar
+        %ul.nav
+          %li.active
+            %a{:href => "#downloads"} Downloads
+            %ul.nav
+              %li.active
+                %a{:href => "#current-version"} Current Version
+              %li
+                %a{:href => "#github"} Tagged on GitHub
+              %li
+                %a{:href => "#previous-versions"} Previous Versions
+          %li
+            %a{:href => "#installing-and-running"} Installing and Running
+            %ul.nav
+              %li
+                %a{:href => "#locally"} Locally
+              %li
+                %a{:href => "#in-the-cloud"} In the Cloud
+      .col-md-9.text-content
+        %h2#downloads.section-header.first Downloads
+        %p.lead LiveOak is currently on version v1.0.0.Beta01, from October 27, 2014. Download your preferred distribution choosing among the options below.
+        %h3#current-version Current Version (v1.0.0.Beta01)
+        .row.download-buttons
+          .col-sm-4
+            %a.btn.btn-default.btn-lg.full-width{:href => "http://repository.liveoak.io/io/liveoak/liveoak-dist/1.0.0.Beta01/liveoak-dist-1.0.0.Beta01.zip"}
+              %i.fa.fa-download
+              Binary .zip
+              %span (175 MB)
+          .col-sm-4
+            %a.btn.btn-default.btn-lg.full-width{:href => "http://repository.liveoak.io/io/liveoak/liveoak-dist/1.0.0.Beta01/liveoak-dist-1.0.0.Beta01.tar.gz"}
+              %i.fa.fa-download
+              Binary tar.gz
+              %span (158 MB)
+          .col-sm-4
+            %a.btn.btn-default.btn-lg.full-width{:href => "http://repository.liveoak.io/io/liveoak/liveoak-dist/1.0.0.Beta01/liveoak-dist-1.0.0.Beta01-src.zip"}
+              %i.fa.fa-download
+              Source .zip
+              %span (3 MB)
+        %h3#github Tagged on GitHub
+        %p
+          Get the source directly from the
+          %a{:href => "https://github.com/liveoak-io/liveoak"}
+            LiveOak repository on GitHub.
+            %p
+              %a.btn.btn-default.btn-lg.github{:href => "https://github.com/liveoak-io/liveoak/tree/1.0.0.Beta01"}
+                %i.fa.fa-github
+                View on GitHub
+            %h3#previous-versions Previous Versions
+        %table.table.table-striped.table-bordered
+          %thead
+            %tr
+              %th Version v1.0.0.Alpha02, from August 29, 2014
+          %tbody
+            %tr
+              %td
+                %a{:href => "http://repository.liveoak.io/io/liveoak/liveoak-dist/1.0.0.Alpha02/liveoak-dist-1.0.0.Alpha02.zip", :id => "1.0.0.Alpha02.zip"} Binary .zip archive
+            %tr
+              %td
+                %a{:href => "http://repository.liveoak.io/io/liveoak/liveoak-dist/1.0.0.Alpha02/liveoak-dist-1.0.0.Alpha02.tar.gz", :id => "1.0.0.Alpha02.tar.gz"} Binary tar.gz archive
+            %tr
+              %td
+                %a{:href => "http://repository.liveoak.io/io/liveoak/liveoak-dist/1.0.0.Alpha02/liveoak-dist-1.0.0.Alpha02-src.zip", :id => "1.0.0.Alpha02-src"} Source .zip archive
+            %tr
+              %td
+                %a{:href => "https://github.com/liveoak-io/liveoak-examples/archive/1.0.0.Alpha02.zip", :id => "1.0.0.Alpha02-examples"} Examples - binary .zip archive
+            %tr
+              %td
+                %a{:href => "https://github.com/liveoak-io/liveoak/tree/1.0.0.Alpha02"} Tagged on GitHub
+            %tr
+              %td
+                %a{:href => "https://github.com/liveoak-io/liveoak-examples/tree/1.0.0.Alpha02"} Examples tagged on GitHub
+        %h2#installing-and-running.section-header Installing and Running
+        %p.lead
+          LiveOak can be deployed locally on a developer machine, or in the cloud. Read through to see how to install and run LiveOak in the way you choose.
+        %h3#locally Installing and Running LiveOak Locally
+        %p It’s very easy to get started with LiveOak. First, download your preferred distribution, among the options above.
+        %p
+          Start by unpacking the downloaded binary
+          %code .zip
+          or
+          %code .tgz
+          archive, which will create a
+          %code liveoak
+          directory on your disk. We’ll refer to this directory as
+          = succeed "." do
+            %code $LIVEOAK_HOME
+        %p All you have to do now is run it:
+        %pre
+          %code $LIVEOAK_HOME/bin/standalone.sh -b 0.0.0.0
+        %p The second parameter is there to make the server socket accessible on all the network interfaces, so you can connect to LiveOak from your mobile device or an emulator.
+        %p
+          LiveOak requires Java 8. You can test your
+          %code java
+          version by running:
+        %pre
+          %code java -version
+        %p
+          If you don’t have Java 8 on your system, follow the instructions
+          %a{:href => "/docs/guides/installing_java"} here
+          to install it.
+        %p
+          When LiveOak is started for the first time it will look for any existing MongoDB on your system. If it doesn’t find one, it will automatically download
+          %code MongoDB
+          from
+          = succeed "," do
+            %a{:href => "http://mongodb.org"} mongodb.org
+          %code $HOME/.liveoak/mongo
+          directory, it will then continue booting up.
+        %p
+          Downloading
+          %code MongoDB
+          takes a while, otherwise LiveOak itself starts up in just a few seconds.
+        %p
+          Once LiveOak is started, point your browser to
+          = succeed "." do
+            %a.bare{:href => "http://localhost:8080"} http://localhost:8080
+        %p
+          You should get a simple page listing the currently available LiveOak applications. For a start, there is ‘admin’ application which contains
+          = succeed "." do
+            %a{:href => "http://localhost:8080/admin"} LiveOak Admin Console
+        %p
+          %a{:href => "http://localhost:8080/admin"} LiveOak Admin Console
+          requires you to log in. Use
+          %code admin
+          as username, and password. The first time you log in you’ll be prompted to change the password.
+        %p
+          %a{:href => "http://localhost:8080/admin"} LiveOak Admin Console
+          has quite a short idle timeout, so you may have to login again quite often.
+        %p
+          %a{:href => "/docs/guides/tutorial_chat"}> Let’s create and deploy another application
+          , to see how easy it is.
+        %h3#in-the-cloud Installing and Running LiveOak in the Cloud
+        %p - there is an example available for deploying it to OpenShift Online.
