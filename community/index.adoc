@@ -1,6 +1,13 @@
-:awestruct-layout: two_column
-= Community
-
+:awestruct-layout: base
+++++
+<section class="main-banner">
+  <div class="container">
+    <h1>Community</h1>
+  </div>
+</section>
+<section class="community">
+  <div class="container">
+++++
 [[governance]]
 include::community/_governance.adoc[]
 
@@ -11,3 +18,8 @@ the full content of which can be viewed link:../license[here].
 
 [[contribute]]
 include::community/_contribute.adoc[]
+
+++++
+  </div>
+</section>
+++++
