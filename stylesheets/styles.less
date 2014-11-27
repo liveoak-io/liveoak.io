@@ -517,6 +517,62 @@ table {
   }
 }
 
+//Blog pages
+
+.blog .main-banner {
+  text-align: center;
+  
+  h1 {
+    background: url(../imgs/liveoak-logo.svg) no-repeat center top;
+    background-size: 100px 100px;
+    padding-top: 105px;
+  }
+}
+
+.panel {
+  border-bottom: 1px solid @gray-divider;
+  padding-bottom: 20px;
+  border-radius: 0;
+  margin-bottom: 30px;
+}
+
+.blog-post {
+
+  h1 {
+    margin-bottom: 5px;
+    font-size: 36px;
+  }
+  
+  h2 {
+    font-size: 27px;
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    font-size: 23px;
+  }
+
+  .author,
+  .date {
+    display: inline-block;
+    color: @gray-subtitle;
+    margin-bottom: 25px;
+  }
+  
+  .author + .date:before {
+    content: ".";
+    vertical-align: super;
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+  
+  p {
+    font-family: @font-family-sans-serif;
+    font-weight: @font-weight-light;
+    font-size: 18px;
+  }
+} 
+
 
 //RedHat logo ==================================================================
 
