@@ -14,9 +14,10 @@ layout: base
           - leader = posts.shift
           .panel
             .blog-post
-              %h1
-                %a{:href=>leader.url}
-                  = leader.title
+              .title
+                %h1
+                  %a{:href=>leader.url}
+                    = leader.title
               .author
                 = leader.author
               .date
@@ -26,10 +27,12 @@ layout: base
     
           .large-4.columns.blog-post-listings
             %h3 Previous Posts
-            - for post in posts
-              .blog-post-listing
-                .date.right
-                  =post.date.strftime("%F")
-                .title
-                  %a{:href=>post.url}
-                    =post.title
+            .blog-post-list.row
+              - for post in posts
+                .blog-post-item.col-sm-4
+                  %h4
+                    %a{:href=>post.url}
+                      =post.title
+                  %span.date
+                    =post.date.strftime("%F")
+
