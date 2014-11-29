@@ -1,32 +1,35 @@
 ---
 layout: base
 ---
-%section.main-banner
-  .container
-    %h1 Blog
-%section.blog
-  .container
-    .row
-      .panel.blog-post
-        .title
-          %h2= page.title
-        .author
-          = page.author
-        .date
-          = page.date.strftime("%F")
-        .body
-          %p= page.content
-      .large-4.columns
-        .row{:style=>'text-align:center'}
-          %hr
-          - if (page.previous_post)
-            %a{:href=>page.previous_post.url}
-              &lsaquo; Earlier
-          - else
-            &lsaquo; Earlier
-          |
-          - if (page.next_post)
-            %a{:href=>page.next_post.url}
-              Later &rsaquo;
-          - else
-            Later &rsaquo;
+.blog
+  %section.main-banner
+    .container
+      %h1 Blog
+      %p Updates, discussions and more for LiveOak.
+  %section.blog
+    .container
+      .row
+        .col-md-8.col-md-offset-2
+          .panel
+            .blog-post
+              .title
+                %h1= page.title
+              .author
+                = page.author
+              .date
+                = page.date.strftime("%F")
+              .body
+                %p= page.content
+          .blog-pagination
+            .pull-left.older
+              - if (page.previous_post)
+                %a{:href=>page.previous_post.url}
+                  Older
+              - else
+                Older
+            .pull-right.newer
+              - if (page.next_post)
+                %a{:href=>page.next_post.url}
+                  Newer
+              - else
+                Newer

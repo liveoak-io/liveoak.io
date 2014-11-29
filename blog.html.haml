@@ -1,33 +1,38 @@
 ---
 layout: base
 ---
-%section.main-banner
-  .container
-    %h1 Blog
-%section.blog
-  .container
-    .row
-      - posts = page.posts * 1
-      - leader = posts.shift
-      .panel
-        .blog-post
-          .title
-            %h2
-              %a{:href=>leader.url}
-                = leader.title
-          .author
-            = leader.author
-          .date
-            = leader.date.strftime("%F")
-          .body
-            %p= leader.content
+.blog
+  %section.main-banner
+    .container
+      %h1 Blog
+      %p Updates, discussions and more for LiveOak.
+  %section.blog
+    .container
+      .row
+        .col-md-8.col-md-offset-2
+          - posts = page.posts * 1
+          - leader = posts.shift
+          .panel
+            .blog-post
+              .title
+                %h1
+                  %a{:href=>leader.url}
+                    = leader.title
+              .author
+                = leader.author
+              .date
+                = leader.date.strftime("%F")
+              .body
+                %p= leader.content
+    
+          .large-4.columns.blog-post-listings
+            %h3 Previous Posts
+            .blog-post-list.row
+              - for post in posts
+                .blog-post-item.col-sm-4
+                  %h4
+                    %a{:href=>post.url}
+                      =post.title
+                  %span.date
+                    =post.date.strftime("%F")
 
-      .large-4.columns.blog-post-listings
-        %h3 Previous Posts
-        - for post in posts
-          .blog-post-listing
-            .date.right
-              =post.date.strftime("%F")
-            .title
-              %a{:href=>post.url}
-                =post.title
