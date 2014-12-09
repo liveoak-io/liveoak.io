@@ -54,6 +54,7 @@ body{
   font-weight: @font-weight-regular;
   font-family: @font-family-sans-serif;
   color: @gray-text;
+  position: relative;
 }
 
 .alt{
@@ -455,14 +456,20 @@ table {
 
 .sidebar{
   @media (min-width: @screen-md-min) {
-    position: static;
-    position: sticky; 
-    top: 90px;
     margin-top: 6px;
   }
   
-  @media (max-width: @screen-sm-max) {
-    margin-bottom: 25px;
+  .affix {
+  
+    @media (min-width: @screen-lg-min) {
+      top: 95px;
+      width: calc(~"1170px/4 - 30px");
+    }
+    
+    @media (max-width: @screen-md-max) {
+      top: 95px;
+      width: calc(~"970px/4 - 30px");
+    }
   }
   
   a {
@@ -516,6 +523,27 @@ table {
     }  
   }
 }
+
+/* Adjusting anchor position */
+
+.downloads, .documentation {
+
+  h2, h3 {
+    padding-top: 86px;
+    margin-top: -66px;
+  }
+  
+  h2.first,
+  table + h2,
+  p.lead + h3 {
+    margin-top: -86px;
+  }
+  
+  p + h3 {
+    margin-top: -76px;
+  }
+}
+
 
 //Blog pages
 

@@ -9,7 +9,7 @@ layout: base
   %section.docs
     .container
       .row
-        .col-md-3.sidebar
+        .col-md-3.sidebar.hidden-xs.hidden-sm
           %ul.nav
             %li.active
               %a{:href => "#getting-started"} Getting Started
@@ -29,16 +29,16 @@ layout: base
             %li
               %a{:href => "#client"} Client Libraries
         .col-md-9.text-content
-          %h2.section-header.first Introduction
+          %h2.section-header.first#getting-started Getting Started
           %p.lead Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, or example, should be wrapped as inline.
-          %h3 Getting LiveOak
+          %h3#getting-getting Getting LiveOak
           %p LiveOak is all about making it easier to develop mobile client applications by providing ready made, easy to consume cloud services that most mobile applications today require.
           %p LiveOak can be deployed locally on a developer machine, or in the cloud - there is an example available for deploying it to OpenShift Online.
           %p
             For this guide we’ll use a local installation which can be downloaded from
             = succeed "." do
               %a{:href => "#{site.base_url}/downloads"} http://liveoak.io/downloads
-          %h3 Installing and Running LiveOak
+          %h3#getting-installing Installing and Running LiveOak
           %p It’s very easy to get started with LiveOak.
           %p
             Start by unpacking the downloaded binary

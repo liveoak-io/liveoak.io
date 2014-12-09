@@ -6,10 +6,10 @@ layout: base
     .container
       %h1 Downloads
       %p The current release, previous versions and how to have LiveOak installed and running.
-  %section.docs
+  %section
     .container
       .row
-        .col-md-3.sidebar
+        .col-md-3.sidebar.hidden-xs.hidden-sm
           %ul.nav
             %li.active
               %a{:href => "#downloads"} Downloads
@@ -52,11 +52,10 @@ layout: base
             Get the source directly from the
             %a{:href => "https://github.com/liveoak-io/liveoak"}
               LiveOak repository on GitHub.
-              %p
-                %a.btn.btn-default.btn-lg.github{:href => "https://github.com/liveoak-io/liveoak/tree/1.0.0.Beta01"}
-                  %i.fa.fa-github
-                  View on GitHub
-              %h3#previous-versions Previous Versions
+          %a.btn.btn-default.btn-lg.github{:href => "https://github.com/liveoak-io/liveoak/tree/1.0.0.Beta01"}
+            %i.fa.fa-github
+            View on GitHub
+          %h3#previous-versions Previous Versions
           %table.table.table-striped.table-bordered
             %thead
               %tr

@@ -1,18 +1,13 @@
-/*
-$( document ).ready(function() {
-  var menu = document.querySelector('.sidebar > .nav')
-  var menuPosition = menu.getBoundingClientRect().top;
-  var classTrigger = menuPosition - 110;
-  window.addEventListener('scroll', function() {
-      if (window.pageYOffset >= classTrigger) {
-          menu.style.position = 'fixed';
-          menu.style.top = '110px';
-      } else {
-          menu.style.position = 'static';
-          menu.style.top = '';
+$(document).ready(function(){
+  $('.sidebar > .nav').affix({
+    offset: {
+      top: 207,
+      bottom: function () {
+        return (this.bottom = $('.footer').outerHeight(true))
       }
+    }
   });
+  
+  $('body').scrollspy({ target: '.sidebar > .nav' });
+
 });
-*/
-
-
