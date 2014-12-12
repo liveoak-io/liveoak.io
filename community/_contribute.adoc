@@ -22,9 +22,7 @@ This website is built with http://awestruct.org/[Awestruct], http://getbootstrap
 and http://asciidoctor.org/[Asciidoctor].
 
 As the LiveOak website is also a community effort, which can be improved by anyone, you can checkout
-the entire website:
-
-https://github.com/liveoak-io/liveoak.io[https://github.com/liveoak-io/liveoak.io.git]
+the entire website: https://github.com/liveoak-io/liveoak.io[https://github.com/liveoak-io/liveoak.io.git]
 
 === Issues
 
@@ -50,7 +48,7 @@ Come on by and ask us any questions you might have about LiveOak.
 
 ==== Mailing List
 
-==== Developer List
+===== Developer List
 
 The Developer list is where the developers (and contributors) to LiveOak discuss features,
 functionality, design and architecture.
@@ -59,7 +57,7 @@ To subscribe directly to the LiveOak Developer mailing list, send an empty messa
 
 To unsubscribe from the LiveOak Developer mailing list, send an empty message to: mailto:dev-unsubscribe@liveoak.io[]
 
-==== Issues List
+===== Issues List
 
 The Issues list is where JIRA sends notifications. We try not to be overly `spammy`
 with this list, so we only send a notification on creation of a new issue.
@@ -68,7 +66,7 @@ To subscribe directly to the LiveOak Issues mailing list, send an empty message 
 
 To unsubscribe from the LiveOak Issues mailing list, send an empty message to: mailto:issues-unsubscribe@liveoak.io[]
 
-==== Archives
+===== Archives
 
 Archives of the Developer and Issues lists can be found at Nabble, which also provides
 an alternative way of reading, posting, and subscribing to our lists: http://mail-archive.liveoak.io/
