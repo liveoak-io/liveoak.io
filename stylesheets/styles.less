@@ -123,8 +123,17 @@ table {
     font-weight: @font-weight-regular;
   }
   
+  h2 {
+    .section-header;
+    
+    :first-child {
+      margin-top: 0;
+    }
+  }
+  
   h3 {
     margin-top: 25px;
+    margin-bottom: 15px;
   }
 
   p {
@@ -136,9 +145,15 @@ table {
     }
   } 
   
-  h3 {
-    margin-bottom: 15px;
+  h4 {
+    margin-top: 20px;
   }
+  
+  h5 {
+    font-weight: bold;
+    margin-top: 20px;
+  }
+
 }
 
 
@@ -609,7 +624,7 @@ table {
   }
 }
 
-//Downloads page
+// Downloads page
 
 .downloads {
 
@@ -634,9 +649,25 @@ table {
   }
 }
 
+// Community page 
+
+.community {
+  h2#governance {
+    margin-top: 0;
+  }
+}
+
+// Builds page
+
+.builds tr.FAILURE td {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+}
+
 /* Adjusting anchor position */
 
-.downloads, .documentation {
+.downloads, .documentation, .community {
 
   h2, h3 {
     padding-top: 86px;
@@ -652,6 +683,21 @@ table {
   p + h3 {
     margin-top: -76px;
   }
+}
+
+.community {
+
+    h2#governance,
+    h3#project-ownership {
+      margin-top: -86px;
+    }
+    
+    h3,
+    h2#license,
+    h2#contribute {
+      margin-top: -76px;
+    }
+
 }
 
 
