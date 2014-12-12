@@ -40,7 +40,7 @@ CI.prototype = {
         $('<tr class="' + build.result + '">').append(
           $( '<td>' ).append( build.number )
         ).append(
-          $( '<td style="font-size:smaller">' ).append( timestamp.toUTCString() )
+          $( '<td>' ).append( timestamp.toUTCString() )
         ).append(
           $( '<td>' ).append( $('<a>').attr('href', build.url).append( result.toLowerCase() ) )
         ).append(

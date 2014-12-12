@@ -3,10 +3,51 @@
 <section class="main-banner">
   <div class="container">
     <h1>Community</h1>
+    <p>Get involved, be part of the community.</p>    
   </div>
 </section>
 <section class="community">
   <div class="container">
+    <div class="row">
+  
+      <div class="col-md-3 sidebar hidden-xs hidden-sm">
+        <ul class="nav">
+          <li class="active">
+            <a href="#governance">Governance</a>
+            <ul class="nav">
+              <li class="active">
+                <a href="#project-ownership">Project Ownership</a>
+              </li>
+              <li>
+                <a href="#project-governance">Project Governance</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#license">License</a>
+          </li>
+          <li>
+            <a href="#contribute">Contribute</a>
+            <ul class="nav">
+              <li>
+                <a href="#code">Code</a>
+              </li>
+              <li>
+                <a href="#website">Website</a>
+              </li>
+              <li>
+                <a href="#issues">Issues</a>
+              </li>
+              <li>
+                <a href="#discuss">Discuss</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-9 text-content">
+
+  
 ++++
 [[governance]]
 include::community/_governance.adoc[]
@@ -20,6 +61,8 @@ the full content of which can be viewed link:../license[here].
 include::community/_contribute.adoc[]
 
 ++++
+      </div>
+    </div>
   </div>
 </section>
 ++++
