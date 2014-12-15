@@ -22,8 +22,10 @@ title: LiveOak
 org: Red Hat
 base_url: ''
 asciidoctor:
-#  :compact: true
+  :safe: safe
+  :compact: true
   :eruby: erubis
+  :backend: xhtml5
   :attributes:
     idprefix: ''
     idseparator: '-'
@@ -32,3 +34,23 @@ asciidoctor:
     linkattrs: ''
     source-highlighter: highlight.js
     imagesdir: /imgs
+
+releases:
+  - version: 1.0.0.Beta01
+    date: 27 Oct 2014
+    tar_size: 158M
+    zip_size: 175M
+    src_tar_size: 2.2M
+    src_zip_size: 3.0M
+  - version: 1.0.0.Alpha02
+    date: 29 Aug 2014
+    tar_size: 156M
+    zip_size: 173M
+    src_tar_size: 2.1M
+    src_zip_size: 2.8M
+  - version: 1.0.0.Alpha01
+    date: 27 May 2014
+    tar_size: 151M
+    zip_size: 167M
+    src_tar_size: 5.4M
+    src_zip_size: 6.2M

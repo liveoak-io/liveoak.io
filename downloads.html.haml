@@ -29,56 +29,62 @@ layout: base
                   %a{:href => "#in-the-cloud"} In the Cloud
         .col-md-9.text-content
           %h2#downloads.section-header.first Downloads
-          %p.lead LiveOak is currently on version v1.0.0.Beta01, from October 27, 2014. Download your preferred distribution choosing among the options below.
-          %h3#current-version Current Version (v1.0.0.Beta01)
+          %p.lead
+            Download your preferred distribution choosing among the options below.
+          - downloads = site.releases * 1
+          - current = downloads.shift
+          %h3#current-version Current Version (#{current.version})
           .row.download-buttons
-            .col-sm-4
-              %a.btn.btn-default.btn-lg.full-width{:href => "http://repository.liveoak.io/io/liveoak/liveoak-dist/1.0.0.Beta01/liveoak-dist-1.0.0.Beta01.zip"}
+            .col-sm-3
+              %a.btn.btn-default.btn-lg.full-width{:href => "http://repository.liveoak.io/io/liveoak/liveoak-dist/#{current.version}/liveoak-dist-#{current.version}.zip"}
                 %i.fa.fa-download
                 Binary .zip
-                %span (175 MB)
-            .col-sm-4
-              %a.btn.btn-default.btn-lg.full-width{:href => "http://repository.liveoak.io/io/liveoak/liveoak-dist/1.0.0.Beta01/liveoak-dist-1.0.0.Beta01.tar.gz"}
+                %span (#{current.zip_size})
+            .col-sm-3
+              %a.btn.btn-default.btn-lg.full-width{:href => "http://repository.liveoak.io/io/liveoak/liveoak-dist/#{current.version}/liveoak-dist-#{current.version}.tar.gz"}
                 %i.fa.fa-download
                 Binary tar.gz
-                %span (158 MB)
-            .col-sm-4
-              %a.btn.btn-default.btn-lg.full-width{:href => "http://repository.liveoak.io/io/liveoak/liveoak-dist/1.0.0.Beta01/liveoak-dist-1.0.0.Beta01-src.zip"}
+                %span (#{current.tar_size})
+            .col-sm-3
+              %a.btn.btn-default.btn-lg.full-width{:href => "http://repository.liveoak.io/io/liveoak/liveoak-dist/#{current.version}/liveoak-dist-#{current.version}-src.zip"}
                 %i.fa.fa-download
                 Source .zip
-                %span (3 MB)
+                %span (#{current.src_zip_size})
+            .col-sm-3
+              %a.btn.btn-default.btn-lg.full-width{:href => "http://repository.liveoak.io/io/liveoak/liveoak-dist/#{current.version}/liveoak-dist-#{current.version}-src.tar.gz"}
+                %i.fa.fa-download
+                Source tar.gz
+                %span (#{current.src_tar_size})
           %h3#github Tagged on GitHub
           %p
             Get the source directly from the
             %a{:href => "https://github.com/liveoak-io/liveoak"}
               LiveOak repository on GitHub.
-          %a.btn.btn-default.btn-lg.github{:href => "https://github.com/liveoak-io/liveoak/tree/1.0.0.Beta01"}
+          %a.btn.btn-default.btn-lg.github{:href => "https://github.com/liveoak-io/liveoak/tree/#{current.version}"}
             %i.fa.fa-github
             View on GitHub
           %h3#previous-versions Previous Versions
           %table.table.table-striped.table-bordered
-            %thead
-              %tr
-                %th Version v1.0.0.Alpha02, from August 29, 2014
-            %tbody
-              %tr
-                %td
-                  %a{:href => "http://repository.liveoak.io/io/liveoak/liveoak-dist/1.0.0.Alpha02/liveoak-dist-1.0.0.Alpha02.zip", :id => "1.0.0.Alpha02.zip"} Binary .zip archive (173 MB)
-              %tr
-                %td
-                  %a{:href => "http://repository.liveoak.io/io/liveoak/liveoak-dist/1.0.0.Alpha02/liveoak-dist-1.0.0.Alpha02.tar.gz", :id => "1.0.0.Alpha02.tar.gz"} Binary tar.gz archive (156 MB)
-              %tr
-                %td
-                  %a{:href => "http://repository.liveoak.io/io/liveoak/liveoak-dist/1.0.0.Alpha02/liveoak-dist-1.0.0.Alpha02-src.zip", :id => "1.0.0.Alpha02-src"} Source .zip archive (2.8 MB)
-              %tr
-                %td
-                  %a{:href => "https://github.com/liveoak-io/liveoak-examples/archive/1.0.0.Alpha02.zip", :id => "1.0.0.Alpha02-examples"} Examples - binary .zip archive (2.9 MB)
-              %tr
-                %td
-                  %a{:href => "https://github.com/liveoak-io/liveoak/tree/1.0.0.Alpha02"} Tagged on GitHub
-              %tr
-                %td
-                  %a{:href => "https://github.com/liveoak-io/liveoak-examples/tree/1.0.0.Alpha02"} Examples tagged on GitHub
+            - for r in downloads
+              %thead
+                %tr
+                  %th #{r.version}, from #{r.date}
+              %tbody
+                %tr
+                  %td
+                    %a{:href => "http://repository.liveoak.io/io/liveoak/liveoak-dist/#{r.version}/liveoak-dist-#{r.version}.zip", :id => "#{r.version}.zip"} Binary .zip archive (#{r.zip_size})
+                %tr
+                  %td
+                    %a{:href => "http://repository.liveoak.io/io/liveoak/liveoak-dist/#{r.version}/liveoak-dist-#{r.version}.tar.gz", :id => "#{r.version}.tar.gz"} Binary tar.gz archive (#{r.tar_size})
+                %tr
+                  %td
+                    %a{:href => "http://repository.liveoak.io/io/liveoak/liveoak-dist/#{r.version}/liveoak-dist-#{r.version}-src.zip", :id => "#{r.version}-src"} Source .zip archive (#{r.src_zip_size})
+                %tr
+                  %td
+                    %a{:href => "http://repository.liveoak.io/io/liveoak/liveoak-dist/#{r.version}/liveoak-dist-#{r.version}-src.tar.gz", :id => "#{r.version}-src"} Source tar.gz archive (#{r.src_tar_size})
+                %tr
+                  %td
+                    %a{:href => "https://github.com/liveoak-io/liveoak/tree/#{r.version}"} Tagged on GitHub
           %h2#installing-and-running.section-header Installing and Running
           %p.lead
             LiveOak can be deployed locally on a developer machine, or in the cloud. Read through to see how to install and run LiveOak in the way you choose.
