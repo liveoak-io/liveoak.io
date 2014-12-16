@@ -3,8 +3,6 @@
 
 == Getting Started
 
-Some text
-
 [[getting-getting]]
 === Getting LiveOak
 
