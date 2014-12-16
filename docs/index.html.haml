@@ -1,124 +1,90 @@
 ---
-layout: base
+layout: doc
 ---
-.documentation
-  %section.main-banner
-    .container
-      %h1 Documentation
-      %p How to use LiveOak as backend for your amazing applications.
-  %section.docs
-    .container
-      .row
-        .col-md-3.sidebar.hidden-xs.hidden-sm
-          %ul.nav
-            %li.active
-              %a{:href => "#getting-started"} Getting Started
-              %ul.nav
-                %li.active
-                  %a{:href => "#getting-getting"} Getting LiveOak
-                %li
-                  %a{:href => "#getting-installing"} Installing and Running LiveOak
-                %li
-                  %a{:href => "#installing-openshift"} Installing LiveOak on OpenShift
-            %li
-              %a{:href => "#dashboard"} Dashboard
-            %li
-              %a{:href => "#developing"} Developing Apps
-            %li
-              %a{:href => "#customising"} Customising the Server
-            %li
-              %a{:href => "#advanced"} Advanced Topics
-            %li
-              %a{:href => "#client"} Client Libraries
-            %li
-              %a{:href => "/docs/scripting"} Server Side Scripting
-        .col-md-9.text-content
-          %h2.section-header.first#getting-started Getting Started
-          %p.lead Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, or example, should be wrapped as inline.
-          %h3#getting-getting Getting LiveOak
-          %p LiveOak is all about making it easier to develop mobile client applications by providing ready made, easy to consume cloud services that most mobile applications today require.
-          %p LiveOak can be deployed locally on a developer machine, or in the cloud - there is an example available for deploying it to OpenShift Online.
-          %p
-            For this guide we’ll use a local installation which can be downloaded from
-            = succeed "." do
-              %a{:href => "#{site.base_url}/downloads"} http://liveoak.io/downloads
-          %h3#getting-installing Installing and Running LiveOak
-          %p It’s very easy to get started with LiveOak.
-          %p
-            Start by unpacking the downloaded binary
-            %code .zip
-            or
-            %code .tgz
-            archive, which will create a
-            %code liveoak
-            directory on your disk. We’ll refer to this directory as
-            = succeed "." do
-              %code $LIVEOAK_HOME
-          %p All you have to do now is run it:
-          %pre
-            %code $LIVEOAK_HOME/bin/standalone.sh -b 0.0.0.0
-          %p The second parameter is there to make the server socket accessible on all the network interfaces, so you can connect to LiveOak from your mobile device or an emulator.
-          %p
-            LiveOak requires Java 8. You can test your
-            %code java
-            version by running:
-          %pre
-            %code java -version
-          %p
-            If you don’t have Java 8 on your system, follow the instructions
-            %a{:href => "/docs/guides/installing_java"} here
-            to install it.
-          %p
-            When LiveOak is started for the first time it will look for any existing MongoDB on your system. If it doesn’t find one, it will automatically download
-            %code MongoDB
-            from
-            = succeed "," do
-              %a{:href => "http://mongodb.org"} mongodb.org
-            %code $HOME/.liveoak/mongo
-            directory, it will then continue booting up.
-          %p
-            Downloading
-            %code MongoDB
-            takes a while, otherwise LiveOak itself starts up in just a few seconds.
-          %p
-            Once LiveOak is started, point your browser to
-            = succeed "." do
-              %a.bare{:href => "http://localhost:8080"} http://localhost:8080
-          %p
-            You should get a simple page listing the currently available LiveOak applications. For a start, there is ‘admin’ application which contains
-            = succeed "." do
-              %a{:href => "http://localhost:8080/admin"} LiveOak Admin Console
-          %p
-            %a{:href => "http://localhost:8080/admin"} LiveOak Admin Console
-            requires you to log in. Use
-            %code admin
-            as username, and password. The first time you log in you’ll be prompted to change the password.
-          %p
-            %a{:href => "http://localhost:8080/admin"} LiveOak Admin Console
-            has quite a short idle timeout, so you may have to login again quite often.
-          %p
-            %a{:href => "/docs/guides/tutorial_chat"}> Let’s create and deploy another application
-            , to see how easy it is.
-          %h3#installing-openshift Installing the LiveOak OpenShift Cartridge
-          %p
-            Installing LiveOak on 
-            %a{:href => "https://www.openshift.com/products/online"} OpenShift Online
-            only requires a few steps.
-          %p
-            You will first need to have an OpenShift account. Then you can go to the 
-            %a{:href => "https://www.openshift.com/quickstarts/liveoak-1.0.0Beta02"} LiveOak OpenShift Quickstart
-            page and click on 'Deploy Now". This will open the OpenShift cartidge install page. From here you can
-            select the name of your gear as well as the gear size you wish to use.
-          %p
-            Please note that althrough LiveOak will run on the small gear, it is recomended to run on a larger gear
-            for much better performance. You may also need to increase your storage beyond the 1GB limit depending
-            on how much data you are storing in your LiveOak applications.
-          %p
-            After the LiveOak gear is installed, you will be presented with a screen showing you the default user
-            name ('admin') and generated initial password. For convience, the initial LiveOak admin password is
-            the same as the MongoDB password. This makes it easy to retrieve from the cartridge overview page.
-          %p
-            Your LiveOak gear is now ready to be used.
-            
-  / Website Javascript
-  %script{:src => "js/behavior.js"}
+%h2.section-header.first#getting-started Getting Started
+%p.lead Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, or example, should be wrapped as inline.
+%h3#getting-getting Getting LiveOak
+%p LiveOak is all about making it easier to develop mobile client applications by providing ready made, easy to consume cloud services that most mobile applications today require.
+%p LiveOak can be deployed locally on a developer machine, or in the cloud - there is an example available for deploying it to OpenShift Online.
+%p
+  For this guide we’ll use a local installation which can be downloaded from
+  = succeed "." do
+    %a{:href => "#{site.base_url}/downloads"} http://liveoak.io/downloads
+%h3#getting-installing Installing and Running LiveOak
+%p It’s very easy to get started with LiveOak.
+%p
+  Start by unpacking the downloaded binary
+  %code .zip
+  or
+  %code .tgz
+  archive, which will create a
+  %code liveoak
+  directory on your disk. We’ll refer to this directory as
+  = succeed "." do
+    %code $LIVEOAK_HOME
+%p All you have to do now is run it:
+%pre
+  %code $LIVEOAK_HOME/bin/standalone.sh -b 0.0.0.0
+%p The second parameter is there to make the server socket accessible on all the network interfaces, so you can connect to LiveOak from your mobile device or an emulator.
+%p
+  LiveOak requires Java 8. You can test your
+  %code java
+  version by running:
+%pre
+  %code java -version
+%p
+  If you don’t have Java 8 on your system, follow the instructions
+  %a{:href => "/docs/guides/installing_java"} here
+  to install it.
+%p
+  When LiveOak is started for the first time it will look for any existing MongoDB on your system. If it doesn’t find one, it will automatically download
+  %code MongoDB
+  from
+  = succeed "," do
+    %a{:href => "http://mongodb.org"} mongodb.org
+  %code $HOME/.liveoak/mongo
+  directory, it will then continue booting up.
+%p
+  Downloading
+  %code MongoDB
+  takes a while, otherwise LiveOak itself starts up in just a few seconds.
+%p
+  Once LiveOak is started, point your browser to
+  = succeed "." do
+    %a.bare{:href => "http://localhost:8080"} http://localhost:8080
+%p
+  You should get a simple page listing the currently available LiveOak applications. For a start, there is ‘admin’ application which contains
+  = succeed "." do
+    %a{:href => "http://localhost:8080/admin"} LiveOak Admin Console
+%p
+  %a{:href => "http://localhost:8080/admin"} LiveOak Admin Console
+  requires you to log in. Use
+  %code admin
+  as username, and password. The first time you log in you’ll be prompted to change the password.
+%p
+  %a{:href => "http://localhost:8080/admin"} LiveOak Admin Console
+  has quite a short idle timeout, so you may have to login again quite often.
+%p
+  %a{:href => "/docs/guides/tutorial_chat"}> Let’s create and deploy another application
+  , to see how easy it is.
+%h3#installing-openshift Installing the LiveOak OpenShift Cartridge
+%p
+  Installing LiveOak on
+  %a{:href => "https://www.openshift.com/products/online"} OpenShift Online
+  only requires a few steps.
+%p
+  You will first need to have an OpenShift account. Then you can go to the
+  %a{:href => "https://www.openshift.com/quickstarts/liveoak-1.0.0Beta02"} LiveOak OpenShift Quickstart
+  page and click on 'Deploy Now". This will open the OpenShift cartidge install page. From here you can
+  select the name of your gear as well as the gear size you wish to use.
+%p
+  Please note that althrough LiveOak will run on the small gear, it is recomended to run on a larger gear
+  for much better performance. You may also need to increase your storage beyond the 1GB limit depending
+  on how much data you are storing in your LiveOak applications.
+%p
+  After the LiveOak gear is installed, you will be presented with a screen showing you the default user
+  name ('admin') and generated initial password. For convience, the initial LiveOak admin password is
+  the same as the MongoDB password. This makes it easy to retrieve from the cartridge overview page.
+%p
+  Your LiveOak gear is now ready to be used.
+

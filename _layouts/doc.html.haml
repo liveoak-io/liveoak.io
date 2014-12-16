@@ -1,0 +1,18 @@
+---
+layout: base
+---
+.documentation
+  %section.main-banner
+    .container
+      %h1 Documentation
+      %p How to use LiveOak as backend for your amazing applications.
+  %section.docs
+    .container
+      .row
+        .col-md-3.sidebar.hidden-xs.hidden-sm
+          = partial( page.doc_nav_partial.nil? ? 'doc_nav.html.haml' : page.doc_nav_partial )
+        .col-md-9.text-content
+          ~ content
+
+/ Website Javascript
+%script{:src => "js/behavior.js"}
