@@ -3,4 +3,5 @@ _tmp
 .awestruct
 .ruby-version
 .ruby-gemset
+.sass-cache
 *.swp
