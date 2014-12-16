@@ -1,0 +1,20 @@
+== Scripting Overview
+
+LiveOak provides the ability for application developers to write and administer their own javascript based logic within the LiveOak server.
+
+These scripts allow the application developer to access to such things as:
+
+* Inspecting the incoming request and outgoing response
+* Modifying the request and response
+* Denying the request or response
+* Accessing any of the LiveOak resources. This allows for such things as reading and writing to the LiveOak storage. As well as configuring any of the internal LiveOak resources (such as security or UPS integration).
+
+=== Resource Triggered Scripts
+
+These scripts can be configured to be triggered before and/or after any resource invocation. This include when a resource is created, read,
+updated or deleted. Or if an error occured during the invocation. These resource triggered scripts are useful for such things as:
+
+* Verifying that incoming data is properly formated and of an expected type
+* Acting as a highly customized gatekeeper to resources
+* Modifying the incoming requests to add such things as metadata to the resource
+* Modifying the outgoing response to add or remove content going out to a specific user

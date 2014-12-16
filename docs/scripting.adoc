@@ -1,0 +1,61 @@
+:awestruct-layout: base
+++++
+<section class="main-banner">
+  <div class="container">
+    <h1>Server Side Scripting</h1>
+    <p>Running scripts within LiveOak itself</p>
+  </div>
+</section>
+<section class="scripting">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-3 sidebar hidden-xs hidden-sm">
+        <ul class="nav">
+          <li class="active">
+            <a href="#overview">Overview</a>
+            <ul class="nav">
+              <li>
+                <a href="#resource-triggered-scripts">Resource Triggered Scripts</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#gettingstarted">Getting Started</a>
+            <ul class="nav">
+              <li>
+                <a href="#scripting-examples">Scripting Examples</a>
+              </li>
+              <li>
+                <a href="#starting-from-scratch">Starting from Scratch</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#configuring">Configuring Scripts</a>
+          </li>
+          <li>
+            <a href="#javascript-api">JavaScript API</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-9 text-content">
+
+
+++++
+[[overview]]
+include::docs/scripting/_overview.adoc[]
+
+[[gettingstarted]]
+include::docs/scripting/_gettingstarted.adoc[]
+
+[[configuring]]
+include::docs/scripting/_configuring.adoc[]
+
+++++
+      </div>
+    </div>
+  </div>
+</section>
+++++
+
