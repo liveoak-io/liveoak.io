@@ -33,7 +33,7 @@ LiveOak requires Java 8. You can test your `java` version by running:
 java -version
 ....
 
-If you don’t have Java 8 on your system, follow the instructions link:../guides/installing_java[here] to install it.
+If you don’t have Java 8 on your system, follow the instructions link:install/java/[here] to install it.
 
 When LiveOak is started for the first time it will look for any existing MongoDB on your system. If it doesn’t find one, it will automatically download
 `MongoDB` from http://mongodb.org[mongodb.org] `$HOME/.liveoak/mongo` directory, it will then continue booting up.
