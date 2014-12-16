@@ -1,3 +1,5 @@
+require File.expand_path '../haml/filters/asciidoc.rb', __FILE__
+
 Awestruct::Extensions::Pipeline.new do
   helper Awestruct::Extensions::Partial
   extension Awestruct::Extensions::Posts.new '/blog'
