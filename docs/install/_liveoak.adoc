@@ -1,0 +1,54 @@
+[[installing-local]]
+=== Installing and Running LiveOak
+
+It’s very easy to get started with LiveOak.
+
+Start by unpacking the downloaded binary `.zip` or `.tgz` archive, which will create a `liveoak` directory on your disk. We’ll refer to this directory as `$LIVEOAK_HOME`.
+
+All you have to do now is run it:
+
+....
+$LIVEOAK_HOME/bin/standalone.sh -b 0.0.0.0
+....
+
+The second parameter is there to make the server socket accessible on all the network interfaces, so you can connect to LiveOak from your mobile device or an emulator.
+
+LiveOak requires Java 8. You can test your `java` version by running:
+
+....
+java -version
+....
+
+If you don’t have Java 8 on your system, follow the instructions link:install/java/[here] to install it.
+
+When LiveOak is started for the first time it will look for any existing MongoDB on your system. If it doesn’t find one, it will automatically download
+`MongoDB` from http://mongodb.org[mongodb.org] `$HOME/.liveoak/mongo` directory, it will then continue booting up.
+
+Downloading `MongoDB` takes a while, otherwise LiveOak itself starts up in just a few seconds.
+
+Once LiveOak is started, point your browser to http://localhost:8080[http://localhost:8080, role="bare", window="_blank"]
+
+You should get a simple page listing the currently available LiveOak applications. For a start, there is ‘admin’ application which contains
+http://localhost:8080/admin[LiveOak Admin Console]
+
+http://localhost:8080/admin[LiveOak Admin Console] requires you to log in. Use `admin` as username, and password. The first time you log in you’ll be prompted to change the password.
+
+http://localhost:8080/admin[LiveOak Admin Console] has quite a short idle timeout, so you may have to login again quite often.
+
+link:../guides/tutorial_chat[Let’s create and deploy another application], to see how easy it is.
+
+[[installing-openshift]]
+=== Installing the LiveOak OpenShift Cartridge
+
+Installing LiveOak on https://www.openshift.com/products/online[OpenShift Online] only requires a few steps.
+
+You will first need to have an OpenShift account. Then you can go to the https://www.openshift.com/quickstarts/liveoak-1.0.0Beta02[LiveOak OpenShift Quickstart]
+page and click on 'Deploy Now'. This will open the OpenShift cartridge install page. From here you can select the name of your gear as well as the gear size you wish to use.
+
+Please note that although LiveOak will run on the small gear, it is recommended to run on a larger gear for much better performance. You may also need to
+increase your storage beyond the 1GB limit depending on how much data you are storing in your LiveOak applications.
+
+After the LiveOak gear is installed, you will be presented with a screen showing you the default user name ('admin') and generated initial password. For convenience,
+the initial LiveOak admin password is the same as the MongoDB password. This makes it easy to retrieve from the cartridge overview page.
+
+Your LiveOak gear is now ready to be used.

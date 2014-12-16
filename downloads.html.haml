@@ -21,12 +21,12 @@ layout: base
                 %li
                   %a{:href => "#previous-versions"} Previous Versions
             %li
-              %a{:href => "#installing-and-running"} Installing and Running
+              %a{:href => "#installing-local"} Installing and Running
               %ul.nav
                 %li
-                  %a{:href => "#locally"} Locally
+                  %a{:href => "#installing-local"} Local
                 %li
-                  %a{:href => "#in-the-cloud"} In the Cloud
+                  %a{:href => "#installing-openshift"} OpenShift
         .col-md-9.text-content
           %h2#downloads.section-header.first Downloads
           %p.lead
@@ -86,65 +86,6 @@ layout: base
                 %tr
                   %td
                     %a{:href => "https://github.com/liveoak-io/liveoak/tree/#{r.version}"} Tagged on GitHub
-          %h2#installing-and-running.section-header Installing and Running
-          %p.lead
-            LiveOak can be deployed locally on a developer machine, or in the cloud. Read through to see how to install and run LiveOak in the way you choose.
-          %h3#locally Installing and Running LiveOak Locally
-          %p It’s very easy to get started with LiveOak. First, download your preferred distribution, among the options above.
-          %p
-            Start by unpacking the downloaded binary
-            %code .zip
-            or
-            %code .tgz
-            archive, which will create a
-            %code liveoak
-            directory on your disk. We’ll refer to this directory as
-            = succeed "." do
-              %code $LIVEOAK_HOME
-          %p All you have to do now is run it:
-          %pre
-            %code $LIVEOAK_HOME/bin/standalone.sh -b 0.0.0.0
-          %p The second parameter is there to make the server socket accessible on all the network interfaces, so you can connect to LiveOak from your mobile device or an emulator.
-          %p
-            LiveOak requires Java 8. You can test your
-            %code java
-            version by running:
-          %pre
-            %code java -version
-          %p
-            If you don’t have Java 8 on your system, follow the instructions
-            %a{:href => "/docs/guides/installing_java"} here
-            to install it.
-          %p
-            When LiveOak is started for the first time it will look for any existing MongoDB on your system. If it doesn’t find one, it will automatically download
-            %code MongoDB
-            from
-            = succeed "," do
-              %a{:href => "http://mongodb.org"} mongodb.org
-            %code $HOME/.liveoak/mongo
-            directory, it will then continue booting up.
-          %p
-            Downloading
-            %code MongoDB
-            takes a while, otherwise LiveOak itself starts up in just a few seconds.
-          %p
-            Once LiveOak is started, point your browser to
-            = succeed "." do
-              %a.bare{:href => "http://localhost:8080"} http://localhost:8080
-          %p
-            You should get a simple page listing the currently available LiveOak applications. For a start, there is ‘admin’ application which contains
-            = succeed "." do
-              %a{:href => "http://localhost:8080/admin"} LiveOak Admin Console
-          %p
-            %a{:href => "http://localhost:8080/admin"} LiveOak Admin Console
-            requires you to log in. Use
-            %code admin
-            as username, and password. The first time you log in you’ll be prompted to change the password.
-          %p
-            %a{:href => "http://localhost:8080/admin"} LiveOak Admin Console
-            has quite a short idle timeout, so you may have to login again quite often.
-          %p
-            %a{:href => "/docs/guides/tutorial_chat"}> Let’s create and deploy another application
-            , to see how easy it is.
-          %h3#in-the-cloud Installing and Running LiveOak in the Cloud
-          %p - there is an example available for deploying it to OpenShift Online.
+
+          :asciidoc
+            include::docs/install/_liveoak.adoc[]
