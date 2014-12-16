@@ -1,7 +1,6 @@
 :awestruct-layout: doc
 :linkattrs:
 
-[.section-header.first]
 == Getting Started
 
 Some text
