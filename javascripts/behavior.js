@@ -7,7 +7,7 @@ $(document).ready(function(){
       }
     }
   });
-  
-  $('body').scrollspy({ target: '.sidebar > .nav' });
+
+  $('body').scrollspy({ target: '.sidebar' });
 
 });
