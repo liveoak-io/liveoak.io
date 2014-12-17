@@ -1,0 +1,79 @@
+=== Configuring the Server
+
+==== Binding to a different Address
+
+If you wish for LiveOak to bind to another ip address, you will just need to modify the underlying Wildfly server to bind to this ip address. No extra LiveOak steps should be needed in most scenarios.
+
+To bind the Wildfly server to another address, you can either do so using the _-b_ binding option or specifying the _jboss.bind.address_ variable
+
+For example, to bind to the _123.45.678.9_ ip address, you can start the server with:
+
+`$LIVEOAK_HOME/bin/standalone.sh -b 123.45.678.9`
+
+or
+
+`$LIVEOAK_HOME/bin/standalone.sh -Djboss.bind.address=123.45.678.9`
+
+==== Changing the Port
+
+Changing the port in LiveOak may require a few extra steps in order for it to function properly.
+
+===== Changing the Port
+
+If you just want to change the HTTP port that the Wildfly server is running on, you just need to specify the _jboss.http.port_ variable.
+
+For instance, to run LiveOak on port _1234_ instead of the default _8080_ you would need to start the server with the following command
+
+`$LIVEOAK_HOME/bin/standalone.sh -Djboss.http.port=1234`
+
+NOTE: WildFly uses many different ports and this will only change the http one. Please see the WildFly documentation on how to change the other ports incase you are running into other port conflicts.
+
+===== Using Port Offset
+
+An easy way to start up multiple WildFly instances on the same machine is to use the _jboss.socket.binding.port-offset_ option to specify to the server to offset its list of ports. For instance, the http port by default is specified to be 8080, with a port offset of 10, the http port would now become 8090.
+
+For instance, to run LiveOak with a port offset of 10, you would need to start the server with the following command:
+
+`$LIVEOAK_HOME/bin/standalone.sh -Djboss.socket.binding.port-offset=10`
+
+_port-offset_ can also be used with the _jboss.http.port_ option. Starting the server with the following command will make the server start at port 9100:
+
+`$LIVEOAK_HOME/bin/standalone.sh -Djboss.http.port=9000  -Djboss.socket.binding.port-offset=100`
+
+==== Running Two Instances of LiveOak on the same Machine
+
+If you are running two instances of LiveOak on the same machine, you will need to modify the ports as well as the _standalone/configuration/standalone.xml_ to remove a port conflict on port 8383. Please see the above sections on how to modify the ports that LiveOak's WildFly runs on.
+
+Originally the _standalone/configuration/standalone.xml_ file will contain two sections which referece the 8383 port:
+
+[source,xml]
+.standalone.xml
+----
+...
+   <reverse-proxy name="reverse-proxy" connections-per-thread="30">
+      <host name="http://localhost:8383" instance-id="myRoute"/>
+   </reverse-proxy>
+...
+   <socket-binding name="ajp" port="${jboss.ajp.port:8009}"/>
+   <socket-binding name="liveoak" interface="localhost" port="${jboss.liveoak.port:8383}" fixed-port="true"/>
+   <socket-binding name="http" port="${jboss.http.port:8080}"/>
+...
+----
+
+
+To change this to another port, you will just need to change the _8383_ value to something else. For instance, to change it to port _8483_ it will look something like:
+
+[source,xml]
+.standalone.xml
+----
+...
+   <reverse-proxy name="reverse-proxy" connections-per-thread="30">
+      <host name="http://localhost:8483" instance-id="myRoute"/>
+   </reverse-proxy>
+...
+   <socket-binding name="ajp" port="${jboss.ajp.port:8009}"/>
+   <socket-binding name="liveoak" interface="localhost" port="${jboss.liveoak.port:8483}" fixed-port="true"/>
+   <socket-binding name="http" port="${jboss.http.port:8080}"/>
+...
+----
+
