@@ -1,0 +1,12 @@
+:awestruct-layout: doc
+:awestruct-doc_nav_partial: doc_scripting_nav.html.haml
+:linkattrs:
+
+[[overview]]
+include::docs/advanced/scripting/_overview.adoc[]
+
+[[getting-started]]
+include::docs/advanced/scripting/_gettingstarted.adoc[]
+
+[[configuring]]
+include::docs/advanced/scripting/_configuring.adoc[]
