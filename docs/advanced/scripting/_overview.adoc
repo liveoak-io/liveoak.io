@@ -1,4 +1,6 @@
-== Scripting Overview
+== Server Side Scripting
+
+=== Overview
 
 LiveOak provides the ability for application developers to write and administer their own javascript based logic within the LiveOak server.
 

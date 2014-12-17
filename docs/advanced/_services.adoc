@@ -35,3 +35,9 @@ The ups resource provides the integration with AeroGear UnifiedPush Server that 
 notifications.
 
 Full details on the push resource can be found link:advanced/push/[here].
+
+==== Server Side Scripting
+
+LiveOak provides the ability for application developers to write and administer their own javascript based logic to be run within the LiveOak server.
+
+Full details on how to use server side scripting in LiveOak can be found link:advanced/scripting/[here]
