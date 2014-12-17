@@ -111,10 +111,6 @@ table {
     margin-bottom: 20px;
     padding-bottom: 5px;
     margin-top: 30px;
-
-  &.first {
-    margin-top: 0;
-  }
 }
 
 .text-content {
@@ -602,6 +598,17 @@ table {
     }
   }
   
+  > .nav > li {
+    
+    > .nav {
+      display: none;
+    }
+    
+    &.active > .nav {
+      display: block;
+    }
+  }
+  
   a {
     font-weight: @font-weight-regular;
   }
@@ -626,7 +633,16 @@ table {
         padding: 4px 15px 4px 35px;
       }
     }
+    
+    a.btn {
+      margin-bottom: 15px;
+      margin-top: -6px;
+      color: @gray-text;
+      text-transform: none;
+    }
   }
+    
+  
 }
 
 
@@ -643,6 +659,7 @@ table {
 
  .btn.github {
     width: calc(~"50% - 15px");
+    margin-bottom: 10px;
     
     @media (max-width: @screen-xs-max) {
       width: 100%;
@@ -650,6 +667,7 @@ table {
   }
   
   .download-buttons {
+    margin-bottom: 10px;
     
     .btn {
   
@@ -662,10 +680,6 @@ table {
         margin-bottom: 10px;
       }
     }
-    
-    + .download-buttons {
-      margin-top: 10px;
-    }  
   }
 }
 
@@ -680,32 +694,39 @@ table {
 
 /* Adjusting anchor position */
 
+
 .downloads, .documentation, .scripting, .community {
 
   h2, h3 {
     padding-top: 86px;
+  }
+  
+  h2 {
     margin-top: -66px;
   }
   
-  h2.first,
+  h3 {
+    margin-top: -76px;
+  }
+
+  h2.first,  
   table + h2,
   p.lead + h3 {
     margin-top: -86px;
-  }
-  
-  p + h3 {
-    margin-top: -76px;
   }
 }
 
 .documentation {
   
-  h2#getting-started {
+  h2#getting-started,
+  h2#installing-java-8 {
     margin-top: -86px;
   }
   
-  h3#getting-getting {
-    margin-top: -76px;
+  h3#gs-overview,
+  h3#subscriptions,
+  h3#available-services {
+    margin-top: -86px;
   }
 }
 
@@ -715,22 +736,13 @@ table {
   h3#project-ownership {
     margin-top: -86px;
   }
-  
-  h3,
-  h2#license,
-  h2#contribute {
-    margin-top: -76px;
-  }
 }
 
 .scripting {
   
-  h2#overview {
-    margin-top: -86px;
-  }
-  
+  h2#overview,
   h3#scripting-examples {
-    margin-top: -76px;
+    margin-top: -86px;
   }
 }
 
