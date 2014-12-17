@@ -3,8 +3,8 @@
 
 == Getting Started
 
-[[getting-getting]]
-=== Getting LiveOak
+[[gs-overview]]
+=== Overview
 
 LiveOak is all about making it easier to develop mobile client applications by providing ready made, easy to consume cloud services that most mobile applications today require.
 
