@@ -1,0 +1,31 @@
+[[dash-push]]
+=== Push Notifications
+
+Before being able to configure your application to use Push Notifications, you will need to have your own instance of the
+AeroGear UnifiedPush Server (UPS) running and configured with the various native push platforms it supports.
+
+Instructions for how to setup and install a UPS instance can be found in the
+https://aerogear.org/docs/unifiedpush/ups_userguide/[AeroGear UPS User Guide].
+
+==== Configuring
+
+Since LiveOak needs to be able to send messages to a UPS instance, it will need the following information which needs to be
+obtained from a UPS instance directly:
+
+* The URL of where the UPS instance can be located
+* The ID of the UPS application
+* The master secret for that UPS application
+
+NOTE: Full details with screen shots coming soon
+
+////
+TODO Screenshots of configuring UPS in console
+
+<1> +ups-url+ The URL to the server hosting the UPS instance
+
+<2> +application-id+ The ID of the application configure in UPS
+
+<3> +master-secret+ The master secret for the specified application
+
+NOTE: The +application-id+ and its +master-secret+ need to be retrieved from the UPS console.
+////

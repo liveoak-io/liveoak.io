@@ -28,3 +28,10 @@ Full details on using the pgsql resource can be found link:advanced/postgresql/[
 The scheduler resource exposes a way to schedule triggers. When the trigger executes, the server will invoke an HTTP
 call to another end-point specified when the trigger is created. Additionally clients can subscribe to the executions of a
 given trigger, allowing them to also be triggered.
+
+==== Push
+
+The ups resource provides the integration with AeroGear UnifiedPush Server that is necessary to support native push
+notifications.
+
+Full details on the push resource can be found link:advanced/push/[here].

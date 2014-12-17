@@ -1,0 +1,24 @@
+%ul.nav
+  %li
+    %a.btn.btn-default{:href => "#{site.base_url}/docs"} 
+      %i.fa.fa-arrow-left
+      Back to documentation
+  %li.active
+    %a{:href => "#push-resource"} Push Resource
+    %ul.nav
+      %li.active
+        %a{:href => "#aliases"} Aliases
+        %ul
+          %li
+            %a{:href => "#retrieving-the-alias"} Retrieving the Alias
+          %li
+            %a{:href => "#alias-based-subscriptions"} Alias Based Subscriptionss
+          %li
+            %a{:href => "#securing-the-alias-endpoint"} Securing the Alias Endpoint
+      %li
+        %a{:href => "#ubuntu"} Subscriptions
+        %ul
+          %li
+            %a{:href => "#creating-a-subscription"} Creating a Subscription
+          %li
+            %a{:href => "#securing-the-subscriptions-endpoint"} Securing the Subscriptions Endpoint
