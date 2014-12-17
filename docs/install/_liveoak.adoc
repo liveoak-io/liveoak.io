@@ -52,3 +52,16 @@ After the LiveOak gear is installed, you will be presented with a screen showing
 the initial LiveOak admin password is the same as the MongoDB password. This makes it easy to retrieve from the cartridge overview page.
 
 Your LiveOak gear is now ready to be used.
+
+[[installing-docker]]
+=== Installing LiveOak Docker container
+
+To get the latest Docker container for LiveOak, simply run:
+....
+docker pull jboss/liveoak-server
+....
+
+Once the download is complete, you can start the "all in one" LiveOak server that bundles `MongoDB` and `Keycloak` by running:
+....
+docker run -it -p 8080:8080 -p 9090:9090 jboss/liveoak-server
+....
