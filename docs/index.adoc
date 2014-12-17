@@ -25,3 +25,8 @@ Here are some screencasts that we've put together to help you become familiar wi
 - https://vimeo.com/jbossdeveloper/review/105402526/9797d7a3b8[Installing LiveOak examples - With the Admin Console]
 - https://vimeo.com/106071915[LiveOak Business Logic (Part 1) - Introduction to resource triggered scripting]
 - https://vimeo.com/106072405[LiveOak Business Logic (Part 2) - Using the LiveOak Client]
+
+== Advanced Topics
+
+include::docs/advanced/_services.adoc[]
+

@@ -1,0 +1,30 @@
+=== Available Services
+
+LiveOak provides a number of services for your application to utilize, as detailed below.
+
+==== Filesystem
+
+The filesystem resource makes it easy to serve up files from a filesystem to provide the HTML, Javascript, CSS, images, and
+other artifacts required by an application.
+
+==== Aggregating Filesystem
+
+The aggregating filesystem resource uses special descriptors to aggregate several files into a single resource to be served.
+Its usage is not unlike the Rails asset-pipeline, able to stitch together many Javascript, CSS and other files together as a
+single addressable resource.
+
+==== MongoDB
+
+The Mongo resource exposes typical CRUD operations on MongoDB databases, collections, and objects.
+
+==== PostgreSQL
+
+The pgsql resource exposes typical CRUD operations on PostgreSQL table data, in addition to managing table definitions.
+
+Full details on using the pgsql resource can be found link:advanced/postgresql/[here].
+
+==== Scheduler
+
+The scheduler resource exposes a way to schedule triggers. When the trigger executes, the server will invoke an HTTP
+call to another end-point specified when the trigger is created. Additionally clients can subscribe to the executions of a
+given trigger, allowing them to also be triggered.
