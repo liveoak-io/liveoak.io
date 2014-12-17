@@ -1,9 +1,25 @@
 [[installing-local]]
 === Installing and Running LiveOak
 
+==== Prerequisites
+
+The only prerequisite for being able to run LiveOak is Java 8.
+
+You can test your `java` version by running:
+
+....
+java -version
+....
+
+If you don’t have Java 8 on your system, follow the instructions link:install/java/[here] to install it.
+
+==== Installing and Running
+
 It’s very easy to get started with LiveOak.
 
-Start by unpacking the downloaded binary `.zip` or `.tgz` archive, which will create a `liveoak` directory on your disk. We’ll refer to this directory as `$LIVEOAK_HOME`.
+First, download your preferred binary from link:../downloads[http://liveoak.io/downloads].
+
+Next, unpack the downloaded binary `.zip` or `.tgz` archive. This will create a `liveoak` directory, where you chose to extract it to. We’ll refer to this directory as `$LIVEOAK_HOME`.
 
 All you have to do now is run it:
 
@@ -12,14 +28,6 @@ $LIVEOAK_HOME/bin/standalone.sh -b 0.0.0.0
 ....
 
 The second parameter is there to make the server socket accessible on all the network interfaces, so you can connect to LiveOak from your mobile device or an emulator.
-
-LiveOak requires Java 8. You can test your `java` version by running:
-
-....
-java -version
-....
-
-If you don’t have Java 8 on your system, follow the instructions link:install/java/[here] to install it.
 
 When LiveOak is started for the first time it will look for any existing MongoDB on your system. If it doesn’t find one, it will automatically download
 `MongoDB` from http://mongodb.org[mongodb.org] `$HOME/.liveoak/mongo` directory, it will then continue booting up.
