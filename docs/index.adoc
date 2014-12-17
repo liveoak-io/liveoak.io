@@ -37,5 +37,7 @@ include::docs/develop/_subscriptions.adoc[]
 
 == Advanced Topics
 
+include::docs/advanced/_serverconfig.adoc[]
+
 include::docs/advanced/_services.adoc[]
 
