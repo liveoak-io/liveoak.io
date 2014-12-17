@@ -26,6 +26,10 @@ Here are some screencasts that we've put together to help you become familiar wi
 - https://vimeo.com/106071915[LiveOak Business Logic (Part 1) - Introduction to resource triggered scripting]
 - https://vimeo.com/106072405[LiveOak Business Logic (Part 2) - Using the LiveOak Client]
 
+== Developing Apps
+
+include::docs/develop/_subscriptions.adoc[]
+
 == Advanced Topics
 
 include::docs/advanced/_services.adoc[]
