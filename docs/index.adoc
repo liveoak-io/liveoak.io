@@ -8,8 +8,20 @@
 
 LiveOak is all about making it easier to develop mobile client applications by providing ready made, easy to consume cloud services that most mobile applications today require.
 
+Our goal is to enable you, a mobile application developer, to focus on developing an amazing mobile application quickly. To that end, we provide a "point and click" interface
+for specifying the services you need for your mobile application.
+
 LiveOak can be deployed locally on a developer machine, or in the cloud - either to OpenShift Online or as a Docker container.
 
-For this guide we’ll use a local installation which can be downloaded from link:../downloads[http://liveoak.io/downloads].
-
 include::docs/install/_liveoak.adoc[]
+
+[[gs-screencasts]]
+=== Screencasts
+
+Here are some screencasts that we've put together to help you become familiar with what LiveOak can do:
+
+- https://vimeo.com/96213933[Rapid application development with LiveOak (Part 1) - HTML Chat client]
+- https://vimeo.com/96691967[Rapid application development with LiveOak (Part 2) - Security]
+- https://vimeo.com/jbossdeveloper/review/105402526/9797d7a3b8[Installing LiveOak examples - With the Admin Console]
+- https://vimeo.com/106071915[LiveOak Business Logic (Part 1) - Introduction to resource triggered scripting]
+- https://vimeo.com/106072405[LiveOak Business Logic (Part 2) - Using the LiveOak Client]
