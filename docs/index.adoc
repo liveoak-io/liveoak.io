@@ -67,6 +67,8 @@ include::docs/develop/_subscriptions.adoc[]
 
 == Customising the Server
 
+include::docs/custom/_spi.adoc[]
+
 include::docs/custom/_extensions.adoc[]
 
 == Advanced Topics
