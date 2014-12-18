@@ -35,6 +35,10 @@ include::docs/dash/_push.adoc[]
 
 include::docs/develop/_subscriptions.adoc[]
 
+== Customising the Server
+
+include::docs/custom/_extensions.adoc[]
+
 == Advanced Topics
 
 include::docs/advanced/_serverconfig.adoc[]

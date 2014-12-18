@@ -1,0 +1,61 @@
+=== Extensions
+
+==== What is an Extension?
+
+An Extension is the mechanism used by LiveOak to bring a class of resource into the system.  An extension is loaded using
+JBoss-Modules, and implements `io.liveoak.spi.extension.Extension`.
+
+A given extension may be installed several times under different names, with different configuration values.
+
+==== Responsibilities of an Extension
+
+An extension runs within the context of an initialized LiveOak server, and has two main roles:
+
+* Initialize resources at a system-wide level
+* Initialize resources for each application in which it is used
+
+==== System-wide Initialization
+
+When installed, an Extension's first `extend(...)` method is called, and provided a `SystemExtensionContext`. This context
+provides the extension the following:
+
+* The ID under which it is being installed
+* An MSC `ServiceTarget` in which to install services
+* An MSC `ServiceName` referencing the system-level configuration object for the extension.
+
+The extension may choose to install shared MSC services through the `ServiceTarget` and may inject the configuration
+to any of these services.
+
+During system-wide initialization, no actions are required to be performed for any application wishing to use the extension.
+
+==== Application-level Initialization
+
+When an extension is provisioned for a specific application, its second `extend(...)` method is called, and provided an
+`ApplicationExtensionContext`.  This context provides the extension the following:
+
+* The ID under which it is being installed
+* An MSC `ServiceTarget` in which to install services
+* An MSC `ServiceName` referencing the application-level configuration object for the extension
+* A reference to the `Application` requesting the extension provisioning.
+
+Additionally, two methods are provided for installing Resources into the web-accessible resource tree:
+
+* `mountPublic(...)`
+* `mountPrivate(...)`
+
+Just as with system-level initialization, an Extension may choose to install many MSC services on behalf of each
+application that uses it. It is expected that at least some of these will be web-accessible `Resource` implementations.
+
+The extension may call `mountPublic(...)` exactly once, with a `ServiceName` which points to a `RootResource` with the same ID
+as the extension-context provides.  This will result in mounting the resource on the public side of the application's URL-space:
+
+----
+http://host.com/some-app/the-resource
+----
+
+An extension may mount an "administrative" resource on the private side of the application's URL-space.  If the extension
+is installed as `foo`, the "administrative" resource would be available through a URL such as:
+
+----
+http://host.com/admin/applications/some-app/resources/foo
+----
