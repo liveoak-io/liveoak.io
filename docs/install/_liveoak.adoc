@@ -34,7 +34,7 @@ When LiveOak is started for the first time it will look for any existing MongoDB
 
 Downloading `MongoDB` takes a while, otherwise LiveOak itself starts up in just a few seconds.
 
-Once LiveOak is started, point your browser to http://localhost:8080[http://localhost:8080, role="bare", window="_blank"]
+Once LiveOak is started, point your browser to http://localhost:8080[]
 
 You should get a simple page listing the currently available LiveOak applications. For a start, there is ‘admin’ application which contains
 http://localhost:8080/admin[LiveOak Admin Console]
