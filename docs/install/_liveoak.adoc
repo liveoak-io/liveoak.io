@@ -1,5 +1,5 @@
 [[installing-local]]
-=== Installing and Running LiveOak
+=== Installing and Running LiveOak local
 
 ==== Prerequisites
 
