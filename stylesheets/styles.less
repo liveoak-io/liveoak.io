@@ -703,43 +703,34 @@ table {
 
 .downloads, .documentation, .scripting, .community {
 
+  /* General styles */
+
   h2, h3 {
     padding-top: 86px;
-  }
-  
-  h2 {
-    margin-top: -66px;
   }
   
   h3 {
     margin-top: -76px;
   }
+  
+  h2 {
+    margin-top: -66px;
+  }
+
+  /* Downloads page */
 
   h2.first,  
   table + h2,
   p.lead + h3 {
     margin-top: -86px;
   }
-}
 
-.documentation {
+
+  /* Documentation page */
   
-  h2#getting-started,
-  h2#installing-java-8 {
-    margin-top: -86px;
-  }
-  
-  h3#gs-overview,
-  h3#subscriptions,
-  h3#available-services {
-    margin-top: -86px;
-  }
-}
-
-.community {
-
-  h2#governance,
-  h3#project-ownership {
+  .text-content > .sect1:first-child > h2,
+  h2 + .sect2 > h3,
+  h2 + .sectionbody > .sect2:first-child > h3 {
     margin-top: -86px;
   }
 }

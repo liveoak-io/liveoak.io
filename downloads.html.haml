@@ -21,12 +21,14 @@ layout: base
                 %li
                   %a{:href => "#previous-versions"} Previous Versions
             %li
-              %a{:href => "#installing-local"} Installing and Running
+              %a{:href => "#installing-running"} Installing and Running
               %ul.nav
                 %li
-                  %a{:href => "#installing-local"} Local
+                  %a{:href => "#installing-local"} Installing and Running local
                 %li
-                  %a{:href => "#installing-openshift"} OpenShift
+                  %a{:href => "#installing-openshift"} Installing on OpenShift
+                %li
+                  %a{:href => "#installing-docker"} Installing via Docker
         .col-md-9.text-content.sidebar-anchor
           %h2#downloads.first Downloads
           %p.lead
@@ -86,6 +88,6 @@ layout: base
                 %tr
                   %td
                     %a{:href => "https://github.com/liveoak-io/liveoak/tree/#{r.version}"} Tagged on GitHub
-
+          %h2#installing-running Installing and Running
           :asciidoc
             include::docs/install/_liveoak.adoc[]

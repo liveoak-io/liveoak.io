@@ -18,20 +18,7 @@
         %li{:class=>"#{'active' if page.output_page.output_path.start_with?('/downloads') }" }<
           %a{:href => "#{site.base_url}/downloads"} Downloads
         %li.dropdown{:class=>"#{'active' if page.output_page.output_path.start_with?('/docs') }" }<
-          %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#{site.base_url}/docs", :role => "button"}
-            Documentation
-            %span.caret
-          %ul.dropdown-menu{:role => "menu"}
-            %li
-              %a{:href => "#{site.base_url}/docs#getting-started"} Getting Started
-            %li
-              %a{:href => "#{site.base_url}/docs#dashboard"} Dashboard
-            %li
-              %a{:href => "#{site.base_url}/docs#developing-apps"} Developing Apps
-            %li
-              %a{:href => "#{site.base_url}/docs#customising-the-server"} Customising the Server
-            %li
-              %a{:href => "#{site.base_url}/docs#advanced-topics"} Advanced Topics
+          %a{:href => "#{site.base_url}/docs"} Documentation
         %li.dropdown{:class=>"#{'active' if page.output_page.output_path.start_with?('/community') }" }<
           %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
             Community
