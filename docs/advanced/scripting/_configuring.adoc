@@ -1,4 +1,4 @@
-== Configuring Scripts
+=== Configuring Scripts
 
 From within the console, when you create or go to edit a script, you will be presented with a form to configure your script.
 
@@ -25,7 +25,7 @@ An optional, user friendly name for the script.
 Description::
 An optional description to be used for the script.
 
-=== Resource Paths
+==== Resource Paths
 The resource path for your script determines what resources should trigger the script. You can use the resource path to target one particular resource, all the children of a particular resource, all the descendants of a particular resource, or a combination of these options. 
 
 You can only specify one resource path per script. You will need to create multiple scripts if you need the same script to be run against multiple targets.
@@ -51,7 +51,7 @@ You can only specify one resource path per script. You will need to create multi
 
 |===================================  
 
-=== The Script
+==== The Script
 
 What functions your script contains will determine what actions will trigger the script into being run. 
 
@@ -61,7 +61,7 @@ Similarily, if you also had a *postUpdate(link:/docs/reference/scripting/javascr
 
 You can have multiple script functions defined in your script, and each will be run based on the appropriate action.
 
-==== Script Functions
+===== Script Functions
 
 .Script Functions
 [width="90%", align="center", cols="1,^2", options="header", valign="top"]
@@ -86,6 +86,6 @@ You can have multiple script functions defined in your script, and each will be 
 |on-error | function onError(link:/docs/reference/scripting/javascript/out/Response.html[response]) {...}
 |===================================
 
-=== JavaScript API
+==== JavaScript API
 
 The API for dealing with javascript object can be found link:/docs/reference/scripting/javascript/out/index.html[here]

@@ -1,28 +1,28 @@
-== Getting Started
+=== Getting Started
 
-=== Scripting Examples
+==== Scripting Examples
 
 The easiest way to get started with LiveOak server side scripting is to try out the examples.
 
 From the LiveOak console, click on 'Applications' and then on 'Try example applications'. If you are running locally on port 8080, then the url to install the example applications is http://localhost:8080/admin#/example-applications 
 
-==== Hello Script Example
+===== Hello Script Example
 The 'message' example is a very simple example to go through and print a message to the server logs whenever a resource is accessed.
 More information about this example can be found at https://github.com/liveoak-io/liveoak-example-helloscript
 
-==== Metadata Example
+===== Metadata Example
 The 'Metadata for Data' example will add a 'last-modified' entry to new storage data being created, as well as remove this entry when a normal user access it. 
 More information about this example can be found at https://github.com/liveoak-io/liveoak-example-metadatascript
 
-==== Data Validation Example
+===== Data Validation Example
 The 'Data Validation' example will enforce a specific format when creating a new 'product' entry into the LiveOak storage.
 More information about this example can be found at https://github.com/liveoak-io/liveoak-example-formatscript
 
-==== Useragent Example
+===== Useragent Example
 The 'Request Headers' example will fetch the useragent of the device accessing the resource and store it in a resource collection.
 More information about this example can be found at https://github.com/liveoak-io/liveoak-example-useragentscript
 
-=== Starting from Scratch
+==== Starting from Scratch
 
 It is very easy to add resource triggered scripts to your application. Just select the 'Logic' option from the left side menu in your application overview page and select 'New Script'
 
