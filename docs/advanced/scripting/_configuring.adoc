@@ -31,7 +31,7 @@ The resource path for your script determines what resources should trigger the s
 You can only specify one resource path per script. You will need to create multiple scripts if you need the same script to be run against multiple targets.
 
 .Example Resource Paths
-[width="90%",align="center",cols="1,^2",options="header",valign="top"]
+[align="center",cols="1,^2",options="header",valign="top"]
 |===================================
 |Resource Path | Resource Target
 
