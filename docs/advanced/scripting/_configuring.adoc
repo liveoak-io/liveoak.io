@@ -7,24 +7,23 @@ image::scripting/new_script.png[Console Script Configuration, 90%, align="center
 
 The various settings for script configuration are:
 
-===== Script ID
+Script ID::
 The indentifier for this script. This values can only be set on script creation
 
-===== Resource Path
+Resource Path::
 The path we should should target our script against. See the <<Resource Paths>> section for more information.
 
-===== Priority
+Priority::
 Sets the priority for running this script when multiple scripts are configured to be triggered against the same resource path. The higher the priority, the sooner the script will be run.
 
-===== Enable Script
+Enable Script::
 If the script should be currently enabled or not
 
-===== Script Name
+Script Name::
 An optional, user friendly name for the script.
 
-===== Description
+Description::
 An optional description to be used for the script.
-
 
 === Resource Paths
 The resource path for your script determines what resources should trigger the script. You can use the resource path to target one particular resource, all the children of a particular resource, all the descendants of a particular resource, or a combination of these options. 
