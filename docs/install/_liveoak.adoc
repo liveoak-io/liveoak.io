@@ -50,11 +50,11 @@ link:../guides/tutorial_chat[Let’s create and deploy another application], to 
 
 Installing LiveOak on https://www.openshift.com/products/online[OpenShift Online] only requires a few steps.
 
-You will first need to have an OpenShift account. Then you can go to the https://www.openshift.com/quickstarts/liveoak-1.0.0Beta02[LiveOak OpenShift Quickstart]
-page and click on 'Deploy Now'. This will open the OpenShift cartridge install page. From here you can select the name of your gear as well as the gear size you wish to use.
+You will first need to have an OpenShift account. Then you can then click https://marketplace.openshift.com/apps/10363[here] to go to the LiveOak entry in the OpenShift Marketplace
+and click on 'Try Now'. This will open the OpenShift cartridge install page. From here you can select the name of your gear as well as the gear size you wish to use.
 
-Please note that although LiveOak will run on the small gear, it is recommended to run on a larger gear for much better performance. You may also need to
-increase your storage beyond the 1GB limit depending on how much data you are storing in your LiveOak applications.
+Please note that it is highly recommended to run the LiveOak cartridge on a medium sized gear or larger. The LiveOak cartridge may still run on a smaller gear, but its performance will
+be affected. You may also need to increase your storage beyond the 1GB limit depending on how much data you are storing in your LiveOak applications.
 
 After the LiveOak gear is installed, you will be presented with a screen showing you the default user name ('admin') and generated initial password. For convenience,
 the initial LiveOak admin password is the same as the MongoDB password. This makes it easy to retrieve from the cartridge overview page.
