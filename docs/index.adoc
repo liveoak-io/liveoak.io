@@ -43,5 +43,7 @@ include::docs/custom/_extensions.adoc[]
 
 include::docs/advanced/_serverconfig.adoc[]
 
+include::docs/advanced/_keycloak.adoc[]
+
 include::docs/advanced/_services.adoc[]
 
