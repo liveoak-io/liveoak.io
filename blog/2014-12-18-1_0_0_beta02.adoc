@@ -1,0 +1,58 @@
+= Beta02
+Ken Finnigan
+
+We are proud to announce the second public beta release of http://liveoak.io[LiveOak]!
+
+== Release Highlights
+
+Some of the highlights of Beta02 are:
+
+* Updating the code for a Single Page App through the Admin Console
+* Overhaul the look of the chat example
+* Support for a LiveOak MongoDB `datasource` that can be used by any application for a `storage` backend.
+* Yeoman generator
+* Updated OpenShift cartridge
+* Importing applications from the filesystem or git url
+
+Along with many other improvements and bug fixes.
+
+For a full list of all the resolved issues, see the https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12314622&version=12325422[Release Notes].
+
+=== Yeoman Generator
+
+Viliam Rockai has put together an easy to use Yeoman Generator for LiveOak!
+
+All you need to do is, install yeoman:
+
+[source,bash]
+----
+npm install -g yo
+----
+
+Install the LiveOak Yeoman generator:
+
+[source,bash]
+----
+npm install -g generator-liveoak
+----
+
+And generate the example LiveOak chat application:
+
+[source,bash]
+----
+yo liveoak {yourAppName}
+----
+
+And then `grunt serve` to start the application. It's as simple as that to have a simple chat application up and running,
+and communicating with a LiveOak server!
+
+== On the way to 1.0.0.Final?
+
+Some of the key features we're looking to introduce before we go final:
+
+* API usage metrics and basic analytics
+* SDKs and tooling
+* Continued UX improvements to the Console
+
+Please link:/downloads[download it] and link:/docs/#getting-started[try it out], then go to our link:/community[community page],
+subscribe to the mailing list and share your feedback!
