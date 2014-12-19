@@ -61,15 +61,17 @@ Here are some screencasts that we've put together to help you become familiar wi
 
 LiveOak comes with some example applications that are installable from within the Admin Console.
 
-include::docs/examples/_chat-html.adoc[]
+NOTE: Documentation on Chat and Business Logic examples coming soon.
 
-include::docs/examples/_chat-android.adoc[]
+// include::docs/examples/_chat-html.adoc[]
 
-include::docs/examples/_chat-ios.adoc[]
+// include::docs/examples/_chat-android.adoc[]
 
-include::docs/examples/_chat-secured.adoc[]
+// include::docs/examples/_chat-ios.adoc[]
 
-include::docs/examples/_business-logic.adoc[]
+// include::docs/examples/_chat-secured.adoc[]
+
+// include::docs/examples/_business-logic.adoc[]
 
 [[ex-todo]]
 === ToDo
@@ -107,32 +109,7 @@ include::docs/examples/_basic-auth.adoc[]
 
 == Dashboard
 
-[[create-app]]
-=== Creating a new Application
-
-NOTE: Updated documentation coming soon.
-
-[[install-examples]]
-=== Install Examples
-
-NOTE: Updated documentation coming soon.
-
-[[security]]
-=== Security
-
-NOTE: Updated documentation coming soon.
-
-[[storage]]
-=== Data Storage
-
-NOTE: Updated documentation coming soon.
-
 include::docs/dash/_push.adoc[]
-
-[[clients]]
-=== Clients
-
-NOTE: Updated documentation coming soon.
 
 == Developing Apps
 
