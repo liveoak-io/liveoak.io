@@ -1,0 +1,136 @@
+[[ex-todo-html]]
+=== ToDo (HTML)
+
+This example will make static web content available to be served by LiveOak, but also configure the necessary LiveOak services
+as REST endpoints.
+
+The source for this example is located at https://github.com/liveoak-io/liveoak-example-todomvc
+
+==== Installation
+
+Start LiveOak:
+[source,bash]
+----
+$LIVEOAK_HOME/bin/standalone.sh -b 0.0.0.0
+----
+
+Point your browser to http://localhost:8080/admin#/example-applications[], select `TodoMVC` and then `Install`.
+
+==== Usage
+
+Point your browser to http://localhost:8080/todomvc[].
+
+We would expect to see the 'todomvc' web application. But instead we get the following screen:
+
+image::examples/todomvc_first_login.png[TodoMVC - First Login, 75%, align="center"]
+
+The reason is that the application is configured through the
+https://github.com/liveoak-io/liveoak-example-todomvc/blob/master/application.json[application.json]
+file to require authentication for all access - it doesn't allow any anonymous access, but we have not configured the login
+mechanism through the http://localhost:8080/admin[LiveOak Admin Console] yet.
+
+Let's configure security by pointing the browser to http://localhost:8080/admin[].
+
+We are met with a login form. Use `admin` as username and a password - unless you changed it to something else already.
+
+If this is the first time you're logging into the http://localhost:8080/admin[LiveOak Admin Console], you'll have to
+change the password.
+
+The http://localhost:8080/admin[LiveOak Admin Console] has quite a short idle timeout, so you may have to login again quite often.
+
+After successful login you find yourself on the 'Applications' admin page.
+
+image::dash/admin_applications.png[LiveOak Admin - Applications, 75%, align="center"]
+
+Select `todomvc` application to open the dashboard, then select the `Security` icon in the left sidebar and select the `Roles`
+tab. The application currently has no Roles configured.
+
+image::examples/todomvc_security_roles.png[LiveOak Admin - Application Settings, 75%, align="center"]
+
+Use the `New Role` button to add two roles named `admin`, and `user`.
+
+Then make the `user` role active by default for new users.
+
+image::examples/todomvc_security_roles_toggle_default_role.png[LiveOak Admin - Toggle default role, 75%, align="center"]
+
+Switch from `Security` to `Clients` in the left sidebar.
+
+image::examples/todomvc_application_clients.png[LiveOak Admin - Application Clients, 75%, align="center"]
+
+Use the `New Client` button to add a new client configuration.
+
+image::examples/todomvc_application_clients_new.png[LiveOak Admin - New Application Client, 75%, align="center"]
+
+Set `todomvc-html-client` as a 'Client Name'.
+
+For 'Platform' select `HTML5`.
+
+Specify a single 'Redirect URI': `http://localhost:8080/todomvc/*`, and specify `http://localhost:8080` for 'Web Origins'.
+
+Finally, check both `admin`, and `user` role for 'Scope', and click `Save`.
+
+If you now try again to access http://localhost:8080/todomvc[], you will get a working Login screen.
+
+image::examples/todomvc_working_login.png[TodoMVC - Login, 75%, align="center"]
+
+At this point we don't have any users yet, but we do have registration of new users available on the Login page. This allows
+anyone to register as a regular user - one with `user` role automatically assigned.
+
+But we want to create an 'admin' user for our application first.
+
+Let's go back to the http://localhost:8080/admin[LiveOak Admin Console] and open the `Security` section for `todomvc`.
+
+Select the `Users` tab
+
+image::examples/todomvc_security_users.png[LiveOak Admin Console - Users, 75%, align="center"]
+
+And use the `New User` button to create a new user. Enter new 'Username', a temporary password and click `Save`. The user will
+have to change the password on a first login.
+
+image::examples/todomvc_security_users_add.png[LiveOak Admin Console - Add User, 75%, align="center"]
+
+At this point our user `bob` can login to http://localhost:8080/todomvc[], and access the web application.
+
+image::examples/todomvc_bob.png[TodoMVC, 75%, align="center"]
+
+'You might get an error message here. Let's just ignore it for now.'
+
+Thus far `bob` is a regular user, which means he can create new todo items, and list, edit, or delete todo items that he
+himself has created.
+
+We can make him an 'admin', which will allow him full access to any other user's items as well.
+
+Let's go back to the http://localhost:8080/admin[LiveOak Admin Console] again, and go to `Users` tab of `Security` for `todomvc`.
+`bob` will be present in the list of users.
+
+image::examples/todomvc_security_users_all.png[LiveOak Admin Console - View all users, 75%, align="center"]
+
+Select `bob` to edit the user, and select `user` and `admin` for `Roles`. Click `Save`.
+
+image::examples/todomvc_security_users_roles.png[LiveOak Admin Console - Assigned Roles, 75%, align="center"]
+
+While here, create two more users. User `john`, which should only have `user` role assigned,
+and user `alice`, which should have no roles assigned at all - i.e. should have a default `user` role removed from
+'Assigned Roles' list.
+
+Don't forget to set their temporary passwords.
+
+Now, let's login to http://localhost:8080/todomvc[TodoMVC] as user `bob` again, and create one todo item.
+
+image::examples/todomvc_bob_first_todo.png[Bob's first Todo, 75%, align="center"]
+
+Then log out, and login as `john`. And create a new item.
+
+image::examples/todomvc_john.png[John's first Todo, 75%, align="center"]
+
+Note that John only sees his own items.
+
+Log out, and login as `bob` again.
+
+image::examples/todomvc_see_all_bob.png[Bob the admin, 75%, align="center"]
+
+You can see that Bob can read all existing todo items from all users. He can also edit, and delete any item he wants.
+
+Now try to login as `alice`.
+
+Since `alice` has no roles, she has no access to application functions, even though she was allowed to log in.

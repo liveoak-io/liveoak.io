@@ -1,25 +1,25 @@
-[[ex-gallery-cordova]]
-==== Gallery (Cordova)
+[[ex-todo-cordova]]
+=== ToDo (Cordova)
 
 http://cordova.apache.org[Cordova] is an open source project under the umbrella of the Apache organization, that provides
 a framework for using HTML5, CSS, and JavaScript to create cross-platform native mobile applications.
 
-For the server endpoints, we depend on the `gallery` HTML application, so make sure you have it one up and running.
+For the server endpoints, we depend on the `todo` HTML application, so make sure you have it up and running.
 
-The source for this example is located at https://github.com/liveoak-io/liveoak-example-gallery-cordova
+The source for this example is located at https://github.com/liveoak-io/liveoak-example-todomvc-cordova
 
 If you don't have Cordova installed on your system yet, follow the link:/docs/install/cordova[instructions here] to install it.
 
-Now we’re going to build `gallery-cordova`.
+Now we’re going to build `todomvc-cordova`.
 
 [source,bash]
 ----
-git clone https://github.com/liveoak-io/liveoak-example-gallery-cordova
-cd liveoak-example-gallery-cordova
+git clone https://github.com/liveoak-io/liveoak-example-todomvc-cordova
+cd liveoak-example-todomvc-cordova
+rm -rf platforms
+rm -rf plugins
 mkdir platforms plugins
 cordova plugin add org.apache.cordova.inappbrowser
-cordova plugin add org.apache.cordova.camera
-cordova plugin add org.apache.cordova.file
 ----
 
 Make sure you have the link:/docs/install/android[Android SDK] installed, the ANDROID_HOME environment variable set,
@@ -46,10 +46,10 @@ This last step will build an Android application, and install it on your device 
 cordova run android
 ----
 
-You should see 'Gallery' application start on your device / emulator.
+You should see 'TodoMVC' application start on your device / emulator.
 
-image::examples/gallery_android.png[Gallery for Android - using Cordova, 75%, align="center"]
+image::examples/todomvc_android_login.png[TodoMVC Android - Login, 75%, align="center"]
 
-Thanks to the `org.apache.cordova.file` plugin, our 'Gallery' example can use a native image picker activity.
+When you login as 'bob' or 'john' you see the same list of items as if logged in through a web browser.
 
-image::examples/gallery_android_gallery.png[Gallery Android - native image picker, 75%, align="center"]
+image::examples/todomvc_android_todos.png[TodoMVC Android - Todos, 75%, align="center"]
