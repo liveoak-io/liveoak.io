@@ -107,7 +107,32 @@ include::docs/examples/_basic-auth.adoc[]
 
 == Dashboard
 
+[[create-app]]
+=== Creating a new Application
+
+NOTE: Updated documentation coming soon.
+
+[[install-examples]]
+=== Install Examples
+
+NOTE: Updated documentation coming soon.
+
+[[security]]
+=== Security
+
+NOTE: Updated documentation coming soon.
+
+[[storage]]
+=== Data Storage
+
+NOTE: Updated documentation coming soon.
+
 include::docs/dash/_push.adoc[]
+
+[[clients]]
+=== Clients
+
+NOTE: Updated documentation coming soon.
 
 == Developing Apps
 
