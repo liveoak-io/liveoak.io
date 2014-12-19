@@ -3,7 +3,7 @@
 :linkattrs:
 
 [[installing-android]]
-== Installing Android SDK Tools
+== Installing Android SDK
 
 Visit the http://developer.android.com/sdk/index.html[official Android SDK site].
 
