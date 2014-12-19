@@ -10,7 +10,7 @@ The source for this example is located at https://github.com/liveoak-io/liveoak-
 
 Now we’re going to build `gallery-cordova`. But first, we need to install the necessary tools.
 
-'Cordova' uses a 'node.js' based build system, and comes as a set of 'Node Package Manager (npm)' packages.
+Cordova uses a 'node.js' based build system, and comes as a set of 'Node Package Manager (npm)' packages.
 
 Follow the link:/docs/install/cordova[instructions here] to install 'Cordova' on your system.
 
