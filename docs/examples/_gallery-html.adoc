@@ -11,7 +11,7 @@ The source for this example is located at https://github.com/liveoak-io/liveoak-
 Start LiveOak:
 [source,bash]
 ----
- $LIVEOAK_HOME/bin/standalone.sh -b 0.0.0.0
+$LIVEOAK_HOME/bin/standalone.sh -b 0.0.0.0
 ----
 
 Point your browser to link:http://localhost:8080/admin#/example-applications[], select `Gallery` and then `Install`.
