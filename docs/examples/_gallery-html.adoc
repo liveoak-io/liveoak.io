@@ -1,0 +1,46 @@
+[[ex-gallery-html]]
+==== Gallery (HTML)
+
+This example will not only deploy static web content to be served by LiveOak, but also configure the necessary LiveOak
+services ('mongo-gridfs' for example) as REST endpoints which are used by both the HTML and Cordova UIs.
+
+The source for this example is located at https://github.com/liveoak-io/liveoak-example-gallery
+
+===== Installation
+
+Start LiveOak:
+[source,bash]
+----
+ $LIVEOAK_HOME/bin/standalone.sh -b 0.0.0.0
+----
+
+Point your browser to link:http://localhost:8080/admin#/example-applications[], select `Gallery` and then `Install`.
+
+===== Usage
+
+Point your browser to link:http://localhost:8080/gallery/app/index.html[].
+
+You should see a simple photo gallery application, that allows you to upload images to LiveOak.
+
+image::examples/gallery_web.png[Gallery Web - desktop, 75%, align="center"]
+
+By using a '+' button in bottom right corner you can upload new images to the server.
+
+image::examples/gallery_web_filepicker.png[Gallery Web - desktop add images, 75%, align="center"]
+
+You can access the web application from your Android device by going to that same link - except instead of `localhost` use an
+ip address of your LiveOak server instance.
+
+image::examples/gallery_web_on_android.png[Gallery Web - on Android device, 75%, align="center"]
+
+Android Chrome browser offers various options when adding a new image.
+
+image::examples/gallery_android_web_add_image.png[Gallery Web - Android add image, 75%, align="center"]
+
+Selecting `Documents` opens a file picker activity.
+
+image::examples/gallery_android_filepicker.png[Gallery Web - Android file picker, 75%, align="center"]
+
+The exact look and functionality of the file picker component used will depend on what software is installed on the device.
+
+image::examples/gallery_android_camera.png[Gallery Web - Android Camera gallery, 75%, align="center"]

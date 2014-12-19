@@ -57,6 +57,43 @@ Here are some screencasts that we've put together to help you become familiar wi
 - https://vimeo.com/106071915[LiveOak Business Logic (Part 1) - Introduction to resource triggered scripting]
 - https://vimeo.com/106072405[LiveOak Business Logic (Part 2) - Using the LiveOak Client]
 
+== Examples
+
+LiveOak comes with some example applications that are installable from within the Admin Console.
+
+include::docs/examples/_chat-html.adoc[]
+
+include::docs/examples/_chat-android.adoc[]
+
+include::docs/examples/_chat-ios.adoc[]
+
+include::docs/examples/_chat-secured.adoc[]
+
+include::docs/examples/_business-logic.adoc[]
+
+include::docs/examples/_todo-html.adoc[]
+
+include::docs/examples/_todo-cordova.adoc[]
+
+[[ex-gallery]]
+=== Gallery
+
+Gallery is a simple image gallery allowing browsing and uploading of photos. It demonstrates LiveOak's binary data
+storage capabilities.
+
+The example comes in two forms:
+
+* As an link:/docs/#ex-gallery-html[HTML web application]
+
+* As an link:/docs/#ex-gallery-cordova[Android application] - implemented using Apache Cordova, which means it's essentially
+ the same as the HTML web application, only slightly modified, and repackaged as a native Android application.
+
+include::docs/examples/_gallery-html.adoc[]
+
+include::docs/examples/_gallery-cordova.adoc[]
+
+include::docs/examples/_basic-auth.adoc[]
+
 == Dashboard
 
 include::docs/dash/_push.adoc[]
