@@ -11,7 +11,7 @@ profiles:
   production:
     base_url: http://liveoak.io/
     metrics_base_url:  http://www.redhat.com
-    google_analytics: 'UA-10656779-1'
+    google_analytics: 'UA-56523623-1'
     deploy:
       host: liveoak.io
       path: /var/www/domains/liveoak.io/www/htdocs/

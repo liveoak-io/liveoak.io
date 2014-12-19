@@ -38,23 +38,23 @@ layout: base
           %h3#current-version Current Version (#{current.version})
           .row.download-buttons
             .col-sm-6
-              %a.btn.btn-default.btn-lg.full-width{:href => "http://repository.liveoak.io/io/liveoak/liveoak-dist/#{current.version}/liveoak-dist-#{current.version}.zip"}
+              %a.btn.btn-default.btn-lg.full-width{:href => "http://repository.liveoak.io/io/liveoak/liveoak-dist/#{current.version}/liveoak-dist-#{current.version}.zip", :id => "#{current.version}.zip"}
                 %i.fa.fa-download
                 Binary .zip
                 %span (#{current.zip_size})
             .col-sm-6
-              %a.btn.btn-default.btn-lg.full-width{:href => "http://repository.liveoak.io/io/liveoak/liveoak-dist/#{current.version}/liveoak-dist-#{current.version}.tar.gz"}
+              %a.btn.btn-default.btn-lg.full-width{:href => "http://repository.liveoak.io/io/liveoak/liveoak-dist/#{current.version}/liveoak-dist-#{current.version}.tar.gz", :id => "#{current.version}.tar.gz"}
                 %i.fa.fa-download
                 Binary tar.gz
                 %span (#{current.tar_size})
           .row.download-buttons
             .col-sm-6
-              %a.btn.btn-default.btn-lg.full-width{:href => "http://repository.liveoak.io/io/liveoak/liveoak-dist/#{current.version}/liveoak-dist-#{current.version}-src.zip"}
+              %a.btn.btn-default.btn-lg.full-width{:href => "http://repository.liveoak.io/io/liveoak/liveoak-dist/#{current.version}/liveoak-dist-#{current.version}-src.zip", :id => "#{current.version}-src"}
                 %i.fa.fa-download
                 Source .zip
                 %span (#{current.src_zip_size})
             .col-sm-6
-              %a.btn.btn-default.btn-lg.full-width{:href => "http://repository.liveoak.io/io/liveoak/liveoak-dist/#{current.version}/liveoak-dist-#{current.version}-src.tar.gz"}
+              %a.btn.btn-default.btn-lg.full-width{:href => "http://repository.liveoak.io/io/liveoak/liveoak-dist/#{current.version}/liveoak-dist-#{current.version}-src.tar.gz", :id => "#{current.version}-src"}
                 %i.fa.fa-download
                 Source tar.gz
                 %span (#{current.src_tar_size})
