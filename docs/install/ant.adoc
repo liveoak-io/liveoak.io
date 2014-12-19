@@ -1,0 +1,40 @@
+:awestruct-layout: doc
+:awestruct-doc_nav_partial: doc_ant_nav.html.haml
+:linkattrs:
+
+[[installing-ant]]
+== Installing Ant
+
+=== Fedora 20
+
+[source,bash]
+----
+su -c "yum install ant"
+----
+
+=== Ubuntu
+
+[source,bash]
+----
+sudo apt-get install ant
+----
+
+=== Mac OS X
+
+[source,bash]
+----
+brew install ant
+----
+
+=== Windows
+
+Visit http://ant.apache.org/bindownload.cgi[Apache Ant Download page], and download a .zip archive.
+
+Unpack it into a destination directory e.g. c:\tools\apache-ant-1.9.4.
+
+Make sure its `bin` directory is on your PATH:
+
+[source,bash]
+----
+set PATH=%PATH%;c:\tools\apache-ant-1.9.4\bin
+----
