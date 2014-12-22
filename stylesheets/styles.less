@@ -640,8 +640,6 @@ table {
       text-transform: none;
     }
   }
-    
-  
 }
 
 
@@ -649,6 +647,14 @@ table {
 
 .imageblock {
   margin-bottom: 10px;
+  
+  + .paragraph {
+    margin-top: 15px;
+  }
+}
+
+.paragraph + .imageblock {
+  margin-top: 17px;
 }
 
 
@@ -850,7 +856,7 @@ table {
 .note {
   .alert;
   .alert-info;
-  margin-bottom: 0;
+  margin-bottom: 10px;
   
   .fa {
     font-size: 16px;
@@ -877,5 +883,13 @@ table {
 table.tableblock {
   .table;
   .table-striped;
+}
+
+.colist {
+  margin-bottom: 10px;
   
+  &.arabic tr td:first-child {
+    padding-right: 10px;
+    vertical-align: top;
+  }
 }

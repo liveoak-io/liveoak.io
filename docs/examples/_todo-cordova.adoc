@@ -1,5 +1,5 @@
 [[ex-todo-cordova]]
-=== ToDo (Cordova)
+==== ToDo (Cordova)
 
 http://cordova.apache.org[Cordova] is an open source project under the umbrella of the Apache organization, that provides
 a framework for using HTML5, CSS, and JavaScript to create cross-platform native mobile applications.
