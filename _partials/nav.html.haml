@@ -14,7 +14,7 @@
         %li{:class=>"#{'active' if page.output_page.output_path.start_with?('/index') }" }<
           %a{:href => "#{site.base_url}/index.html"} LiveOak
         %li
-          %a{:href => "#"} Getting Started
+          %a{:href => "#{site.base_url}/docs/#getting-started"} Getting Started
         %li{:class=>"#{'active' if page.output_page.output_path.start_with?('/downloads') }" }<
           %a{:href => "#{site.base_url}/downloads"} Downloads
         %li.dropdown{:class=>"#{'active' if page.output_page.output_path.start_with?('/docs') }" }<

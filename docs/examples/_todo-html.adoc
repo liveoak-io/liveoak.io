@@ -1,12 +1,12 @@
 [[ex-todo-html]]
-=== ToDo (HTML)
+==== ToDo (HTML)
 
 This example will make static web content available to be served by LiveOak, but also configure the necessary LiveOak services
 as REST endpoints.
 
 The source for this example is located at https://github.com/liveoak-io/liveoak-example-todomvc
 
-==== Installation
+===== Installation
 
 Start LiveOak:
 [source,bash]
@@ -16,7 +16,7 @@ $LIVEOAK_HOME/bin/standalone.sh -b 0.0.0.0
 
 Point your browser to http://localhost:8080/admin#/example-applications[], select `TodoMVC` and then `Install`.
 
-==== Usage
+===== Usage
 
 Point your browser to http://localhost:8080/todomvc[].
 

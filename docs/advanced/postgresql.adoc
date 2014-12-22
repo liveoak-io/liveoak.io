@@ -356,6 +356,7 @@ The returned status has no error-type section in it, meaning that the operation 
 
 If another table had a foreign key constraint reference to this table, the operation would fail.
 
+[[column-fields]]
 === Column fields Vs. synthetic fields
 
 PgSql endpoint maps tables to collections, and table rows to collection items. Table rows contain data in columns, and this data is exported as JSON document containing fields.

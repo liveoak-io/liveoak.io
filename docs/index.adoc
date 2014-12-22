@@ -23,6 +23,7 @@ support of a specific application.
 
 LiveOak can be deployed locally on a developer machine, or in the cloud - either to OpenShift Online or as a Docker container.
 
+[[gs-rest]]
 === REST with 100% more push
 
 HTML5/Javascript-based applications today have a variety of libraries and frameworks that enable interaction with RESTful
@@ -38,6 +39,7 @@ This addition of push semantics basically adds one more verb to the standard arr
 For any given resource provided by the LiveOak server, in addition to traditional GET, POST, PUT and DELETE, a client can SUBSCRIBE
 to the same resource, and be immediately notified of changes to the resource, including creates, updates, and deletes.
 
+[[gs-resource]]
 === A Resource
 
 The only type of component visible on the server-side is a *Resource*, which matches the ideas of REST. Each resource is
