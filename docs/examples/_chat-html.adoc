@@ -1,2 +1,69 @@
 [[ex-chat-html]]
-=== Chat (HTML)
+==== Chat (HTML)
+
+This example utilize some basic services from LiveOak, such as storage and subscriptions, and serve the static content that
+constitutes the single page application of the example.
+
+The source for this example is located at https://github.com/liveoak-io/liveoak-example-chat-html
+
+===== Installation
+
+Start LiveOak:
+[source,bash]
+----
+$LIVEOAK_HOME/bin/standalone.sh -b 0.0.0.0
+----
+
+Point your browser to http://localhost:8080/admin#/example-applications[], select `HTML Chat` and then `Install`.
+
+===== Usage
+
+Point your browser to http://localhost:8080/chat-html[].
+
+You should see a simple chat web application. Enter some text as if you were Alice:
+
+image::examples/chat_html.png[Chat HTML, 75%, align="center"]
+
+Open http://localhost:8080/chat-html[] in another window, side by side with the first, type some text in there and send it.
+You should see the sent text display in both windows instantly.
+
+This example is a https://en.wikipedia.org/wiki/Single-page_application[single page application] - it provides static HTML,
+javascript, and CSS content which is served by LiveOak as simple static files. This is configured through the
+link:https://raw.githubusercontent.com/liveoak-io/liveoak-example-chat-html/master/application.json[application.json] configuration
+file, which instructs LiveOak what ready-made services to expose through REST for this application.
+
+Serving of static files is one of these services. Another is persistent storage backed by `MongoDB`.
+
+Keep in mind that this example does not contain any application specific server-side logic - all the javascript files are for
+a client browser, not for the server, yet the application stores chat messages on the server, and broadcasts content updates to
+other clients through server. All thanks to the out-of-the-box services that LiveOak provides.
+
+We can use the http://localhost:8080/admin[LiveOak Admin Console] to configure application resources, and browse application
+data on the server. Let’s go to http://localhost:8080/admin[]
+
+Log in as user `admin` - use the same for a password. The first time you try to login to the http://localhost:8080/admin[LiveOak Admin Console]
+you will be asked to set a new password.
+
+image::examples/chat_html_admin_dashboard.png[Chat HTML - Admin Dashboard, 75%, align="center"]
+
+You should now find yourself on the `Dashboard` page of the `chat-html` application.
+
+To browse application data select `Storage` in the left navigation bar.
+
+image::examples/chat_html_admin_storage.png[Chat HTML - Admin Storage, 75%, align="center"]
+
+We can see that we have one storage resource configured, bound to `/storage` subroot of `/chat-html`, and using the `Default Datastore`
+for `MongoDB`.
+
+Where did this configuration come from?
+It is specified in the `$LIVEOAK_HOME/apps/chat-html/application.json` file which serves as a master configuration file for the application.
+
+We can create storage resources directly through the http://localhost:8080/admin[LiveOak Admin Console] as well, but for now let's browse
+through `chat-html` application’s data created thus far.
+
+Click on storage resource title text `storage` - in green.
+
+image::examples/chat_html_admin_storage_collections.png[Chat HTML - Admin Storage Collections, 75%, align="center"]
+
+We can browse the data, and search through it. If we switch again to application page, and send some more messages, we can see the
+`Admin Console Storage Collections` view automatically update with the new content, just like the other application window before.

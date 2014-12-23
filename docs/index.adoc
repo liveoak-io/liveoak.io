@@ -63,9 +63,24 @@ Here are some screencasts that we've put together to help you become familiar wi
 
 LiveOak comes with some example applications that are installable from within the Admin Console.
 
-NOTE: Documentation on Chat and Business Logic examples coming soon.
+NOTE: Documentation on Business Logic examples coming soon.
 
-// include::docs/examples/_chat-html.adoc[]
+[[ex-chat]]
+=== Chat
+
+A simple chat example that demonstrates LiveOak storage, subscriptions and security.
+
+The example comes in four forms:
+
+* As an link:/docs/#ex-chat-html[HTML Web application]
+
+// * As an link:/docs/#ex-chat-android[Android application]
+
+// * As an link:/docs/#ex-chat-ios[iOS application]
+
+//  * As an link:/docs/#ex-chat-secured[Secured HTML Web application]
+
+include::docs/examples/_chat-html.adoc[]
 
 // include::docs/examples/_chat-android.adoc[]
 
