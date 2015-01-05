@@ -1,2 +1,9 @@
-[[ex-secured-chatl]]
-=== Secured Chat
+[[ex-chat-secured]]
+==== Secured Chat
+
+This example extends the Chat HTML example by securing access to the application with Keycloak users, roles and permissions.
+
+The source for the application is on https://github.com/liveoak-io/liveoak-example-chat-html-secured[GitHub].
+
+Instructions for configuring the application can be found
+https://github.com/liveoak-io/liveoak-example-chat-html-secured#setup-the-application[here].

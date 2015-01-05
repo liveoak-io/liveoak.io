@@ -78,7 +78,7 @@ The example comes in four forms:
 
 * As an link:/docs/#ex-chat-ios[iOS application]
 
-//  * As an link:/docs/#ex-chat-secured[Secured HTML Web application]
+* As an link:/docs/#ex-chat-secured[Secured HTML Web application]
 
 include::docs/examples/_chat-html.adoc[]
 
@@ -86,7 +86,7 @@ include::docs/examples/_chat-android.adoc[]
 
 include::docs/examples/_chat-ios.adoc[]
 
-// include::docs/examples/_chat-secured.adoc[]
+include::docs/examples/_chat-secured.adoc[]
 
 // include::docs/examples/_business-logic.adoc[]
 
