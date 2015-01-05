@@ -1,5 +1,5 @@
 [[ex-chat-android]]
-=== Chat (Android)
+==== Chat (Android)
 
 The chat application we deployed to LiveOak earlier, configured LiveOak services to provide REST endpoints for `chat-html`.
 
@@ -17,7 +17,7 @@ not only GCM, but also https://en.wikipedia.org/wiki/Apple_Push_Notification_Ser
 makes it possible to dispatch messages to many different native platforms without having to write, and deploy, as much as a
 single line of application specific server-side code.
 
-==== Installing AeroGear UnifiedPush Server (UPS)
+===== Installing AeroGear UnifiedPush Server (UPS)
 
 Note: These instructions will be updated with the latest version of AeroGear UPS, once it has been verified.
 
@@ -33,7 +33,7 @@ to follow this document, as all the URLs referring to 'AeroGear UPS' will be inc
 Before continuing, make sure that you have followed the instructions to configure a 'Google Cloud Messaging' application via
 'Google Developers Console'.
 
-===+ Setting Up Chat Application in AeroGear UPS
+===== Setting Up Chat Application in AeroGear UPS
 
 Now we browse to http://localhost:8080/unifiedpush-server-0.10.3[UPS Admin Console], and create a new application.
 
@@ -62,7 +62,7 @@ our application.
 We still have to configure our `chat-html` LiveOak application to talk to http://localhost:8080/unifiedpush-server-0.10.3[AeroGear UPS]
 before messages will be pushed to our device.
 
-==== Setting Up Chat Application in LiveOak
+===== Setting Up Chat Application in LiveOak
 
 In the http://localhost:8080/admin#/applications/chat-html[LiveOak Admin Console] for `chat-html` select `Push` in the left
 navigation bar.
@@ -76,7 +76,7 @@ image::examples/chat_html_admin_push_config.png[Chat HTML Admin Push Configurati
 
 Now it’s time to build a native Android client.
 
-==== Preparing Chat Android Application for Build
+===== Preparing Chat Android Application for Build
 
 Before we can build our `Chat` Android application, we need the `Android SDK` installed.
 
@@ -144,13 +144,13 @@ $ANDROID_HOME/platform-tools/adb install -r app/build/apk/app-debug-unaligned.ap
 
 image:examples/chat_android.png[LiveOak Chat for Android, 50%, align="center"]
 
-==== Troubleshooting
+===== Troubleshooting
 
-===== Where is application on my phone?
+====== Where is the application on my phone?
 
 Look for a green application icon with a title 'LiveOak Chat'.
 
-===== Application shows error message and exits
+====== Application shows error message and exits
 
 The most likely reason is that the application can't connect to the server. Try the following steps to resolve connectivity issues.
 
@@ -191,7 +191,7 @@ filled out, and has a Connected status.
 You may also re-check http://localhost:8080/unifiedpush-server-0.10.3[AeroGear UPS console] and compare values with those in
 https://console.developers.google.com/project[Google Developers Console] to make sure all is properly configured.
 
-===== Application seems to be working, but does not receive any messages
+====== Application seems to be working, but does not receive any messages
 
 Try to completely uninstall any previous version of 'LiveOak Chat' from your device / emulator, and reinstall it again.
 
@@ -200,7 +200,7 @@ which caches some GCM related information that may become invalid when applicati
 
 Uninstalling, and reinstalling the application will clean any such information.
 
-===== Application is working, but receives all messages twice
+====== Application is working, but receives all messages twice
 
 Reinstalling 'LiveOak Chat' may result in multiple different GCM registration ids for the same device. 'AeroGear UPS' will
 dispatch messages to all registered GCM registration ids. 'LiveOak Chat' should probably detect such situation, and unregister
@@ -210,6 +210,6 @@ http://localhost:8080/unifiedpush-server-0.10.3/#/mobileApps[AeroGear UPS Admin]
 GCM registration ids - also called 'Device Tokens'. That can be done in the administration page for the `liveoak-chat-android`
 variant.
 
-==== Sources
+===== Sources
 
 You can find the latest `chat-android` sources for this demo application on https://github.com/liveoak-io/liveoak-example-chat-android[GitHub].
