@@ -17,6 +17,8 @@ not only GCM, but also https://en.wikipedia.org/wiki/Apple_Push_Notification_Ser
 makes it possible to dispatch messages to many different native platforms without having to write, and deploy, as much as a
 single line of application specific server-side code.
 
+The source for this example is located at https://github.com/liveoak-io/liveoak-example-chat-android
+
 ===== Installing AeroGear UnifiedPush Server (UPS)
 
 Note: These instructions will be updated with the latest version of AeroGear UPS, once it has been verified.
@@ -209,7 +211,3 @@ redundant old registration ids.
 http://localhost:8080/unifiedpush-server-0.10.3/#/mobileApps[AeroGear UPS Admin] can be used to disable individual
 GCM registration ids - also called 'Device Tokens'. That can be done in the administration page for the `liveoak-chat-android`
 variant.
-
-===== Sources
-
-You can find the latest `chat-android` sources for this demo application on https://github.com/liveoak-io/liveoak-example-chat-android[GitHub].

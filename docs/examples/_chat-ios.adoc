@@ -4,4 +4,4 @@
 Full details on how to install the iOS chat application can be found
 https://github.com/liveoak-io/liveoak-example-chat-ios#liveoak-native-ios-chat-application[here].
 
-The source for the iOS chat application is on https://github.com/liveoak-io/liveoak-example-chat-ios[GitHub].
+The source for this example is located at https://github.com/liveoak-io/liveoak-example-chat-ios.
