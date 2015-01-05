@@ -1,2 +1,7 @@
 [[ex-chat-ios]]
-=== Chat (iOS)
+==== Chat (iOS)
+
+Full details on how to install the iOS chat application can be found
+https://github.com/liveoak-io/liveoak-example-chat-ios#liveoak-native-ios-chat-application[here].
+
+The source for the iOS chat application is on https://github.com/liveoak-io/liveoak-example-chat-ios[GitHub].
