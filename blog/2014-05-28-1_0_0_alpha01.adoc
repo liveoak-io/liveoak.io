@@ -65,14 +65,15 @@ video::96638444[vimeo]
 
 == How can I try it out?
 
-First of all check out our link:http://liveoak.io/[website]. You can find several link:/docs[screencasts], link:/docs[getting started guides and tutorials] there.
+First of all check out our link:http://liveoak.io/[website]. You can find several link:/docs/#gs-screencasts[screencasts],
+link:/docs/#getting-started[getting started guide] there.
 
-link:http://liveoak.io[LiveOak] also comes with few link:/docs/guides/guide_examples/[example applications] that can be quickly tried out.
-We have a simple link:/docs/guides/tutorial_chat/[chat application], our
- own variant of the well known link:/docs/guides/tutorial_todomvc[TodoMVC application] and a link:/docs/guides/tutorial_gallery[gallery application]
- showing binary storage capabilities. All of these are also available as Android applications - either native or link:http://cordova.apache.org/[Cordova].
+link:http://liveoak.io[LiveOak] also comes with few link:/docs/#examples[example applications] that can be quickly tried out.
+We have a simple link:/docs/#ex-chat[chat application], our own variant of the well known link:/docs/#ex-todo[TodoMVC application]
+and a link:/docs/#ex-gallery[gallery application] showing binary storage capabilities. All of these are also available as
+Android applications - either native or link:http://cordova.apache.org/[Cordova].
 
-link:/docs/guides/tutorial_chat/#preparing-chat-android-app-for-buil[Android chat client] deserves a special mention as it demonstrates integration with
+link:/docs/#ex-chat-android[Android chat client] deserves a special mention as it demonstrates integration with
 link:http://aerogear.org/docs/specs/aerogear-server-push/[AeroGear Unified Push Server] to receive
 native push notifications.
 
@@ -91,5 +92,5 @@ We have plenty of ideas. A few key ones:
 * Better provisioning and automation
 ...
 
-Please link:/downloads[download it] and link:/docs/guides/getting_started[try it out], then go to our link:/community[community page],
+Please link:/downloads[download it] and link:/docs/#getting-started[try it out], then go to our link:/community[community page],
 subscribe to the mailing list and share your feedback!

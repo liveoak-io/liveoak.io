@@ -11,7 +11,7 @@ You can test your `java` version by running:
 java -version
 ....
 
-If you don’t have Java 8 on your system, follow the instructions link:install/java/[here] to install it.
+If you don’t have Java 8 on your system, follow the instructions link:../docs/install/java/[here] to install it.
 
 ==== Installing and Running
 
@@ -42,8 +42,6 @@ http://localhost:8080/admin[LiveOak Admin Console]
 http://localhost:8080/admin[LiveOak Admin Console] requires you to log in. Use `admin` as username, and password. The first time you log in you’ll be prompted to change the password.
 
 http://localhost:8080/admin[LiveOak Admin Console] has quite a short idle timeout, so you may have to login again quite often.
-
-link:../guides/tutorial_chat[Let’s create and deploy another application], to see how easy it is.
 
 [[installing-openshift]]
 === Installing the LiveOak OpenShift Cartridge

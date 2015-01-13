@@ -42,5 +42,5 @@ Some of the key features we're looking to introduce before we go final:
 * Continued UX improvements to the Console
 
 
-Please link:/downloads[download it] and link:/docs/guides/getting_started[try it out], then go to our link:/community[community page],
+Please link:/downloads[download it] and link:/docs/#getting-started[try it out], then go to our link:/community[community page],
 subscribe to the mailing list and share your feedback!
