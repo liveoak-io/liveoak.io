@@ -6,75 +6,58 @@ The chat application we deployed to LiveOak earlier, configured LiveOak services
 Now we will create another mobile application that will communicate with those same server endpoints, but will run as a native
 application on Android.
 
-For this demo we’ll be using https://en.wikipedia.org/wiki/Google_Cloud_Messaging[Google Cloud Messaging (GCM)].
+For this demo we’ll be using https://developer.android.com/google/gcm/index.html[Google Cloud Messaging (GCM)].
 GCM is natively supported on most Android devices, and allows native applications to receive messages sent to the device even
 when the device has no data connectivity, or was turned off when messages were sent to it. It also makes it possible for a
 native application to be ‘woken up’ when a message arrives - even if an application may not be running at that moment.
 
 LiveOak provides the necessary REST endpoints for message dispatching. It uses the http://aerogear.org/push[AeroGear UnifiedPush Server]
 component to perform the actual native cloud messaging dispatch. http://aerogear.org/push[AeroGear UnifiedPush Server] supports
-not only GCM, but also https://en.wikipedia.org/wiki/Apple_Push_Notification_Service[Apple Push Notification Service]. That
-makes it possible to dispatch messages to many different native platforms without having to write, and deploy, as much as a
-single line of application specific server-side code.
+not only GCM, but also 
+https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html[Apple Push Notification Service].
+That makes it possible to dispatch messages to many different native platforms without having 
+to write, and deploy, as much as a single line of application specific server-side code.
 
 The source for this example is located at https://github.com/liveoak-io/liveoak-example-chat-android
 
-===== Installing AeroGear UnifiedPush Server (UPS)
+===== AeroGear UnifiedPush Server (UPS) Configuration
 
-Note: These instructions will be updated with the latest version of AeroGear UPS, once it has been verified.
+In order to use the Android chat example you will need to have access to a UPS instance. Please note that you cannot install 
+UPS into the same server as LiveOak. Your UPS instance will have to be installed in a different server, either locally
+or network accessible. Please see the https://aerogear.org/push/[AeroGear UPS website] for installation instructions.
 
-We assume that the 'AeroGear UnifiedPush Server' is installed into the LiveOak server, and listens at http://localhost:8080/unifiedpush-server-0.10.3.
+There is nothing unique which needs to be done specifically for LiveOak when configuring an Android based application in the
+UPS console. It's the exact same steps as configuring any other Android application in UPS, which comes down to two main steps:
 
-Follow the link:/docs/install/ups[instructions here] to download, and install 'AeroGear UPS' so that it can be accessed this way.
 
-This is not the only way to install 'AeroGear UPS'. It could live in its own application server instance on a different port,
-and a different URL, or it could be deployed on OpenShift. LiveOak can use 'AeroGear UPS' regardless of its host, or port, as
-long as its REST APIs are accessible. But deploying it differently than into LiveOak server may make it more difficult for you
-to follow this document, as all the URLs referring to 'AeroGear UPS' will be incorrect.
+====== Setting up a Google Messaging Project
 
-Before continuing, make sure that you have followed the instructions to configure a 'Google Cloud Messaging' application via
-'Google Developers Console'.
+You will first need to setup a Google Cloud Messaging project in the 
+https://console.developers.google.com[Google Developer Console]. Instructions for setting up your project can be found 
+https://aerogear.org/docs/unifiedpush/aerogear-push-android/google-setup/[here] in the AeroGear documention.
 
-===== Setting Up Chat Application in AeroGear UPS
 
-Now we browse to http://localhost:8080/unifiedpush-server-0.10.3[UPS Admin Console], and create a new application.
+====== Setting up a Google Based UPS Application
 
-image::ups/applications.png[AeroGear UPS Applications, 75%, align="center"]
+Once you have your project setup in the Google Developer Console, you will then need to create a Google based
+application in UPS. Instructions for setting up your application can be found 
+https://aerogear.org/docs/unifiedpush/aerogear-push-android/register-device/[here] in the AeroGear documentation.
 
-Click `Create ...` button, type `liveoak-chat` for an application name, and click `Create` again.
-
-image::ups/create_application.png[AeroGear UPS Create Application, 75%, align="center"]
-
-Click on the `liveoak-chat` application name.
-
-image::ups/liveoak_chat_added.png[AeroGear UPS liveoak-chat added, 75%, align="center"]
-
-In the application screen, add a new `Variant` (using the 'Add...' button), calling it `liveoak-chat-android`.
-
-image::ups/chat_variants.png[AeroGear UPS Variants, 75%, align="center"]
-
-Fill in the `Google API Key`, and `Project Number` with values from the https://console.developers.google.com/project[Google Developers Console].
-
-image::ups/chat_add_variant.png[AeroGear UPS Add Variant, 75%, align="center"]
-
-Thus far we have configured GCM support in https://console.developers.google.com/project[Google Developers Console],
-and configured the http://localhost:8080/unifiedpush-server-0.10.3[AeroGear UnifiedPush Server] to use Google’s GCM services for
-our application.
-
-We still have to configure our `chat-html` LiveOak application to talk to http://localhost:8080/unifiedpush-server-0.10.3[AeroGear UPS]
-before messages will be pushed to our device.
 
 ===== Setting Up Chat Application in LiveOak
+
+From your UPS console you will need to open your Android application. You should then be presented with a page which
+displays the `Server URL`, `Application ID` and `Master Secret`
+
+image::examples/chat_html_UPS_console.png[UPS Console, 75%, align="center"]
 
 In the http://localhost:8080/admin#/applications/chat-html[LiveOak Admin Console] for `chat-html` select `Push` in the left
 navigation bar.
 
 image::examples/chat_html_admin_push.png[Chat HTML Admin Push, 75%, align="center"]
 
-Enter the `Application ID`, and `Master Secret` from the http://localhost:8080/unifiedpush-server-0.10.3[AeroGear UPS console].
-Enter the `AeroGear UnifiedPush URL` as: `http://localhost:8080/unifiedpush-server-0.10.3`, and save changes.
-
-image::examples/chat_html_admin_push_config.png[Chat HTML Admin Push Configuration, 75%, align="center"]
+Here you will need to enter the `AeroGear UnifiedPush URL`, `Application ID`, and `Master Secret` that you obtained from the 
+UPS console.
 
 Now it’s time to build a native Android client.
 
@@ -94,7 +77,10 @@ git clone https://github.com/liveoak-io/liveoak-example-chat-android.git
 After cloning, we need to make modifications to the code that are explained
 https://github.com/liveoak-io/liveoak-example-chat-android#building-the-example[here].
 
-Use `Project Number` of the `chat-android` application in https://console.developers.google.com/project[Google Developers Console] as `GCM_SENDER_ID`.
+All the data for filling out the liveoak.json file can be found in your variant's page in the UPS console. Please note that the 
+`gcm-sender-id` is equal to the `Project Number` seen in the UPS console:
+
+image::examples/chat_android_ups_variant.png[UPS Console Variant, 75%, align="center"]
 
 Let’s go to the project directory:
 
@@ -144,13 +130,15 @@ After successful build, install the created archive to a running emulator or con
 $ANDROID_HOME/platform-tools/adb install -r app/build/apk/app-debug-unaligned.apk
 ----
 
-image:examples/chat_android.png[LiveOak Chat for Android, 50%, align="center"]
+image::examples/chat_android.png[LiveOak Chat for Android, 50%, align="center"]
 
 ===== Troubleshooting
 
 ====== Where is the application on my phone?
 
-Look for a green application icon with a title 'LiveOak Chat'.
+Look for an application called `LiveOak Chat`. It should look something like:
+
+image::examples/chat_html_homescreen_icon.png[Android Chat Icon, 50%, align="center"]
 
 ====== Application shows error message and exits
 
