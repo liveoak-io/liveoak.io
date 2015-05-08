@@ -32,6 +32,12 @@ asciidoctor:
     imagesdir: /imgs
 
 releases:
+  - version: 1.0.0.Final
+    date: 8 May 2015
+    tar_size: 168M
+    zip_size: 186M
+    src_tar_size: 9.8M
+    src_zip_size: 11M
   - version: 1.0.0.Beta03
     date: 12 Mar 2015
     tar_size: 168M
