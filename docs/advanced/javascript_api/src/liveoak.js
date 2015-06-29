@@ -1,0 +1,4 @@
+/**
+ * @namespace liveoak
+ * @global
+ */

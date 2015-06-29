@@ -1,0 +1,27 @@
+{
+  "opts" : {
+    "destination": ".",
+    "recurse": true
+  },
+  "tags": {
+    "allowUnknownTags": true
+  },
+  "source": {
+    "include": [
+      "src",
+      "src/README.md",
+      "src/liveoak",
+      "src/liveoak/error"
+    ],
+    "includePattern": ".+\\.js(doc)?$",
+    "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "plugins": [ ],
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false,
+    "default": {
+      "outputSourceFiles": false
+    }
+  }
+}
