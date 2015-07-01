@@ -1,0 +1,22 @@
+= Future of LiveOak
+Ken Finnigan
+
+Firstly, I would like to personally thank the community for helping us reach 1.0.0.Final, we could not have done it without your support and assistance!
+
+Since the announcement in September 2014 that Red Hat would acquire FeedHenry, there has been much discussion about the future of LiveOak. With the
+acquisition complete and the recent announcement at Red Hat Summit of Red Hat Mobile Application Platform, a commercial offering based on FeedHenry,
+Red Hat has leapfrogged where we are with LiveOak in terms of an mBaaS feature set. As more of FeedHenry is open sourced over time, the desire for a
+completely separate open source mBaaS developed by Red Hat does not make sense.
+
+Given all the above, there will be no additional development of LiveOak by Red Hat. I have created a branch of the code as it stood at the 1.0.0.Final
+release, named [1.x](https://github.com/liveoak-io/liveoak/tree/1.x), so that anyone from the community who has an interest in advancing the project
+as an mBaaS may do so. I will endeavor to provide guidance and assistance on how the current project works to those that are interested in my spare time,
+so please be patient if I don't respond promptly.
+
+I do hope there can be a future for the foundation that we created with LiveOak, even if it's not as an mBaaS. To that end, I will be spending some
+spare time investigating some options for LiveOak, most likely built with the core REST container in mind. When I have some information on what will
+be happening, I will most definitely be sharing it with the community at large.
+
+Once again, thanks for all the work with LiveOak as an mBaaS.
+
+I'll leave you with a common saying for this situation: "LiveOak as an mBaaS is dead. Long live LiveOak as ..."
