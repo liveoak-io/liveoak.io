@@ -112,9 +112,9 @@ You can only specify one resource path per script. You will need to create multi
 
 What functions your script contains will determine what actions will trigger the script into being run.
 
-For example, if your *Resource Path* is _/test/storage/dogs/fido_ and your script contains a *preUpdate(link:/docs/advanced/_javascript_api/Request.html[request^])* function, then this function will be called whenever an update is about to be performed on the _/test/storage/dogs/fido_ resource.
+For example, if your *Resource Path* is _/test/storage/dogs/fido_ and your script contains a *preUpdate(link:/docs/advanced/javascript_api/Request.html[request^])* function, then this function will be called whenever an update is about to be performed on the _/test/storage/dogs/fido_ resource.
 
-Similarily, if you also had a *postUpdate(link:/docs/advanced/_javascript_api/Response.html[response^])* function, then this function would be called after the update had occured.
+Similarily, if you also had a *postUpdate(link:/docs/advanced/javascript_api/Response.html[response^])* function, then this function would be called after the update had occured.
 
 You can have multiple script functions defined in your script, and each will be run based on the appropriate action.
 
@@ -124,25 +124,25 @@ You can have multiple script functions defined in your script, and each will be 
 [width="90%", align="center", cols="1,^2", options="header", valign="top"]
 |===================================
 |Type | Must Contain Function
-|pre-create | function preCreate(link:/docs/advanced/_javascript_api/Request.html[request^]) {...}
+|pre-create | function preCreate(link:/docs/advanced/javascript_api/Request.html[request^]) {...}
 
-|post-create | function postCreate(link:/docs/advanced/_javascript_api/Response.html[response^]) {...}
+|post-create | function postCreate(link:/docs/advanced/javascript_api/Response.html[response^]) {...}
 
-|pre-read | function preRead(link:/docs/advanced/_javascript_api/Request.html[request^]) {...}
+|pre-read | function preRead(link:/docs/advanced/javascript_api/Request.html[request^]) {...}
 
-|post-read | function postRead(link:/docs/advanced/_javascript_api/Response.html[response^]) {...}
+|post-read | function postRead(link:/docs/advanced/javascript_api/Response.html[response^]) {...}
 
-|pre-update | function preUpdate(link:/docs/advanced/_javascript_api/Request.html[request^]) {...}
+|pre-update | function preUpdate(link:/docs/advanced/javascript_api/Request.html[request^]) {...}
 
-|post-update | function postUpdate(link:/docs/advanced/_javascript_api/Response.html[response^]) {...}
+|post-update | function postUpdate(link:/docs/advanced/javascript_api/Response.html[response^]) {...}
 
-|pre-delete | function preDelete(link:/docs/advanced/_javascript_api/Request.html[request^]) {...}
+|pre-delete | function preDelete(link:/docs/advanced/javascript_api/Request.html[request^]) {...}
 
-|post-delete | function postDelete(link:/docs/advanced/_javascript_api/Response.html[response^]) {...}
+|post-delete | function postDelete(link:/docs/advanced/javascript_api/Response.html[response^]) {...}
 
-|on-error | function onError(link:/docs/advanced/_javascript_api/Response.html[response^]) {...}
+|on-error | function onError(link:/docs/advanced/javascript_api/Response.html[response^]) {...}
 |===================================
 
 ==== JavaScript API
 
-The API for dealing with javascript object can be found link:/docs/advanced/_javascript_api/index.html[here^]
+The API for dealing with javascript object can be found link:/docs/advanced/javascript_api/index.html[here^]
